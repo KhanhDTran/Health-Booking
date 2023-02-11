@@ -13,7 +13,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(bodyParser.json({ limit: "50mb" }));
 mongoose.set("strictQuery", true);
-// mongoose.connect(process.env.MONGO_DB_URI);
 mongoose.connect(process.env.MONGO_DB_URI).then(() => {
     console.log("Connected to Database");
     }).catch((err) => {

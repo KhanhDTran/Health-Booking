@@ -1,12 +1,40 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Login from "./pages/auth/Login";
+import Error from "./pages/Error";
+import Signup from "./pages/auth/Signup";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          {/* Authenticate */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+
+          <Route path="*" element={<Error />} />
+
+          {/* <Route path="/doctor/:id" element={<DoctorPage />} />
+          <Route path="system/admin">
+            <Route index={true} element={<Admin />} />
+            <Route path="manage-doctors-profile" element={<ManageDoctor />} />
+            <Route path="manage-users" element={<ManageUser />} />
+            <Route path="manage-specialties" element={<ManageSpecialty />} />
+            <Route path="manage-clinics" element={<ManageClinic />} />
+            <Route
+              path="manage-doctors-schedule"
+              element={<ManageDoctorSchedule />}
+            />
+          </Route>
+          <Route path="system/doctor">
+            <Route index={true} element={<Doctor />} />
+          </Route> */}
+        </Routes>
+      </Router>
+    </>
   );
 }
 

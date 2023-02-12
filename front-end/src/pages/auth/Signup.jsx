@@ -4,9 +4,11 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+import { postData } from "../../services/commonSv";
+
 export default function Signup() {
   useEffect(() => {
-    document.title = "Đăng ký| Health Booking";
+    document.title = "Đăng ký | Health Booking";
   }, []);
 
   let [name, setName] = useState("");
@@ -22,9 +24,25 @@ export default function Signup() {
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
-  function signUp() {
+  async function signUp() {
     if (checkInput()) {
-      alert("123");
+      let res = await postData(
+        "/create-patient",
+        {
+          name,
+          username,
+          password: pass,
+          phone,
+          address,
+          gender,
+          age,
+          email,
+        },
+        "Đang tạo tài khoản..."
+      );
+      if (res) {
+        navigate("/login");
+      }
     }
   }
 

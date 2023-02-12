@@ -3,12 +3,13 @@ const { Schema } = mongoose;
 
 const patientSchema = new Schema(
   {
-    userdsff: { type: Schema.Types.String, ref: "User" },
+    user: { type: Schema.Types.String, ref: "User" },
     name: String,
     age: String,
     address: String,
     phone: String,
-    email: String
+    email: String,
+    gender: String,
   },
   {
     timestamps: true,

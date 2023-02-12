@@ -2,15 +2,21 @@ import expess from "express";
 
 let router = expess.Router();
 
-import { createUser } from "../controllers/userCtrl.js";
+import { createUser, login } from "../controllers/userCtrl.js";
+
+import {
+  createPatient,
+  // checkCreatePatient,
+} from "../controllers/patientCtrl.js";
 
 export function webRoute(app) {
-  // router.get("/users", (req, res) => {
-  //   res.send("users page");
-  // });
-
   //Users
-  router.get("/api/create-user", createUser);
+  router.post("/api/create-user", createUser);
+  router.get("/api/login", login);
+
+  //patients
+  // router.get("/api/check-create-patient", checkCreatePatient);
+  router.post("/api/create-patient", createPatient);
 
   return app.use("", router);
 }

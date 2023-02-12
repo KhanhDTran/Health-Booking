@@ -2,14 +2,16 @@ import logo from "../../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-// import { userLogin } from "../../store/actions/userAction";
 import { useNavigate } from "react-router-dom";
+import { getData } from "../../services/commonSv";
+import { logged_in } from "../../store/features/userSlice";
 
 export default function Login() {
   let [username, setUsername] = useState("");
   let [password, setPassword] = useState("");
   let [showPass, setShowPass] = useState(false);
-  //   const { user, logged_in } = useSelector((state) => state.user);
+  
+  const { role } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
@@ -21,7 +23,14 @@ export default function Login() {
     if (!username || !password) {
       toast.warning("Missing input");
     } else {
-      dispatch(userLogin({ username, password }));
+      let res = await getData(
+        "/login",
+        { username, password },
+        "Đang đăng nhập..."
+      );
+      if (res) {
+        dispatch(logged_in(res));
+      }
     }
   }
   async function handleKeyDown(e) {
@@ -39,20 +48,19 @@ export default function Login() {
   //       }
   //     }
   //   }, []);
-  //   useEffect(() => {
-  //     if (user) {
-  //       if (user.role.keyMap === "R1") {
-  //         navigate("/system/admin");
-  //       } else {
-  //         navigate("/system/doctor");
-  //       }
-  //     }
-  //   }, [logged_in]);
+
+  useEffect(() => {
+    if (role) {
+      if (role === "admin") {
+        navigate("/system/admin");
+      }
+    }
+  }, [role]);
 
   return (
     <div data-theme="">
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col  gap-10 lg:w-5/6">
+        <div className="hero-content flex-col  gap-10 w-full">
           <div className="text-center  flex-col">
             <div className="w-24 rounded mx-auto">
               <img src={logo} className="" />
@@ -61,7 +69,7 @@ export default function Login() {
             <span></span>
           </div>
           <div
-            className="card flex-shrink-0 w-ful max-w shadow-2xl bg-base-100"
+            className="card flex-shrink-0 w-10/12 md:w-1/2 shadow-2xl bg-base-100"
             data-theme="light"
           >
             <div className="card-body">
@@ -88,7 +96,7 @@ export default function Login() {
                   id="password"
                   autoComplete="off"
                   placeholder="Mật khẩu"
-                  className="input input-bordered md:w-96"
+                  className="input input-bordered w-full"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   onKeyDown={(e) => handleKeyDown(e)}

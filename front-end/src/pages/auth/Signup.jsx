@@ -4,7 +4,8 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { postData } from "../../services/commonSv";
+import { getRequestToast } from "../../services/commonSv";
+import ModalOtp from "./ModalOtp";
 
 export default function Signup() {
   useEffect(() => {
@@ -20,28 +21,21 @@ export default function Signup() {
   let [age, setAge] = useState("2023");
   let [gender, setGender] = useState("Nam");
   let [check, setCheck] = useState(false);
+  let [showPass, setShowPass] = useState(false);
+  let [openModalOtp, setOpenModalOtp] = useState(false);
 
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
   async function signUp() {
     if (checkInput()) {
-      let res = await postData(
-        "/create-patient",
-        {
-          name,
-          username,
-          password: pass,
-          phone,
-          address,
-          gender,
-          age,
-          email,
-        },
-        "Đang tạo tài khoản..."
+      let res = await getRequestToast(
+        "/check-create-patient",
+        { username, name, email },
+        "Đang kiểm tra tài khoản mới..."
       );
       if (res) {
-        navigate("/login");
+        setOpenModalOtp(true);
       }
     }
   }
@@ -53,6 +47,14 @@ export default function Signup() {
     }
     return true;
   }
+
+  useEffect(() => {
+    if (openModalOtp) {
+      document.querySelector("body").style.overflow = "hidden";
+    } else {
+      document.querySelector("body").style = "";
+    }
+  }, [openModalOtp]);
 
   return (
     <div className="min-h-screen">
@@ -120,9 +122,9 @@ export default function Signup() {
                   </label>
                 </span>
                 <input
-                  type="password"
+                  type={!showPass ? "password" : "text"}
                   id="pass"
-                  placeholder="Mật khẩu..."
+                  placeholder="*************"
                   className="input input-bordered"
                   value={pass}
                   onChange={(e) => setPass(e.target.value)}
@@ -174,7 +176,6 @@ export default function Signup() {
                 >
                   <option value="Nam">Nam</option>
                   <option value="Nữ">Nữ</option>
-                  <option value="Khác">Khác</option>
                 </select>
               </div>
               <div className="form-control">
@@ -315,6 +316,20 @@ export default function Signup() {
           </div>
         </div>
       </div>
+      {openModalOtp && (
+        <ModalOtp
+          setOpenModalOtp={setOpenModalOtp}
+          openModalOtp={openModalOtp}
+          email={email}
+          username={username}
+          name={name}
+          phone={phone}
+          address={address}
+          pass={pass}
+          gender={gender}
+          age={age}
+        />
+      )}
     </div>
   );
 }

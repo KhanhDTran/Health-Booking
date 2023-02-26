@@ -19,7 +19,8 @@ export const userSlice = createSlice({
   reducers: {
     logged_in: (state, res) => {
       state.role = res.payload.user.role;
-      localStorage.setItem("user", JSON.stringify(res.payload));
+      state.user = res.payload.user;
+      localStorage.setItem("user", JSON.stringify(res.payload.user));
       localStorage.setItem("role", JSON.stringify(res.payload.user.role));
     },
     logged_out: (state) => {

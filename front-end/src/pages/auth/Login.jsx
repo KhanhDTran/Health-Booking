@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getData } from "../../services/commonSv";
+import { getRequestToast } from "../../services/commonSv";
 import { logged_in } from "../../store/features/userSlice";
 
 export default function Login() {
   let [username, setUsername] = useState("");
   let [password, setPassword] = useState("");
   let [showPass, setShowPass] = useState(false);
-  
+
   const { role } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function Login() {
     if (!username || !password) {
       toast.warning("Missing input");
     } else {
-      let res = await getData(
+      let res = await getRequestToast(
         "/login",
         { username, password },
         "Đang đăng nhập..."
@@ -39,20 +39,10 @@ export default function Login() {
     }
   }
 
-  //   useEffect(() => {
-  //     if (user) {
-  //       if (user.role.keyMap === "R1") {
-  //         navigate("/system/admin");
-  //       } else {
-  //         navigate("/system/doctor");
-  //       }
-  //     }
-  //   }, []);
-
   useEffect(() => {
     if (role) {
       if (role === "admin") {
-        navigate("/system/admin");
+        navigate("/system/admin/");
       }
     }
   }, [role]);
@@ -95,20 +85,12 @@ export default function Login() {
                   type={!showPass ? "password" : "text"}
                   id="password"
                   autoComplete="off"
-                  placeholder="Mật khẩu"
+                  placeholder="**************"
                   className="input input-bordered w-full"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   onKeyDown={(e) => handleKeyDown(e)}
                 />
-                <i
-                  className={
-                    !showPass
-                      ? "fa-solid fa-eye text-md absolute right-10 top-48 hover:cursor-pointer"
-                      : "fa-solid fa-eye-slash text-md absolute right-10 top-48 hover:cursor-pointer"
-                  }
-                  onClick={() => setShowPass(!showPass)}
-                ></i>
                 <a
                   href="#"
                   className="label-text-alt link link-hover  text-md mt-2"

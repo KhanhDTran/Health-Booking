@@ -2,7 +2,27 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { instance } from "./instance";
 
-export async function getData(api, data, loading) {
+export async function getRequest(api, data,) {
+  try {
+    let res = await instance.get(api, { params: data });
+    return res.data;
+  } catch (e) {
+    console.log(res);
+    return false;
+  }
+}
+
+export async function postRequest(api, data,) {
+  try {
+    let res = await instance.post(api, data);
+    return res.data;
+  } catch (e) {
+    console.log(res);
+    return false;
+  }
+}
+
+export async function getRequestToast(api, data, loading) {
   const toastId = toast.loading(loading);
   try {
     let res = await instance.get(api, { params: data });
@@ -12,7 +32,7 @@ export async function getData(api, data, loading) {
       isLoading: false,
       autoClose: 3000,
     });
-    return res.data.data;
+    return res.data;
   } catch (e) {
     toast.update(toastId, {
       render: e.response.data.msg,
@@ -24,7 +44,7 @@ export async function getData(api, data, loading) {
   }
 }
 
-export async function postData(api, data, loading) {
+export async function postRequestToast(api, data, loading) {
   const toastId = toast.loading(loading);
   try {
     let res = await instance.post(api, data);
@@ -34,7 +54,7 @@ export async function postData(api, data, loading) {
       isLoading: false,
       autoClose: 3000,
     });
-    return true;
+    return res.data;
   } catch (e) {
     toast.update(toastId, {
       render: e.response.data.msg,

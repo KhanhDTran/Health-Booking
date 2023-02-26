@@ -4,6 +4,12 @@ import Login from "./pages/auth/Login";
 import Error from "./pages/Error";
 import Signup from "./pages/auth/Signup";
 import Admin from "./pages/system/admin/Admin";
+import ManageClinic from "./pages/system/admin/clinic/ManageClinic";
+import ManageLab from "./pages/system/admin/lab/ManageLab";
+import ManageDoctor from "./pages/system/admin/doctor/ManageDoctor";
+import ManageSchedule from "./pages/system/admin/schedule/ManageSchedule";
+import ManageSpecialty from "./pages/system/admin/specialty/ManageSpecialty";
+import ManageService from "./pages/system/admin/service/ManageService";
 
 function App() {
   return (
@@ -19,21 +25,32 @@ function App() {
           <Route path="*" element={<Error />} />
 
           {/* <Route path="/doctor/:id" element={<DoctorPage />} /> */}
-          <Route path="system/admin">
-            <Route index={true} element={<Admin />} />
-            {/* <Route path="manage-doctors-profile" element={<ManageDoctor />} />
-            <Route path="manage-users" element={<ManageUser />} />
-            <Route path="manage-specialties" element={<ManageSpecialty />} />
-            <Route path="manage-clinics" element={<ManageClinic />} />
-            <Route
-              path="manage-doctors-schedule"
-              element={<ManageDoctorSchedule />}
-            /> */}
-          </Route>
-          {/* 
-          <Route path="system/doctor">
-            <Route index={true} element={<Doctor />} />
-          </Route> */}
+
+          <Route path="/system/admin/" element={<Admin />} />
+          <Route
+            path="/system/admin/manage-clinic"
+            element={<ManageClinic />}
+          />
+          <Route
+            path="/system/admin/manage-laboratory"
+            element={<ManageLab />}
+          />
+          <Route
+            path="/system/admin/manage-specialty"
+            element={<ManageSpecialty />}
+          />
+          <Route
+            path="/system/admin/manage-doctor"
+            element={<ManageDoctor />}
+          />
+          <Route
+            path="/system/admin/manage-schedule"
+            element={<ManageSchedule />}
+          />
+          <Route
+            path="/system/admin/manage-service"
+            element={<ManageService />}
+          />
         </Routes>
       </Router>
     </>

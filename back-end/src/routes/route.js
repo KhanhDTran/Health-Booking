@@ -6,7 +6,8 @@ import { createUser, login } from "../controllers/userCtrl.js";
 
 import {
   createPatient,
-  // checkCreatePatient,
+  resendOtpPatient,
+  checkCreatePatient,
 } from "../controllers/patientCtrl.js";
 
 export function webRoute(app) {
@@ -15,7 +16,8 @@ export function webRoute(app) {
   router.get("/api/login", login);
 
   //patients
-  // router.get("/api/check-create-patient", checkCreatePatient);
+  router.get("/api/resend-otp-patient", resendOtpPatient);
+  router.get("/api/check-create-patient", checkCreatePatient);
   router.post("/api/create-patient", createPatient);
 
   return app.use("", router);

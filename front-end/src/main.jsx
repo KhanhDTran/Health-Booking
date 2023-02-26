@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-toastify/dist/ReactToastify.css";
+import 'react-markdown-editor-lite/lib/index.css';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

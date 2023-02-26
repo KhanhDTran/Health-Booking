@@ -21,7 +21,7 @@ export default function Login() {
 
   async function handleLogin() {
     if (!username || !password) {
-      toast.warning("Missing input");
+      toast.warning("Nhập thiếu thông tin");
     } else {
       let res = await getRequestToast(
         "/login",

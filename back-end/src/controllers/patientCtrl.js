@@ -1,7 +1,6 @@
 import { delay } from "../utils/commonUtils.js";
 import User from "../schemas/User.js";
 import Patient from "../schemas/Patient.js";
-// import { createPatientSv } from "../services/patientSv.js";
 import { sendVerifyCodeEmail } from "../services/emailSv.js";
 import { genOtp, verifyOtp } from "../utils/otp.js";
 
@@ -59,8 +58,8 @@ export async function createPatient(req, res) {
     patient: newPatient._id,
   });
   newPatient.user = newUser._id;
-  newPatient.save();
-  newUser.save();
+  await newPatient.save();
+  await newUser.save();
 
   return res.status(200).json({ msg: "Tạo tài khoản thành công" });
 }

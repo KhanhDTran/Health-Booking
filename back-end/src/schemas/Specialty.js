@@ -4,8 +4,7 @@ const { Schema } = mongoose;
 const specialtySchema = new Schema(
   {
     name: String,
-    markdown: String,
-    markdownHtml: String,
+    description: String,
     image: String,
   },
   {

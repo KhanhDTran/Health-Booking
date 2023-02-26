@@ -103,7 +103,6 @@ export default function AdminHeader(props) {
           </span>
         </div>
         <div className="navbar-end">
-          {/* <span> {user && user.lastName && user.lastName}</span> */}
           <a
             className="btn btn-ghost normal-case text-md lg:text-xl"
             onClick={() => {

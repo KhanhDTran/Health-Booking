@@ -13,7 +13,13 @@ export default function ManageService() {
         {role && role === "admin" ? (
           <>
             <AdminHeader />
-            trang quan ly dịch vụ
+            <div className="container mx-auto flex flex-col">
+              <div className="title text-md lg:text-3xl p-4 m-4 bg-base-300 rounded-box text-center">
+                <span className="">Trang quản lý Dịch vụ y tế</span>
+              </div>
+              <div className="divider"></div>
+              <div></div>
+            </div>
           </>
         ) : (
           <Err401Page />

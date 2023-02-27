@@ -4,16 +4,60 @@ import User from "../schemas/User.js";
 import Specialty from "../schemas/Specialty.js";
 import Clinic from "../schemas/Clinic.js";
 
+export async function editClinic(req, res) {
+  await delay(1000);
+  if (!req.body._id || !req.body.user)
+    return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    await Clinic.updateOne(
+      { _id: req.body._id },
+      {
+        name: req.body.name,
+        username: req.body.username,
+        room: req.body.room,
+        address: req.body.address,
+        hospital: req.body.hospital,
+        province: req.body.province,
+        image: req.body.image,
+        specialty: req.body.specialty,
+      }
+    );
+    await User.updateOne(
+      { _id: req.body.user._id },
+      {
+        username: req.body.user.username,
+        password: req.body.user.password,
+      }
+    );
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ msg: `Đã lưu thanh đổi không thành công` });
+  }
+  return res.status(200).json({ msg: `Đã lưu thanh đổi thành công` });
+}
+
+export async function deleteClinic(req, res) {
+  await delay(1000);
+  if (!req.query._id) return res.status(400).json({ msg: "Thiếu thông tin" });
+  await Clinic.deleteOne({ _id: req.query._id });
+  return res
+    .status(200)
+    .json({ msg: `Đã xóa thành công phòng khám chuyên khoa` });
+}
+
 export async function createClinic(req, res) {
   await delay(1000);
   if (!req.body.username || !req.body.password || !req.body.name)
     return res.status(400).json({ msg: "Thiếu thông tin" });
   console.log(req.body);
   let checkUser = await User.findOne({ username: req.body.username });
-
+  let checClinic = await Clinic.findOne({ name: req.body.name });
   if (checkUser)
     return res.status(400).json({ msg: `Tên tài khoản đã tồn tại` });
-
+  if (checClinic)
+    return res
+      .status(400)
+      .json({ msg: `Tên phòng khám chuyên khoa đã tồn tại` });
   let newUser = new User({
     username: req.body.username,
     password: req.body.password,
@@ -32,7 +76,6 @@ export async function createClinic(req, res) {
     specialty: req.body.specialty,
   });
   newUser.clinic = newClinic._id;
-
   try {
     await newClinic.save();
     await newUser.save();

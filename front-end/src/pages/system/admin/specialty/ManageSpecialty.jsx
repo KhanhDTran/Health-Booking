@@ -50,8 +50,12 @@ export default function ManageSpecialty() {
   }
 
   function handleChagneSelect(e) {
-    let specialty = _.find(specialties, { _id: e.value });
-    setselectedSpecialty(specialty);
+    if (e) {
+      let specialty = _.find(specialties, { _id: e.value });
+      setselectedSpecialty(specialty);
+    } else {
+      setselectedSpecialty(null);
+    }
   }
 
   async function handleDelete(item) {
@@ -85,13 +89,14 @@ export default function ManageSpecialty() {
               </div>
               <div className="divider"></div>
               <div className="container mx-auto flex justify-center m-4">
-                <div className="w-80 lg:w-96">
+                <div className="w-64 lg:w-96">
                   <Select
+                    isClearable={true}
                     className="my-react-select-container"
                     classNamePrefix="my-react-select"
                     options={specialtyOptions}
                     styles={customStyles}
-                    placeholder={"Tìm chuyên khoa theo tên..."}
+                    placeholder={"Tìm chuyên khoa...."}
                     onChange={(e) => handleChagneSelect(e)}
                   />
                 </div>

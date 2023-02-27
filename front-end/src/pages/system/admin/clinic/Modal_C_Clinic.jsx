@@ -8,8 +8,6 @@ import { postRequestToast } from "../../../../services/commonSv";
 import { toBase64 } from "../../../../utils/CommonUtils";
 
 export default function Modal_C_Clinic(props) {
-  const { specialties } = useSelector((state) => state.fetchData);
-
   const [username, setusername] = useState("");
   const [name, setName] = useState("");
   const [password, setpassword] = useState("");
@@ -19,25 +17,10 @@ export default function Modal_C_Clinic(props) {
   const [province, setprovince] = useState("Hà Nội");
   const [specialty, setspecialty] = useState(null);
   const [image, setImage] = useState("");
-  const [specialtyOptions, setspecialtyOptions] = useState([]);
 
   async function handleImgChange(file) {
     let base64 = await toBase64(file);
     if (base64) setImage(base64);
-  }
-
-  useEffect(() => {
-    fillOptionsSelect();
-  }, [specialties]);
-
-  function fillOptionsSelect() {
-    let list = [];
-    if (!_.isEmpty(specialties)) {
-      _.forEach(specialties, function (item) {
-        list.push({ value: item._id, label: item.name });
-      });
-      setspecialtyOptions(list);
-    }
   }
 
   async function handleCreateClinic() {
@@ -119,8 +102,6 @@ export default function Modal_C_Clinic(props) {
             sethospital={sethospital}
             province={province}
             setprovince={setprovince}
-            specialtyOptions={specialtyOptions}
-            setspecialtyOptions={setspecialtyOptions}
             specialty={specialty}
             handleImgChange={handleImgChange}
             image={image}

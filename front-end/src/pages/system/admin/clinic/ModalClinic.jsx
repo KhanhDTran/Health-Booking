@@ -2,8 +2,27 @@ import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { customStyles } from "../../../../utils/CommonUtils";
+import _ from "lodash";
+
 
 export default function ModalClinic(props) {
+  const { specialties } = useSelector((state) => state.fetchData);
+  const [specialtyOptions, setspecialtyOptions] = useState([]);
+
+  useEffect(() => {
+    fillOptionsSelect();
+  }, [specialties]);
+
+  function fillOptionsSelect() {
+    let list = [];
+    if (!_.isEmpty(specialties)) {
+      _.forEach(specialties, function (item) {
+        list.push({ value: item._id, label: item.name });
+      });
+      setspecialtyOptions(list);
+    }
+  }
+
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
@@ -64,7 +83,7 @@ export default function ModalClinic(props) {
             <Select
               className="my-react-select-container"
               classNamePrefix="my-react-select"
-              options={props.specialtyOptions}
+              options={specialtyOptions}
               styles={customStyles}
               placeholder={"Chuyên Khoa...."}
               value={props.specialty}

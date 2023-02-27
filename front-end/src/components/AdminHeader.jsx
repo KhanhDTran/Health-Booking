@@ -45,42 +45,42 @@ export default function AdminHeader(props) {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <NavLink to="/system/admin/">Bảng điều khiển</NavLink>
+                <NavLink to="/system/admin/">Bảng Điều Khiển</NavLink>
               </li>
               <li></li>
               <li>
                 <NavLink to="/system/admin/manage-clinic">
-                  Phòng khám chuyên khoa
+                  Phòng Khám Chuyên Khoa
                 </NavLink>
               </li>
               <li></li>
               <li>
                 <NavLink to="/system/admin/manage-laboratory">
-                  Phòng khám lâm sàng
+                  Phòng Khám Lâm Sàng
                 </NavLink>
               </li>
               <li></li>
               <li>
                 <NavLink to="/system/admin/manage-specialty">
-                  Chuyên khoa y tế
+                  Chuyên Khoa Y Tế
                 </NavLink>
               </li>
               <li></li>
               <li>
                 <NavLink to="/system/admin/manage-doctor">
-                  Bác sĩ chuyên khoa
+                  Bác Sĩ Chuyên Khoa
                 </NavLink>
               </li>
               <li></li>
               <li>
                 <NavLink to="/system/admin/manage-schedule">
-                  Bảng biểu thời gian
+                  Bảng Biểu Thời Gian
                 </NavLink>
               </li>
               <li></li>
               <li>
                 <NavLink to="/system/admin/manage-service">
-                  Dịch vụ y tế
+                  Dịch Vụ Y Tế
                 </NavLink>
               </li>
             </ul>

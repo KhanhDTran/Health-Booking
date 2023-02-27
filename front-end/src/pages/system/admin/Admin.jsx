@@ -20,7 +20,7 @@ export default function Admin() {
         <>
           <AdminHeader />
 
-          <div className="container mx-auto flex flex-col gap-4">
+          <div className="container mx-auto flex flex-col gap-4 pb-10">
             <div className="flex text-center w-100">
               <p className="text-center text-4xl p-4">Bảng Điều Khiển</p>
             </div>
@@ -38,7 +38,7 @@ export default function Admin() {
                   <img src={clinicImg} alt="" className="rounded-xl " />
                 </figure>
                 <div className="card-body items-center text-center">
-                  <h2 className="card-title">Clinics</h2>
+                  <h2 className="card-title">Clinic</h2>
                   <p>Quản lý phòng khám chuyên khoa</p>
                 </div>
               </div>

@@ -23,6 +23,10 @@ export default function ManageSpecialty() {
   const { specialties } = useSelector((state) => state.fetchData);
 
   useEffect(() => {
+    dispatch(fetchAllSpecialties());
+  }, []);
+
+  useEffect(() => {
     if (openModalCreateSpecialty || selectedSpecialty) {
       document.querySelector("body").style.overflow = "hidden";
     } else {
@@ -30,10 +34,6 @@ export default function ManageSpecialty() {
     }
     if (!openModalCreateSpecialty) dispatch(fetchAllSpecialties());
   }, [openModalCreateSpecialty, selectedSpecialty]);
-
-  useEffect(() => {
-    dispatch(fetchAllSpecialties());
-  }, []);
 
   useEffect(() => {
     fillOptionsSelect();
@@ -71,9 +71,9 @@ export default function ManageSpecialty() {
         {role && role === "admin" ? (
           <div>
             <AdminHeader />
-            <div className="container mx-auto flex flex-col">
+            <div className="container mx-auto flex flex-col pb-4">
               <div className="title text-lg lg:text-3xl p-4 m-4 bg-base-300 rounded-box text-center">
-                <span className="">Trang quản lý Chuyên khoa y tế</span>
+                <span className="">Chuyên Khoa Y Tế</span>
               </div>
               <div className="container mx-auto flex justify-center">
                 <button
@@ -85,8 +85,10 @@ export default function ManageSpecialty() {
               </div>
               <div className="divider"></div>
               <div className="container mx-auto flex justify-center m-4">
-                <div className="w-80">
+                <div className="w-80 lg:w-96">
                   <Select
+                    className="my-react-select-container"
+                    classNamePrefix="my-react-select"
                     options={specialtyOptions}
                     styles={customStyles}
                     placeholder={"Tìm chuyên khoa theo tên..."}

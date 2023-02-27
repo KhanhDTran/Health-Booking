@@ -1,6 +1,47 @@
 import { delay } from "../utils/commonUtils.js";
 import Patient from "../schemas/Patient.js";
+import User from "../schemas/User.js";
 import Specialty from "../schemas/Specialty.js";
+import Clinic from "../schemas/Clinic.js";
+
+export async function createClinic(req, res) {
+  await delay(1000);
+  if (!req.body.username || !req.body.password || !req.body.name)
+    return res.status(400).json({ msg: "Thiếu thông tin" });
+  console.log(req.body);
+  let checkUser = await User.findOne({ username: req.body.username });
+
+  if (checkUser)
+    return res.status(400).json({ msg: `Tên tài khoản đã tồn tại` });
+
+  let newUser = new User({
+    username: req.body.username,
+    password: req.body.password,
+    role: "clinic",
+  });
+
+  let newClinic = new Clinic({
+    user: newUser._id,
+    name: req.body.name,
+    username: req.body.username,
+    room: req.body.room,
+    address: req.body.address,
+    hospital: req.body.hospital,
+    province: req.body.province,
+    image: req.body.image,
+    specialty: req.body.specialty,
+  });
+  newUser.clinic = newClinic._id;
+
+  try {
+    await newClinic.save();
+    await newUser.save();
+  } catch (e) {
+    return res.status(400).json({ msg: `Đã có lỗi xảy ra!` });
+  }
+
+  return res.status(200).json({ msg: `Đã tạo công phòng khám chuyên khoa` });
+}
 
 export async function deleteSpecialty(req, res) {
   await delay(1000);

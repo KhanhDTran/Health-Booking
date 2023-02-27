@@ -7,19 +7,11 @@ export const toBase64 = (file) =>
   });
 
 export const customStyles = {
-  control: (base) => ({
+  control: (base, state) => ({
     ...base,
     height: 46,
     minHeight: 35,
     with: 200,
+    // borderColor: state.isFocused ? "yellow" : "red",
   }),
-  theme: (theme) => ({
-    ...theme,
-    borderRadius: 0,
-    colors: {
-      ...theme.colors,
-      primary25: 'hotpink',
-      primary: 'black',
-    },
-  })
 };

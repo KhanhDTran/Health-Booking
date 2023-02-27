@@ -5,8 +5,13 @@ const clinicSchema = new Schema(
   {
     user: { type: Schema.Types.String, ref: "User" },
     name: String,
+    username: String,
     room: String,
-    specialtyId: { type: Schema.Types.String, ref: "Specialty" },
+    address: String,
+    hospital: String,
+    province: String,
+    image: String,
+    specialty: { type: Schema.Types.String, ref: "Specialty" },
     doctor: { type: Schema.Types.String, ref: "Doctor" },
   },
   {

@@ -21,7 +21,6 @@ export default function Signup() {
   let [age, setAge] = useState("2023");
   let [gender, setGender] = useState("Nam");
   let [check, setCheck] = useState(false);
-  let [showPass, setShowPass] = useState(false);
   let [openModalOtp, setOpenModalOtp] = useState(false);
 
   const dispatch = useDispatch();
@@ -122,8 +121,8 @@ export default function Signup() {
                   </label>
                 </span>
                 <input
-                  type={!showPass ? "password" : "text"}
                   id="pass"
+                  type="password"
                   placeholder="*************"
                   className="input input-bordered"
                   value={pass}

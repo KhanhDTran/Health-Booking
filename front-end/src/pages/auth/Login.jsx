@@ -9,7 +9,6 @@ import { logged_in } from "../../store/features/userSlice";
 export default function Login() {
   let [username, setUsername] = useState("");
   let [password, setPassword] = useState("");
-  let [showPass, setShowPass] = useState(false);
 
   const { role } = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -80,9 +79,9 @@ export default function Login() {
                   <span className="label-text text-lg ">Mật khẩu</span>
                 </label>{" "}
                 <input
-                  type={!showPass ? "password" : "text"}
                   id="password"
                   autoComplete="off"
+                  type="password"
                   placeholder="**************"
                   className="input input-bordered w-full"
                   value={password}

@@ -11,5 +11,15 @@ export const customStyles = {
     ...base,
     height: 46,
     minHeight: 35,
+    with: 200,
   }),
+  theme: (theme) => ({
+    ...theme,
+    borderRadius: 0,
+    colors: {
+      ...theme.colors,
+      primary25: 'hotpink',
+      primary: 'black',
+    },
+  })
 };

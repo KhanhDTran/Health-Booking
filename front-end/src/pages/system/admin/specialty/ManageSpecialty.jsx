@@ -3,30 +3,67 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
-import ModalCreateSpecialty from "./ModalCreateSpecialty";
+import ModalCreateSpecialty from "./MCreateSpecialty";
 import { fetchAllSpecialties } from "../../../../store/features/fetchDataSlice";
-import _, { forEach } from "lodash";
+import Select from "react-select";
+import _ from "lodash";
+import { customStyles } from "../../../../utils/CommonUtils";
+import ModalEditSpecialty from "./MEditSpecialty";
+import { toast } from "react-toastify";
+import { deleteRequestToast } from "../../../../services/commonSv";
 
 export default function ManageSpecialty() {
+  const dispatch = useDispatch();
   const { role } = useSelector((state) => state.user);
   const [openModalCreateSpecialty, setopenModalCreateSpecialty] =
     useState(false);
-  const [openModalEditSpecialty, setopenModalEditSpecialty] = useState(false);
-  const dispatch = useDispatch();
 
+  const [specialtyOptions, setspecialtyOptions] = useState([]);
+  const [selectedSpecialty, setselectedSpecialty] = useState(null);
   const { specialties } = useSelector((state) => state.fetchData);
 
   useEffect(() => {
-    if (openModalCreateSpecialty || openModalEditSpecialty) {
+    if (openModalCreateSpecialty || selectedSpecialty) {
       document.querySelector("body").style.overflow = "hidden";
     } else {
       document.querySelector("body").style = "";
     }
-  }, [openModalCreateSpecialty, openModalEditSpecialty]);
+    if (!openModalCreateSpecialty) dispatch(fetchAllSpecialties());
+  }, [openModalCreateSpecialty, selectedSpecialty]);
 
-  useState(() => {
+  useEffect(() => {
     dispatch(fetchAllSpecialties());
   }, []);
+
+  useEffect(() => {
+    fillOptionsSelect();
+  }, [specialties]);
+
+  function fillOptionsSelect() {
+    let list = [];
+    if (!_.isEmpty(specialties)) {
+      _.forEach(specialties, function (item) {
+        list.push({ value: item._id, label: item.name });
+      });
+      setspecialtyOptions(list);
+    }
+  }
+
+  function handleChagneSelect(e) {
+    let specialty = _.find(specialties, { _id: e.value });
+    setselectedSpecialty(specialty);
+  }
+
+  async function handleDelete(item) {
+    if (confirm(`Có chắc muốn xóa chuyên khoa: ${item.name}`)) {
+      let res = await deleteRequestToast(
+        "/delete-specialty",
+        { _id: item._id },
+        `Đang xóa chuyên khoa "${item.name}" ....`
+      );
+      if (res) dispatch(fetchAllSpecialties());
+    }
+  }
 
   return (
     <>
@@ -47,6 +84,16 @@ export default function ManageSpecialty() {
                 </button>
               </div>
               <div className="divider"></div>
+              <div className="container mx-auto flex justify-center m-4">
+                <div className="w-80">
+                  <Select
+                    options={specialtyOptions}
+                    styles={customStyles}
+                    placeholder={"Tìm chuyên khoa theo tên..."}
+                    onChange={(e) => handleChagneSelect(e)}
+                  />
+                </div>
+              </div>
               <div>
                 <div className="overflow-x-auto w-full">
                   <table className="table w-full">
@@ -86,9 +133,20 @@ export default function ManageSpecialty() {
                                 <span className="">{item.description}</span>
                               </td>
                               <th>
-                                <button className="btn btn-ghost btn-xs">
-                                  Chi tiết
-                                </button>
+                                <div className="flex justify-between">
+                                  <button
+                                    className="btn btn-ghost btn-xs"
+                                    onClick={() => setselectedSpecialty(item)}
+                                  >
+                                    Chi tiết
+                                  </button>
+                                  <button
+                                    className="btn btn-ghost btn-xs"
+                                    onClick={() => handleDelete(item)}
+                                  >
+                                    Xóa
+                                  </button>
+                                </div>
                               </th>
                             </tr>
                           );
@@ -113,6 +171,12 @@ export default function ManageSpecialty() {
               <ModalCreateSpecialty
                 openModalCreateSpecialty={openModalCreateSpecialty}
                 setopenModalCreateSpecialty={setopenModalCreateSpecialty}
+              />
+            )}
+            {selectedSpecialty && (
+              <ModalEditSpecialty
+                selectedSpecialty={selectedSpecialty}
+                setselectedSpecialty={setselectedSpecialty}
               />
             )}
           </div>

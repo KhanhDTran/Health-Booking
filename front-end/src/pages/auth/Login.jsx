@@ -28,9 +28,7 @@ export default function Login() {
         { username, password },
         "Đang đăng nhập..."
       );
-      if (res) {
-        dispatch(logged_in(res));
-      }
+      if (res) dispatch(logged_in(res));
     }
   }
   async function handleKeyDown(e) {

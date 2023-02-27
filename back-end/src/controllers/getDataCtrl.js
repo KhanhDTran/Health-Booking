@@ -2,6 +2,12 @@ import { delay } from "../utils/commonUtils.js";
 import Patient from "../schemas/Patient.js";
 import Speciaalty from "../schemas/Specialty.js";
 import Clinic from "../schemas/Clinic.js";
+import Lab from "../schemas/Laboratory.js";
+
+export async function getLabs(req, res) {
+  let labs = await Lab.find().populate(["user"]);
+  return res.status(200).json({ labs });
+}
 
 export async function getClinics(req, res) {
   let clinics = await Clinic.find().populate(["specialty", "user"]);

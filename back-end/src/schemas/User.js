@@ -7,7 +7,7 @@ const userSchema = new Schema(
     password: String,
     role: String,
     patient: { type: Schema.Types.String, ref: "Patient" },
-    laboratory: { type: Schema.Types.String, ref: "Laboratory" },
+    lab: { type: Schema.Types.String, ref: "Laboratory" },
     clinic: { type: Schema.Types.String, ref: "Clinic" },
   },
   {

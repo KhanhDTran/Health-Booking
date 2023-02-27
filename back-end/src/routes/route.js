@@ -17,9 +17,12 @@ import {
   createClinic,
   deleteClinic,
   editClinic,
+  deleteLab,
+  createLab,
+  editLab
 } from "../controllers/adminCtrl.js";
 
-import { getSpecialties, getClinics } from "../controllers/getDataCtrl.js";
+import { getSpecialties, getClinics, getLabs } from "../controllers/getDataCtrl.js";
 
 export function webRoute(app) {
   //Users
@@ -32,6 +35,10 @@ export function webRoute(app) {
   router.post("/api/create-patient", createPatient);
 
   // Admin
+  router.post("/api/create-lab", createLab);
+  router.delete("/api/delete-lab", deleteLab);
+  router.put("/api/edit-lab", editLab);
+
   router.post("/api/create-clinic", createClinic);
   router.delete("/api/delete-clinic", deleteClinic);
   router.put("/api/edit-clinic", editClinic);
@@ -43,6 +50,7 @@ export function webRoute(app) {
   // getData
   router.get("/api/getData/all-clinics", getClinics);
   router.get("/api/getData/all-specialties", getSpecialties);
+  router.get("/api/getData/all-labs", getLabs);
 
   return app.use("", router);
 }

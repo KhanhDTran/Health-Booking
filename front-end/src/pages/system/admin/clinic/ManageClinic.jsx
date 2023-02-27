@@ -53,10 +53,11 @@ export default function ManageClinic() {
   }
 
   async function handleDelete(item) {
+    console.log(item);
     if (confirm(`Có chắc muốn xóa phòng khám chuyên khoa: ${item.name}`)) {
       let res = await deleteRequestToast(
         "/delete-clinic",
-        { _id: item._id },
+        { _id: item._id, user: item.user },
         `Đang xóa phòng khám chuyên khoa "${item.name}"....`
       );
       if (res) dispatch(fetchAllClinics());

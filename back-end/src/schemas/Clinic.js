@@ -5,7 +5,6 @@ const clinicSchema = new Schema(
   {
     user: { type: Schema.Types.String, ref: "User" },
     name: String,
-    username: String,
     room: String,
     address: String,
     hospital: String,

@@ -10,7 +10,7 @@ export async function login(req, res) {
   let [username, password] = [req.query.username, req.query.password];
   let user = await User.findOne({ username: username }).populate([
     "patient",
-    "laboratory",
+    "lab",
     "clinic",
   ]);
   if (!user) return res.status(400).json({ msg: "Tài khoản không tồn tại " });

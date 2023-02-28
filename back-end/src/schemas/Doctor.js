@@ -12,6 +12,7 @@ const doctorSchema = new Schema(
     description: String,
     image: String,
     specialty: { type: Schema.Types.String, ref: "Specialty" },
+    clinic:{type: Schema.Types.String, ref: "Clinic" }
   },
   {
     timestamps: true,

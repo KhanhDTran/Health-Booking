@@ -4,7 +4,8 @@ import { getRequest } from "../../services/commonSv";
 const initialState = {
   specialties: null,
   clinics: null,
-  labs: null
+  labs: null,
+  doctors: null,
 };
 
 export const fetchDataSlice = createSlice({
@@ -21,20 +22,32 @@ export const fetchDataSlice = createSlice({
     builder.addCase(fetchAllLabs.fulfilled, (state, { payload }) => {
       if (payload) state.labs = payload;
     });
+    builder.addCase(fetchAllDoctors.fulfilled, (state, { payload }) => {
+      if (payload) state.doctors = payload;
+    });
   },
 });
 
-export const fetchAllLabs = createAsyncThunk(
-  "fetchData/all-labs",
+export const fetchAllDoctors = createAsyncThunk(
+  "fetchData/all-doctors",
   async () => {
     try {
-      let res = await getRequest("/getData/all-labs");
-      if (res && res.labs) return res.labs;
+      let res = await getRequest("/getData/all-doctors");
+      if (res && res.doctors) return res.doctors;
     } catch (e) {
       console.log(e);
     }
   }
 );
+
+export const fetchAllLabs = createAsyncThunk("fetchData/all-labs", async () => {
+  try {
+    let res = await getRequest("/getData/all-labs");
+    if (res && res.labs) return res.labs;
+  } catch (e) {
+    console.log(e);
+  }
+});
 
 export const fetchAllClinics = createAsyncThunk(
   "fetchData/all-clinics",

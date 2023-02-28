@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 export const toBase64 = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -15,3 +17,11 @@ export const customStyles = {
     // borderColor: state.isFocused ? "yellow" : "red",
   }),
 };
+
+export function convertToSelectOptions(array) {
+  let list = [];
+  _.forEach(array, function (item) {
+    list.push({ value: item._id, label: item.name });
+  });
+  return list;
+}

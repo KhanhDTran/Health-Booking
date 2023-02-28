@@ -4,6 +4,121 @@ import User from "../schemas/User.js";
 import Specialty from "../schemas/Specialty.js";
 import Clinic from "../schemas/Clinic.js";
 import Lab from "../schemas/Laboratory.js";
+import Doctor from "../schemas/Doctor.js";
+import Service from "../schemas/Service.js";
+import Schedule from "../schemas/Schedule.js";
+
+// ----------------------------Schedule--------------------------------------------
+
+export async function upsertSchedule(req, res) {
+  await delay(1000);
+  if (!req.body.clinic && !req.body.lab)
+    return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    if (req.body.lab) {
+    } else {
+      if (req.body.clinic)
+        await Schedule.deleteMany({ doctor: data.clinic, date: data.date });
+      if (req.body.lab)
+        await Schedule.deleteMany({ doctor: data.lab, date: data.date });
+    }
+  } catch (e) {
+    console.log(e);
+    return res
+      .status(400)
+      .json({ msg: `Đã xóa không thành công bác sĩ chuyên khoa ` });
+  }
+  return res.status(200).json({ msg: `Đã xóa thành công bác sĩ chuyên khoa ` });
+}
+
+// ----------------------------Schedule--------------------------------------------
+
+// ----------------------------Doctor--------------------------------------------
+
+export async function editDoctor(req, res) {
+  await delay(1000);
+  console.log(req.body._id);
+
+  if (!req.body.name || !req.body.specialty || !req.body.clinic)
+    return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    await Doctor.updateOne(
+      { _id: req.body._id },
+      {
+        name: req.body.name,
+        age: req.body.age,
+        address: req.body.address,
+        phone: req.body.phone,
+        email: req.body.email,
+        position: req.body.position,
+        description: req.body.description,
+        image: req.body.image,
+        specialty: req.body.specialty,
+        clinic: req.body.clinic,
+      }
+    );
+    await Clinic.updateMany(
+      { doctor: req.body._id },
+      { $unset: { doctor: "" } }
+    );
+    let clinic = await Clinic.findById(req.body.clinic);
+    clinic.set({ doctor: req.body._id });
+    console.log(clinic.doctor);
+    await clinic.save();
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ msg: `Đã lưu thay đổi không thành công` });
+  }
+  return res.status(200).json({ msg: `Đã lưu thay đổi thành công` });
+}
+
+export async function deleteDoctor(req, res) {
+  await delay(1000);
+  if (!req.query._id || !req.query.clinicId)
+    return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    await Doctor.deleteOne({ _id: req.query._id });
+    await Clinic.updateMany(
+      { _id: req.query.clinicId },
+      { $unset: { doctor: "" } }
+    );
+  } catch (e) {
+    console.log(e);
+    return res
+      .status(400)
+      .json({ msg: `Đã xóa không thành công bác sĩ chuyên khoa ` });
+  }
+  return res.status(200).json({ msg: `Đã xóa thành công bác sĩ chuyên khoa ` });
+}
+
+export async function createDoctor(req, res) {
+  await delay(1000);
+  try {
+    if (!req.body.name || !req.body.specialty || !req.body.clinic)
+      return res.status(400).json({ msg: "Thiếu thông tin" });
+    let newDoctor = new Doctor({
+      name: req.body.name,
+      age: req.body.age,
+      address: req.body.address,
+      phone: req.body.phone,
+      email: req.body.email,
+      position: req.body.position,
+      description: req.body.description,
+      image: req.body.image,
+      specialty: req.body.specialty,
+      clinic: req.body.clinic,
+    });
+    let clinic = await Clinic.findById(req.body.clinic);
+    clinic.doctor = newDoctor._id;
+    await newDoctor.save();
+    await clinic.save();
+  } catch (e) {
+    return res.status(400).json({ msg: `Đã có lỗi xảy ra!` });
+  }
+  return res.status(200).json({ msg: `Đã tạo thành công bác sĩ chuyên khoa` });
+}
+
+// ----------------------------Doctor--------------------------------------------
 
 // ----------------------------------- Lab -----------------------------------------
 
@@ -73,7 +188,9 @@ export async function createLab(req, res) {
   } catch (e) {
     return res.status(400).json({ msg: `Đã có lỗi xảy ra!` });
   }
-  return res.status(200).json({ msg: `Đã tạo công phòng khám chuyên khoa` });
+  return res
+    .status(200)
+    .json({ msg: `Đã tạo thành công phòng khám chuyên khoa` });
 }
 
 export async function deleteLab(req, res) {
@@ -181,7 +298,9 @@ export async function createClinic(req, res) {
     return res.status(400).json({ msg: `Đã có lỗi xảy ra!` });
   }
 
-  return res.status(200).json({ msg: `Đã tạo công phòng khám chuyên khoa` });
+  return res
+    .status(200)
+    .json({ msg: `Đã tạo thành công phòng khám chuyên khoa` });
 }
 
 // ----------------------------Clinic--------------------------------------------

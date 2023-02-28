@@ -19,10 +19,19 @@ import {
   editClinic,
   deleteLab,
   createLab,
-  editLab
+  editLab,
+  deleteDoctor,
+  createDoctor,
+  editDoctor,
+  upsertSchedule,
 } from "../controllers/adminCtrl.js";
 
-import { getSpecialties, getClinics, getLabs } from "../controllers/getDataCtrl.js";
+import {
+  getSpecialties,
+  getClinics,
+  getLabs,
+  getDoctors,
+} from "../controllers/getDataCtrl.js";
 
 export function webRoute(app) {
   //Users
@@ -35,6 +44,17 @@ export function webRoute(app) {
   router.post("/api/create-patient", createPatient);
 
   // Admin
+
+  router.post("/api/upsert-schedule", upsertSchedule);
+
+  router.post("/api/create-doctor", createDoctor);
+  router.delete("/api/delete-doctor", deleteDoctor);
+  router.put("/api/edit-doctor", editDoctor);
+
+  router.post("/api/create-doctor", createDoctor);
+  router.delete("/api/delete-doctor", deleteDoctor);
+  router.put("/api/edit-doctor", editDoctor);
+
   router.post("/api/create-lab", createLab);
   router.delete("/api/delete-lab", deleteLab);
   router.put("/api/edit-lab", editLab);
@@ -48,6 +68,7 @@ export function webRoute(app) {
   router.put("/api/edit-specialty", editSpecialty);
 
   // getData
+  router.get("/api/getData/all-doctors", getDoctors);
   router.get("/api/getData/all-clinics", getClinics);
   router.get("/api/getData/all-specialties", getSpecialties);
   router.get("/api/getData/all-labs", getLabs);

@@ -6,6 +6,7 @@ const initialState = {
   clinics: null,
   labs: null,
   doctors: null,
+  schedules: null,
 };
 
 export const fetchDataSlice = createSlice({
@@ -25,9 +26,24 @@ export const fetchDataSlice = createSlice({
     builder.addCase(fetchAllDoctors.fulfilled, (state, { payload }) => {
       if (payload) state.doctors = payload;
     });
+    builder.addCase(fetchScedules.fulfilled, (state, { payload }) => {
+      if (payload) state.schedules = payload;
+    });
   },
 });
 
+export const fetchScedules = createAsyncThunk(
+  "fetchData/get-schedules",
+  async (query) => {
+    try {
+      let res = await getRequest("/getData/get-schedules", query);
+      console.log(res);
+      if (res && res.schedules) return res.schedules;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+);
 export const fetchAllDoctors = createAsyncThunk(
   "fetchData/all-doctors",
   async () => {

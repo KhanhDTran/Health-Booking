@@ -31,6 +31,7 @@ import {
   getClinics,
   getLabs,
   getDoctors,
+  getSchedules,
 } from "../controllers/getDataCtrl.js";
 
 export function webRoute(app) {
@@ -45,7 +46,7 @@ export function webRoute(app) {
 
   // Admin
 
-  router.post("/api/upsert-schedule", upsertSchedule);
+  router.put("/api/upsert-schedule", upsertSchedule);
 
   router.post("/api/create-doctor", createDoctor);
   router.delete("/api/delete-doctor", deleteDoctor);
@@ -72,6 +73,7 @@ export function webRoute(app) {
   router.get("/api/getData/all-clinics", getClinics);
   router.get("/api/getData/all-specialties", getSpecialties);
   router.get("/api/getData/all-labs", getLabs);
+  router.get("/api/getData/get-schedules", getSchedules);
 
   return app.use("", router);
 }

@@ -7,28 +7,30 @@ import Lab from "../schemas/Laboratory.js";
 import Doctor from "../schemas/Doctor.js";
 import Service from "../schemas/Service.js";
 import Schedule from "../schemas/Schedule.js";
+import __ from "lodash";
 
 // ----------------------------Schedule--------------------------------------------
 
 export async function upsertSchedule(req, res) {
   await delay(1000);
-  if (!req.body.clinic && !req.body.lab)
-    return res.status(400).json({ msg: "Thiếu thông tin" });
+  console.log(req.body);
+  if (!req.body.list) return res.status(400).json({ msg: "Thiếu thông tin" });
   try {
-    if (req.body.lab) {
-    } else {
-      if (req.body.clinic)
-        await Schedule.deleteMany({ doctor: data.clinic, date: data.date });
-      if (req.body.lab)
-        await Schedule.deleteMany({ doctor: data.lab, date: data.date });
+    await Schedule.deleteMany({
+      lab: req.body.lab,
+      clinic: req.body.clinic,
+      date: req.body.date,
+    });
+    if (req.body.list.length > 0) {
+      await Schedule.insertMany(req.body.list);
     }
   } catch (e) {
     console.log(e);
     return res
       .status(400)
-      .json({ msg: `Đã xóa không thành công bác sĩ chuyên khoa ` });
+      .json({ msg: `Đã lưu không thành công thời gian biểu` });
   }
-  return res.status(200).json({ msg: `Đã xóa thành công bác sĩ chuyên khoa ` });
+  return res.status(200).json({ msg: `Đã lưu thành công thời gian biểu ` });
 }
 
 // ----------------------------Schedule--------------------------------------------

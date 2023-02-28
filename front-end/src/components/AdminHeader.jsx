@@ -94,7 +94,7 @@ export default function AdminHeader(props) {
             <div className="w-10 rounded">
               <img src={logo} />
             </div>
-            <span className="hidden lg:flex">Health Booking</span>
+            <span className="hidden lg:flex text-lg">Health Booking</span>
           </a>
         </div>
         <div className="navbar-center text-sm lg:flex">

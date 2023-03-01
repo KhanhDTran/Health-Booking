@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { NumericFormat } from "react-number-format";
 
 import _ from "lodash";
 import Select from "react-select";

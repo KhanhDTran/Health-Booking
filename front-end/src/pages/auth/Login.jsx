@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getRequestToast } from "../../services/commonSv";
 import { logged_in } from "../../store/features/userSlice";
+import PatientHeader from "../../components/PatientHeader";
 
 export default function Login() {
   let [username, setUsername] = useState("");
@@ -41,12 +42,16 @@ export default function Login() {
       if (role === "admin") {
         navigate("/system/admin/");
       }
+      if (role === "patient") {
+        navigate("/");
+      }
     }
   }, [role]);
 
   return (
     <div data-theme="">
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero flex flex-col h-screen bg-base-200">
+        <PatientHeader />
         <div className="hero-content flex-col  gap-10 w-full">
           <div className="text-center  flex-col">
             <div className="w-24 rounded mx-auto">
@@ -55,10 +60,7 @@ export default function Login() {
             <span className="text-4xl ">Health Booking</span>
             <span></span>
           </div>
-          <div
-            className="card flex-shrink-0 w-10/12 md:w-1/2 shadow-2xl bg-base-100"
-            data-theme="light"
-          >
+          <div className="card flex-shrink-0 w-10/12 md:w-1/2 shadow-2xl bg-base-100">
             <div className="card-body">
               <div className="form-control">
                 <label className="label" htmlFor="username">

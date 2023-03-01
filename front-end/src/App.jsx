@@ -24,7 +24,19 @@ function App() {
 
           <Route path="*" element={<Error />} />
 
-          {/* <Route path="/doctor/:id" element={<DoctorPage />} /> */}
+          {/* --------------- Patient  ----------------------*/}
+
+          {/* --------------- Patient  ----------------------*/}
+
+          {/* --------------- Clinic  ----------------------*/}
+
+          {/* --------------- Clinic  ----------------------*/}
+
+          {/* --------------- Lab  ----------------------*/}
+
+          {/* --------------- Lab  ----------------------*/}
+
+          {/* --------------- Admin  ----------------------*/}
 
           <Route path="/system/admin/" element={<Admin />} />
           <Route
@@ -51,6 +63,7 @@ function App() {
             path="/system/admin/manage-service"
             element={<ManageService />}
           />
+          {/* --------------- Admin  ----------------------*/}
         </Routes>
       </Router>
     </>

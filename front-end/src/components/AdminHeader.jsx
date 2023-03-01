@@ -19,7 +19,10 @@ export default function AdminHeader(props) {
 
   return (
     <>
-      <div className="navbar bg-base-100 sticky  top-0 z-30" data-theme="night">
+      <div
+        className="navbar bg-base-100 sticky h-auto top-0 z-30"
+        data-theme="night"
+      >
         <input id="side-bar-admin" type="checkbox" className="drawer-toggle" />
 
         <div className="navbar-start">

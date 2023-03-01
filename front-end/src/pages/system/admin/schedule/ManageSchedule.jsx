@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
-import { customStyles } from "../../../../utils/CommonUtils";
-import Select from "react-select";
 import _ from "lodash";
 import { putRequestToast } from "../../../../services/commonSv";
 import { convertToSelectOptions } from "../../../../utils/CommonUtils";
@@ -20,6 +17,7 @@ import {
 } from "../../../../utils/CommonUtils";
 import DatePicker from "react-datepicker";
 import TimeListButton from "./TimeListButton";
+import SelectLabClinic from "../components/SelectLabClinic";
 
 export default function ManageSchedule() {
   const dispatch = useDispatch();
@@ -39,13 +37,15 @@ export default function ManageSchedule() {
   const [checkPm, setCheckPm] = useState(false);
   const [checkninght, setCheckNinght] = useState(false);
 
-  console.log(schedules);
-
   useEffect(() => {
     dispatch(fetchAllClinics());
     dispatch(fetchAllLabs());
     setAllListAttibute("date", date);
   }, []);
+
+  useEffect(() => {
+    setOnAfterFetch();
+  }, [schedules]);
 
   useEffect(() => {
     if (!_.isEmpty(clinics)) setclinicOptions(convertToSelectOptions(clinics));
@@ -62,12 +62,10 @@ export default function ManageSchedule() {
     if (selectedClinic) {
       dispatch(fetchScedules({ clinic: selectedClinic._id, date }));
       setAllListAttibute("clinic", selectedClinic._id);
-      setOnAfterFetch();
     }
     if (selectedLab) {
       dispatch(fetchScedules({ lab: selectedLab._id, date }));
       setAllListAttibute("lab", selectedLab._id);
-      setOnAfterFetch();
     }
   }, [selectedClinic, selectedLab]);
 
@@ -106,8 +104,6 @@ export default function ManageSchedule() {
     setChoose(!choose);
   }
 
-  console.log();
-
   function setListOnAFterFetch(list) {
     _.forEach(list, function (obj) {
       if (_.find(schedules, { hour: obj.hour })) {
@@ -122,11 +118,9 @@ export default function ManageSchedule() {
     clearAll();
     if (selectedClinic) {
       dispatch(fetchScedules({ clinic: selectedClinic._id, date: e }));
-      setOnAfterFetch();
     }
     if (selectedLab) {
       dispatch(fetchScedules({ lab: selectedLab._id, date: e }));
-      setOnAfterFetch();
     }
   }
 
@@ -169,54 +163,18 @@ export default function ManageSchedule() {
               <div className="title text-md lg:text-3xl p-4 m-4 bg-base-300 rounded-box text-center">
                 <span className="">Thời Gian Biểu </span>{" "}
               </div>
-              <div className="select-lab-clinic flex flex-col lg:flex-row">
-                {/* Select clinic */}
-                <div className="container mx-auto flex justify-center m-4">
-                  <div className="w-64 lg:w-96 ">
-                    <label htmlFor="">Phòng khám chuyên khoa</label>
-                    <Select
-                      isClearable={true}
-                      className="my-react-select-container"
-                      classNamePrefix="my-react-select"
-                      options={clinicOptions}
-                      isDisabled={selectedLab ? true : false}
-                      styles={customStyles}
-                      placeholder={"Phòng chuyên khoa....."}
-                      onChange={(e) => {
-                        if (e) {
-                          setSelectedClinic(_.find(clinics, { _id: e.value }));
-                        } else {
-                          setSelectedClinic(null);
-                        }
-                      }}
-                    />{" "}
-                  </div>
-                </div>
-                {/* Select clinic */}
-                {/* Select lab */}
-                <div className="container mx-auto flex justify-center m-4 w-50">
-                  <div className="w-64 lg:w-96 ">
-                    <label htmlFor="">Phòng khám lâm sàng</label>
-                    <Select
-                      isClearable={true}
-                      isDisabled={selectedClinic ? true : false}
-                      className="my-react-select-container"
-                      classNamePrefix="my-react-select"
-                      options={labOptions}
-                      styles={customStyles}
-                      placeholder={"Phòng lâm sàng....."}
-                      onChange={(e) => {
-                        if (e) {
-                          setSelectedLab(_.find(labs, { _id: e.value }));
-                        } else {
-                          setSelectedLab(null);
-                        }
-                      }}
-                    />{" "}
-                  </div>
-                </div>
-                {/* Select lab */}
-              </div>
+              <SelectLabClinic
+                {...{
+                  selectedClinic,
+                  selectedLab,
+                  setSelectedClinic,
+                  setSelectedLab,
+                  labOptions,
+                  clinicOptions,
+                  labs,
+                  clinics,
+                }}
+              />
               <div className="divider"></div>
 
               <div className="flex flex-col container mx-auto justify-center gap-10 pb-10">

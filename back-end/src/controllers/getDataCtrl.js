@@ -5,6 +5,12 @@ import Clinic from "../schemas/Clinic.js";
 import Lab from "../schemas/Laboratory.js";
 import Doctor from "../schemas/Doctor.js";
 import Schedule from "../schemas/Schedule.js";
+import Service from "../schemas/Service.js";
+
+export async function getServices(req, res) {
+  let services = await Service.find(req.query).populate(["clinic", "lab"]);
+  return res.status(200).json({ services });
+}
 
 export async function getSchedules(req, res) {
   let schedules = await Schedule.find(req.query).populate(["clinic", "lab"]);

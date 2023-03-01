@@ -9,11 +9,69 @@ import Service from "../schemas/Service.js";
 import Schedule from "../schemas/Schedule.js";
 import __ from "lodash";
 
+// ----------------------------Service--------------------------------------------
+
+export async function deleteService(req, res) {
+  await delay(1000);
+  if (!req.query._id) return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    await Service.findByIdAndDelete(req.query._id);
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ msg: `Đã xóa không thành công dịch vụ` });
+  }
+  return res.status(200).json({ msg: `Đã xóa thành công dịch vụ ` });
+}
+
+export async function editService(req, res) {
+  await delay(1000);
+  if (!req.body._id) return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    await Service.findByIdAndUpdate(req.body._id, {
+      clinic: req.body.clinic ? req.body.clinic : null,
+      lab: req.body.lab ? req.body.lab : null,
+      name: req.body.name,
+      unit: req.body.unit,
+      unitPrice: req.body.unitPrice,
+    });
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ msg: `Đã lwu không thành công dịch vụ` });
+  }
+  return res.status(200).json({ msg: `Đã lwu thành công dịch vụ ` });
+}
+
+export async function createService(req, res) {
+  await delay(1000);
+  if (!req.body.name) return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    let check = await Service.findOne({
+      name: req.body.name,
+      clinic: req.body.clinic ? req.body.clinic : null,
+      lab: req.body.lab ? req.body.lab : null,
+    });
+    if (check) return res.status(400).json({ msg: `Dịch vụ đã tồn tại` });
+    let service = new Service({
+      clinic: req.body.clinic ? req.body.clinic : null,
+      lab: req.body.lab ? req.body.lab : null,
+      name: req.body.name,
+      unit: req.body.unit,
+      unitPrice: req.body.unitPrice,
+    });
+    await service.save();
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ msg: `Đã tạo không thành công dịch vụ` });
+  }
+  return res.status(200).json({ msg: `Đã tạo thành công dịch vụ ` });
+}
+
+// ----------------------------Service--------------------------------------------
+
 // ----------------------------Schedule--------------------------------------------
 
 export async function upsertSchedule(req, res) {
   await delay(1000);
-  console.log(req.body);
   if (!req.body.list) return res.status(400).json({ msg: "Thiếu thông tin" });
   try {
     await Schedule.deleteMany({
@@ -39,7 +97,6 @@ export async function upsertSchedule(req, res) {
 
 export async function editDoctor(req, res) {
   await delay(1000);
-  console.log(req.body._id);
 
   if (!req.body.name || !req.body.specialty || !req.body.clinic)
     return res.status(400).json({ msg: "Thiếu thông tin" });
@@ -65,7 +122,6 @@ export async function editDoctor(req, res) {
     );
     let clinic = await Clinic.findById(req.body.clinic);
     clinic.set({ doctor: req.body._id });
-    console.log(clinic.doctor);
     await clinic.save();
   } catch (e) {
     console.log(e);

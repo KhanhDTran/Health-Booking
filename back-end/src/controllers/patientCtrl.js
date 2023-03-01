@@ -15,7 +15,6 @@ export async function resendOtpPatient(req, res) {
 }
 
 export async function checkCreatePatient(req, res) {
-  console.log(req.query);
   await delay(1000);
   if (!req.query.username || !req.query.email)
     return res.status(400).json({ msg: "Thiếu thông tin" });

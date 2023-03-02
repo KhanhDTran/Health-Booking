@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
 import ModalCreateSpecialty from "./MCreateSpecialty";
@@ -9,7 +8,6 @@ import Select from "react-select";
 import _ from "lodash";
 import { customStyles } from "../../../../utils/CommonUtils";
 import ModalEditSpecialty from "./MEditSpecialty";
-import { toast } from "react-toastify";
 import { deleteRequestToast } from "../../../../services/commonSv";
 
 export default function ManageSpecialty() {

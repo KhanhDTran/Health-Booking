@@ -222,7 +222,13 @@ export default function ManageService() {
                             <th>{index + 1}</th>
                             <td>{item.name}</td>
                             <td>{item.unit}</td>
-                            <td>{item.unitPrice}.000</td>
+                            <td>
+                              {" "}
+                              {new Intl.NumberFormat("vi-VN", {
+                                style: "currency",
+                                currency: "VND",
+                              }).format(item.unitPrice * 1000)}{" "}
+                            </td>
                             <th>
                               <div className="flex justify-between">
                                 <button

@@ -16,23 +16,19 @@ export default function FirstSection() {
         >
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center ">
-            <div className="max-w-lg ">
+            <div className="max-w-96 ">
               <div className="w-24 rounded mx-auto">
                 <img className="" src={logo} />
               </div>
               <h1 className="mb-5 text-5xl font-bold">HEATH BOOKING</h1>
-              <p className="mb-5">
-                Người có sức khỏe, có hy vọng; và người có hy vọng, có tất cả
+              <p className="mb-5 text-2xl">
+                Người có sức khỏe, có hy vọng, và người có hy vọng, có tất cả
                 mọi thứ.
-                <br />
-                <span>
-                  He who has health, has hope and he who has hope, has
-                  everything.
-                </span>
-                <br />
-                <span>-Thomas Carlyle</span>
               </p>
-              <button className="btn btn-primary w-30">Khám Phá</button>
+              <p className="mb-5 text-2xl">
+                He who has health, has hope and he who has hope, has everything.
+              </p>
+              <span className="text-2xl">-Thomas Carlyle</span>
             </div>
           </div>
         </div>

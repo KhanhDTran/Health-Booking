@@ -1,17 +1,20 @@
-import logo from "../../assets/images/logo.png";
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import logo from "../../assets/images/logo.png";
+import PatientHeader from "../../components/PatientHeader";
 import { getRequestToast } from "../../services/commonSv";
 import { logged_in } from "../../store/features/userSlice";
-import PatientHeader from "../../components/PatientHeader";
+import { remove_selected_doctor } from "../../store/features/patientSlice";
 
 export default function Login() {
   let [username, setUsername] = useState("");
   let [password, setPassword] = useState("");
 
   const { role } = useSelector((state) => state.user);
+  const { selectedDoctor } = useSelector((state) => state.patient);
+
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
@@ -43,7 +46,10 @@ export default function Login() {
         navigate("/system/admin/");
       }
       if (role === "patient") {
-        navigate("/");
+        if (selectedDoctor) {
+          dispatch(remove_selected_doctor());
+          navigate(`/doctor/${selectedDoctor}`);
+        } else navigate("/");
       }
     }
   }, [role]);

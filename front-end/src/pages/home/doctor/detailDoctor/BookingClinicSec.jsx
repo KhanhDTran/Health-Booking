@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import {
   fetchScedules,
   fetchServices,
-} from "../../../store/features/fetchDataSlice";
+} from "../../../../store/features/fetchDataSlice";
 import DatePicker from "react-datepicker";
 import TableServices from "./TableServices";
 import ListTimeBooking from "./ListTimeBooking";
@@ -20,7 +20,7 @@ export default function BookingClinicSec(props) {
   const [selectService, setSelectService] = useState();
 
   useEffect(() => {
-    if (services) setSelectService(services[0]._id);
+    if (services) setSelectService(services[0]);
   }, [services]);
 
   useEffect(() => {
@@ -58,7 +58,15 @@ export default function BookingClinicSec(props) {
           </div>
           {/* ---------------- */}
 
-          <ListTimeBooking {...{ schedules, date }} />
+          <ListTimeBooking
+            {...{
+              schedules,
+              clinic: props.clinic,
+              date,
+              doctor: props.doctor,
+              service: selectService,
+            }}
+          />
         </div>
       )}
     </>

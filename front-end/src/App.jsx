@@ -10,7 +10,10 @@ import ManageDoctor from "./pages/system/admin/doctor/ManageDoctor";
 import ManageSchedule from "./pages/system/admin/schedule/ManageSchedule";
 import ManageSpecialty from "./pages/system/admin/specialty/ManageSpecialty";
 import ManageService from "./pages/system/admin/service/ManageService";
-import DoctorPage from "./pages/home/doctors/DoctorPage";
+import DoctorPage from "./pages/home/doctor/detailDoctor/DoctorPage";
+import SpecialtyPage from "./pages/home/specialty/SpecialtyPage";
+import AllSpecialties from "./pages/home/specialty/AllSpecialties";
+import AllDoctorsPage from "./pages/home/doctor/allDoctors/AllDoctorsPage";
 
 function App() {
   return (
@@ -19,7 +22,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/doctor/:_id" element={<DoctorPage />} />
+          <Route path="/all-doctors" element={<AllDoctorsPage />} />
+          <Route path="/doctor/:_id/:position/:name" element={<DoctorPage />} />
+
+          <Route path="/all-specialties" element={<AllSpecialties />} />
+          <Route path="/specialty/:_id/:name" element={<SpecialtyPage />} />
 
           {/* Authenticate */}
           <Route path="/signup" element={<Signup />} />

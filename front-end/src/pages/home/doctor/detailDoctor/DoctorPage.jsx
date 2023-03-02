@@ -1,31 +1,27 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import _ from "lodash";
-import Select from "react-select";
-import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchAllDoctors } from "../../../store/features/fetchDataSlice";
-import PatientHeader from "../../../components/PatientHeader";
-import Footer from "../../../components/Footer";
-import OtherDocSection from "./OtherDocSection";
+import Footer from "../../../../components/Footer";
+import PatientHeader from "../../../../components/PatientHeader";
+import { fetchAllDoctors } from "../../../../store/features/fetchDataSlice";
+import BookingClinicSec from "./BookingClinicSec";
 import ClinicSection from "./ClinicSection";
 import DoctorInfoSection from "./DoctorInfoSection";
-import BookingClinicSec from "./BookingClinicSec";
+import OtherDocSection from "./OtherDocSection";
 
 export default function DoctorPage() {
   const dispatch = useDispatch();
 
-  const { _id } = useParams();
+  const { _id, name, position } = useParams();
   const { doctors } = useSelector((state) => state.fetchData);
-
   const [doctor, setDoctor] = useState(null);
 
   // useState
 
   // UseEffect
   useEffect(() => {
-    document.title = "Chi tiết bác sĩ";
+    document.title = `${position}` + " " + `${name}`;
     dispatch(fetchAllDoctors());
   }, []);
 
@@ -54,7 +50,7 @@ export default function DoctorPage() {
                   <i className="fa-regular fa-pen-to-square"></i> Đặt lịch khám
                 </h1>
               </div>
-              <BookingClinicSec clinic={doctor.clinic} />
+              <BookingClinicSec {...{ clinic: doctor.clinic, doctor }} />
             </div>
             <div className="divider"></div>
 

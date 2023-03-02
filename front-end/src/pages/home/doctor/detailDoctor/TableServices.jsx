@@ -2,7 +2,7 @@ export default function TableServices(props) {
   return (
     <div className="p-4">
       <div>
-        <h1 className="text-2xl ">Bảng giá dịch vụ</h1>
+        <h1 className="text-2xl m-4">Bảng giá dịch vụ</h1>
       </div>
       <div>
         {props.services && props.services.length > 0 && (
@@ -25,9 +25,12 @@ export default function TableServices(props) {
                           type="checkbox"
                           className="checkbox checkbox-info"
                           checked={
-                            props.selectService === item._id ? true : false
+                            props.selectService &&
+                            props.selectService._id === item._id
+                              ? true
+                              : false
                           }
-                          onChange={() => props.setSelectService(item._id)}
+                          onChange={() => props.setSelectService(item)}
                         />
                       </th>
                       <th>

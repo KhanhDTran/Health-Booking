@@ -23,7 +23,9 @@ export default function DoctorSection() {
                     <div
                       className="card  bg-base-200 hover:cursor-pointer  hover:bg-base-300 shadow-xl"
                       onClick={() => {
-                        navigate(`/doctor/${item._id}`);
+                        navigate(
+                          `/doctor/${item._id}/${item.position}/${item.name}`
+                        );
                       }}
                     >
                       <div className="avatar flex justify-center p-4">
@@ -45,7 +47,14 @@ export default function DoctorSection() {
         </div>
 
         <div className="flex justify-center pb-4">
-          <button className="btn btn-outline btn-info">Xem Thêm</button>
+          <button
+            className="btn btn-outline btn-info"
+            onClick={() => {
+              navigate(`/all-doctors`);
+            }}
+          >
+            Xem Thêm
+          </button>
         </div>
       </div>
     </div>

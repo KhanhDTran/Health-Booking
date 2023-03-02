@@ -16,10 +16,46 @@ export default function PatientHeader(props) {
   return (
     <>
       <div className="navbar sticky h-auto top-0 z-30 bg-base-300">
-        <div className="flex-1">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex={0} className="btn btn-ghost btn-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h7"
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <NavLink to="/">Trang chủ</NavLink>
+              </li>
+              <li></li>
+              <li>
+                <NavLink to="/all-specialties">Chuyên khoa y tế</NavLink>
+              </li>
+              <li></li>
+              <li>
+                <NavLink to="/all-doctors">Bác sĩ chuyên khoa</NavLink>
+              </li>
+            </ul>
+          </div>
           <a
             className="btn btn-ghost normal-case text-sm lg:text-md"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+            }}
           >
             <div className="w-10 rounded">
               <img src={logo} />
@@ -27,7 +63,10 @@ export default function PatientHeader(props) {
             <span className="hidden lg:flex text-lg">Health Booking</span>
           </a>
         </div>
-        <div className="flex-none">
+        {/* -------------------------- */}
+
+        {/* ----------------------------- */}
+        <div className="navbar-end">
           {role && role === "patient" ? (
             <>
               {" "}
@@ -73,7 +112,7 @@ export default function PatientHeader(props) {
                     navigate("/login");
                   }}
                 >
-                  <div className="   items center">
+                  <div className=" items center">
                     <i className="fa-solid fa-right-to-bracket pt-2"></i>
                   </div>
                 </a>

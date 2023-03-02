@@ -24,6 +24,15 @@ export default function DoctorInfoSection(props) {
             <p>
               <b>Giới thiệu:</b> {props.doctor.description}
             </p>
+            <p>
+              <b>Năm Sinh:</b> {props.doctor.age}
+            </p>
+            <p>
+              <b>Email: </b> {props.doctor.email}
+            </p>
+            <p>
+              <b>Phone: </b> {props.doctor.phone}
+            </p>
           </div>
         </div>
       )}

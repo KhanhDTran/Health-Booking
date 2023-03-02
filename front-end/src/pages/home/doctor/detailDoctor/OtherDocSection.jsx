@@ -22,7 +22,9 @@ export default function OtherDocSection(props) {
                       className="card  bg-base-200 hover:cursor-pointer  hover:bg-base-300 shadow-xl"
                       onClick={() => {
                         window.scrollTo(0, 0);
-                        navigate(`/doctor/${item._id}`);
+                        navigate(
+                          `/doctor/${item._id}/${item.position}/${item.name}`
+                        );
                       }}
                     >
                       <div className="avatar flex justify-center p-4">

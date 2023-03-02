@@ -3,7 +3,7 @@ import logo from "../../assets/images/logo.png";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import PatientHeader from "../../components/PatientHeader";
 import { getRequestToast } from "../../services/commonSv";
 import ModalOtp from "./ModalOtp";
 
@@ -56,8 +56,9 @@ export default function Signup() {
   }, [openModalOtp]);
 
   return (
-    <div className="min-h-screen">
-      <div className="hero min-h-screen bg-base-200">
+    <div className=" flex flex-col h-screen">
+      <PatientHeader />
+      <div className="hero  bg-base-200">
         <div className="hero-content flex-col w-full h-full">
           <div className="w-24 rounded mx-auto">
             <img src={logo} className="" />

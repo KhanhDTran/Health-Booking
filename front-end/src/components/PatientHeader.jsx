@@ -73,8 +73,7 @@ export default function PatientHeader(props) {
                     navigate("/login");
                   }}
                 >
-                  <div className=" lg:w-32 lg:flex-row flex justify-between items center">
-                    <span className=" hidden lg:flex text-lg ">Đăng nhập</span>
+                  <div className="   items center">
                     <i className="fa-solid fa-right-to-bracket pt-2"></i>
                   </div>
                 </a>

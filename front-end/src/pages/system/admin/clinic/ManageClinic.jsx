@@ -25,6 +25,7 @@ export default function ManageClinic() {
   const [clinicOptions, setclinicOptions] = useState([]);
 
   useEffect(() => {
+    document.title = "Admin | Phòng Chuyên Khoa";
     dispatch(fetchAllSpecialties());
     dispatch(fetchAllClinics());
   }, []);

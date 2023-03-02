@@ -41,6 +41,7 @@ export default function ManageSchedule() {
     dispatch(fetchAllClinics());
     dispatch(fetchAllLabs());
     setAllListAttibute("date", date);
+    document.title = "Admin | Thời Gian Biểu";
   }, []);
 
   useEffect(() => {
@@ -217,7 +218,6 @@ export default function ManageSchedule() {
                     choose,
                     setChoose,
                     setOnTimeList,
-                    clearOnTimeList,
                     selectedClinic,
                     selectedLab,
                   }}
@@ -225,7 +225,6 @@ export default function ManageSchedule() {
                 <TimeListButton
                   {...{
                     dayninght: "Buổi Chiều",
-                    clearOnTimeList,
                     check: checkPm,
                     setCheck: setCheckPm,
                     timeList: timeListPM,
@@ -240,7 +239,6 @@ export default function ManageSchedule() {
                 <TimeListButton
                   {...{
                     dayninght: "Buổi Tối",
-                    clearOnTimeList,
                     check: checkninght,
                     setCheck: setCheckNinght,
                     timeList: timeListNight,

@@ -1,7 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
+import { useNavigate } from "react-router-dom";
 
 export default function DoctorSection() {
+  let navigate = useNavigate();
+
   const { doctors } = useSelector((state) => state.fetchData);
 
   return (
@@ -17,7 +20,12 @@ export default function DoctorSection() {
               _.sampleSize(doctors, 4).map((item) => {
                 return (
                   <div key={item._id}>
-                    <div className="card  bg-base-200 hover:cursor-pointer  hover:bg-base-300 shadow-xl">
+                    <div
+                      className="card  bg-base-200 hover:cursor-pointer  hover:bg-base-300 shadow-xl"
+                      onClick={() => {
+                        navigate(`/doctor/${item._id}`);
+                      }}
+                    >
                       <div className="avatar flex justify-center p-4">
                         <div className="w-52 rounded-full">
                           <img src={item.image} />

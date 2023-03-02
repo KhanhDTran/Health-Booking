@@ -53,7 +53,7 @@ export default function Login() {
       <div className="hero flex flex-col h-screen bg-base-200">
         <PatientHeader />
         <div className="hero-content flex-col  gap-10 w-full">
-          <div className="text-center  flex-col">
+          <div className="text-center  flex-col pt-16">
             <div className="w-24 rounded mx-auto">
               <img src={logo} className="" />
             </div>

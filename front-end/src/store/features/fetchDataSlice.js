@@ -62,9 +62,9 @@ export const fetchScedules = createAsyncThunk(
 
 export const fetchAllDoctors = createAsyncThunk(
   "fetchData/all-doctors",
-  async () => {
+  async (query) => {
     try {
-      let res = await getRequest("/getData/all-doctors");
+      let res = await getRequest("/getData/all-doctors", query);
       if (res && res.doctors) return res.doctors;
     } catch (e) {
       console.log(e);
@@ -72,20 +72,23 @@ export const fetchAllDoctors = createAsyncThunk(
   }
 );
 
-export const fetchAllLabs = createAsyncThunk("fetchData/all-labs", async () => {
-  try {
-    let res = await getRequest("/getData/all-labs");
-    if (res && res.labs) return res.labs;
-  } catch (e) {
-    console.log(e);
+export const fetchAllLabs = createAsyncThunk(
+  "fetchData/all-labs",
+  async (query) => {
+    try {
+      let res = await getRequest("/getData/all-labs", query);
+      if (res && res.labs) return res.labs;
+    } catch (e) {
+      console.log(e);
+    }
   }
-});
+);
 
 export const fetchAllClinics = createAsyncThunk(
   "fetchData/all-clinics",
-  async () => {
+  async (query) => {
     try {
-      let res = await getRequest("/getData/all-clinics");
+      let res = await getRequest("/getData/all-clinics", query);
       if (res && res.clinics) return res.clinics;
     } catch (e) {
       console.log(e);
@@ -95,9 +98,9 @@ export const fetchAllClinics = createAsyncThunk(
 
 export const fetchAllSpecialties = createAsyncThunk(
   "fetchData/all-specialties",
-  async () => {
+  async (query) => {
     try {
-      let res = await getRequest("/getData/all-specialties");
+      let res = await getRequest("/getData/all-specialties", query);
       if (res && res.specialties) return res.specialties;
     } catch (e) {
       console.log(e);

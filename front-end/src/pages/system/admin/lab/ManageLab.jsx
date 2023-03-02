@@ -22,6 +22,7 @@ export default function ManageLab() {
   const [labOptions, setLabOptions] = useState([]);
 
   useEffect(() => {
+    document.title = "Admin | Phòng Lâm Sàng";
     dispatch(fetchAllLabs());
   }, []);
 

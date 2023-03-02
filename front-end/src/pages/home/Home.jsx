@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import FirstSection from "./sections/FirstSection";
-import AboutUsSection from "./sections/AboutUsSection";
+import FirstSection from "./homeSections/FirstSection";
+import AboutUsSection from "./homeSections/AboutUsSection";
 import Footer from "../../components/Footer";
-import SpecialtySection from "./sections/SpecialtySection";
-import DoctorSection from "./sections/DoctorSection";
+import SpecialtySection from "./homeSections/SpecialtySection";
+import DoctorSection from "./homeSections/DoctorSection";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchAllDoctors,
@@ -14,6 +14,7 @@ export default function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    document.title = "Trang chủ";
     dispatch(fetchAllDoctors());
     dispatch(fetchAllSpecialties());
   }, []);
@@ -24,7 +25,6 @@ export default function Home() {
       <AboutUsSection />
       <SpecialtySection />
       <DoctorSection />
-
       <Footer />
     </div>
   );

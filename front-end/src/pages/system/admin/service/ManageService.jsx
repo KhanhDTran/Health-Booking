@@ -39,6 +39,7 @@ export default function ManageService() {
   useEffect(() => {
     dispatch(fetchAllClinics());
     dispatch(fetchAllLabs());
+    document.title = "Admin | Dịch Vụ Y Tế";
   }, []);
 
   useEffect(() => {
@@ -135,6 +136,7 @@ export default function ManageService() {
             lab: selectedLab ? selectedLab._id : null,
           })
         );
+        clearInputs();
       }
     }
   }
@@ -206,7 +208,7 @@ export default function ManageService() {
                       <th></th>
                       <th>Tên Dịch Vụ</th>
                       <th>Đơn vị</th>
-                      <th>Đơn giá</th>
+                      <th>Đơn giá (VNĐ)</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -220,7 +222,7 @@ export default function ManageService() {
                             <th>{index + 1}</th>
                             <td>{item.name}</td>
                             <td>{item.unit}</td>
-                            <td>{item.unitPrice}</td>
+                            <td>{item.unitPrice}.000</td>
                             <th>
                               <div className="flex justify-between">
                                 <button

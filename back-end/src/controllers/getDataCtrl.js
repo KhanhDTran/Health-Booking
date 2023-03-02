@@ -8,31 +8,35 @@ import Schedule from "../schemas/Schedule.js";
 import Service from "../schemas/Service.js";
 
 export async function getServices(req, res) {
-  let services = await Service.find(req.query).populate(["clinic", "lab"]);
+  let services = await Service.find(req.query);
   return res.status(200).json({ services });
 }
 
 export async function getSchedules(req, res) {
-  let schedules = await Schedule.find(req.query).populate(["clinic", "lab"]);
+  let schedules = await Schedule.find(req.query);
   return res.status(200).json({ schedules });
 }
 
 export async function getDoctors(req, res) {
-  let doctors = await Doctor.find().populate(["clinic", "specialty"]);
+  let doctors = await Doctor.find(req.query).populate(["clinic", "specialty"]);
   return res.status(200).json({ doctors });
 }
 
 export async function getLabs(req, res) {
-  let labs = await Lab.find().populate(["user"]);
+  let labs = await Lab.find(req.query).populate(["user"]);
   return res.status(200).json({ labs });
 }
 
 export async function getClinics(req, res) {
-  let clinics = await Clinic.find().populate(["specialty", "user"]);
+  let clinics = await Clinic.find(req.query).populate([
+    "specialty",
+    "user",
+    "doctor",
+  ]);
   return res.status(200).json({ clinics });
 }
 
 export async function getSpecialties(req, res) {
-  let specialties = await Speciaalty.find();
+  let specialties = await Speciaalty.find(req.query);
   return res.status(200).json({ specialties });
 }

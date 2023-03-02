@@ -14,6 +14,10 @@ export default function Admin() {
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
+  useEffect(() => {
+    document.title = "Admin | Bảng Điều Khiển";
+  }, []);
+
   return (
     <div>
       {role && role === "admin" ? (

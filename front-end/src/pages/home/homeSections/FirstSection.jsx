@@ -1,7 +1,6 @@
-import _ from "lodash";
-import PatientHeader from "../../../components/PatientHeader";
 import backgroundImage from "../../../assets/images/home/background.jpg";
 import logo from "../../../assets/images/logo.png";
+import PatientHeader from "../../../components/PatientHeader";
 
 export default function FirstSection() {
   return (

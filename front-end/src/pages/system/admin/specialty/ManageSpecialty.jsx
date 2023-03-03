@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import _ from "lodash";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Select from "react-select";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
-import ModalCreateSpecialty from "./MCreateSpecialty";
-import { fetchAllSpecialties } from "../../../../store/features/fetchDataSlice";
-import Select from "react-select";
-import _ from "lodash";
-import { customStyles } from "../../../../utils/CommonUtils";
-import ModalEditSpecialty from "./MEditSpecialty";
 import { deleteRequestToast } from "../../../../services/commonSv";
+import { fetchAllSpecialties } from "../../../../store/features/fetchDataSlice";
+import { customStyles } from "../../../../utils/CommonUtils";
+import ModalCreateSpecialty from "./MCreateSpecialty";
+import ModalEditSpecialty from "./MEditSpecialty";
 
 export default function ManageSpecialty() {
   const dispatch = useDispatch();

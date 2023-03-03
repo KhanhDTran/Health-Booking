@@ -70,36 +70,38 @@ export default function PatientHeader(props) {
         {role && role === "patient" ? (
           <>
             {" "}
-            <div className="dropdown dropdown-end ">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full mr-2 ">
-                  <img src={defaultAva} />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <a className="text-xl">
-                    <i className="fa-solid fa-user-tie text-sm"></i>
-                    {user.patient.name}
-                  </a>
-                </li>
-                <li></li>
+            <div className="navbar-end">
+              <div className="dropdown dropdown-end ">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full mr-2 ">
+                    <img src={defaultAva} />
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <a className="text-xl">
+                      <i className="fa-solid fa-user-tie text-sm"></i>
+                      {user.patient.name}
+                    </a>
+                  </li>
+                  <li></li>
 
-                <li>
-                  <a
-                    onClick={() => {
-                      dispatch(logged_out());
-                      navigate("/");
-                    }}
-                  >
-                    <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                    Đăng xuất{" "}
-                  </a>
-                </li>
-              </ul>
+                  <li>
+                    <a
+                      onClick={() => {
+                        dispatch(logged_out());
+                        navigate("/");
+                      }}
+                    >
+                      <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                      Đăng xuất{" "}
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </>
         ) : (

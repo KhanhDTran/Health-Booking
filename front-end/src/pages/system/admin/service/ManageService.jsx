@@ -1,8 +1,14 @@
-import { useState, useEffect } from "react";
+import _ from "lodash";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
-import _ from "lodash";
+import {
+  deleteRequestToast,
+  postRequestToast,
+  putRequestToast,
+} from "../../../../services/commonSv";
 import {
   fetchAllClinics,
   fetchAllLabs,
@@ -11,12 +17,6 @@ import {
 import { convertToSelectOptions } from "../../../../utils/CommonUtils";
 import SelectLabClinic from "../components/SelectLabClinic";
 import FormService from "./FormService";
-import { toast } from "react-toastify";
-import {
-  postRequestToast,
-  putRequestToast,
-  deleteRequestToast,
-} from "../../../../services/commonSv";
 
 export default function ManageService() {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
-import { toBase64 } from "../../../../utils/CommonUtils";
 import { postRequestToast } from "../../../../services/commonSv";
+import { toBase64 } from "../../../../utils/CommonUtils";
 import ModalSpecialty from "./MSpecialty";
 
 export default function ModalCreateSpecialty(props) {
@@ -61,7 +61,7 @@ export default function ModalCreateSpecialty(props) {
             image={image}
             handleImgChange={handleImgChange}
           />
-          
+
           <div className="flex justify-center mt-10">
             <button className="btn btn-info" onClick={handleCreateSpecialty}>
               Tạo mới

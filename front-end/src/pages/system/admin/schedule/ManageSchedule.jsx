@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
+import _ from "lodash";
+import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
 import { useDispatch, useSelector } from "react-redux";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
-import _ from "lodash";
 import { putRequestToast } from "../../../../services/commonSv";
-import { convertToSelectOptions } from "../../../../utils/CommonUtils";
 import {
   fetchAllClinics,
   fetchAllLabs,
   fetchScedules,
 } from "../../../../store/features/fetchDataSlice";
 import {
+  convertToSelectOptions,
   timeListAm,
-  timeListPM,
   timeListNight,
+  timeListPM,
 } from "../../../../utils/CommonUtils";
-import DatePicker from "react-datepicker";
-import TimeListButton from "./TimeListButton";
 import SelectLabClinic from "../components/SelectLabClinic";
+import TimeListButton from "./TimeListButton";
 
 export default function ManageSchedule() {
   const dispatch = useDispatch();

@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 import logo from "../../assets/images/logo.png";
 import PatientHeader from "../../components/PatientHeader";
 import { getRequestToast } from "../../services/commonSv";
-import { logged_in } from "../../store/features/userSlice";
 import { remove_selected_doctor } from "../../store/features/patientSlice";
+import { logged_in } from "../../store/features/userSlice";
 
 export default function Login() {
   let [username, setUsername] = useState("");
@@ -48,7 +48,9 @@ export default function Login() {
       if (role === "patient") {
         if (selectedDoctor) {
           dispatch(remove_selected_doctor());
-          navigate(`/doctor/${selectedDoctor}`);
+          navigate(
+            `/doctor/${selectedDoctor._id}/${selectedDoctor.position}/${selectedDoctor.name}`
+          );
         } else navigate("/");
       }
     }

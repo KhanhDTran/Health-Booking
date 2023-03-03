@@ -1,14 +1,13 @@
+import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
 import { useDispatch, useSelector } from "react-redux";
-import _ from "lodash";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 import {
   fetchScedules,
   fetchServices,
 } from "../../../../store/features/fetchDataSlice";
-import DatePicker from "react-datepicker";
-import TableServices from "./TableServices";
 import ListTimeBooking from "./ListTimeBooking";
+import TableServices from "./TableServices";
 
 export default function BookingClinicSec(props) {
   let navigate = useNavigate();

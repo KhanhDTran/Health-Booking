@@ -1,5 +1,4 @@
-import _ from "lodash";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Footer from "../../../components/Footer";
@@ -8,8 +7,8 @@ import {
   fetchAllDoctors,
   fetchAllSpecialties,
 } from "../../../store/features/fetchDataSlice";
-import SpecialtyBanner from "./SpecialtyBanner";
 import DoctorBanner from "../doctor/allDoctors/DoctorBanner";
+import SpecialtyBanner from "./SpecialtyBanner";
 
 export default function SpecialtyPage() {
   const dispatch = useDispatch();

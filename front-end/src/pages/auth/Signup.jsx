@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import logo from "../../assets/images/logo.png";
-import { toast } from "react-toastify";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import logo from "../../assets/images/logo.png";
 import PatientHeader from "../../components/PatientHeader";
 import { getRequestToast } from "../../services/commonSv";
 import ModalOtp from "./ModalOtp";

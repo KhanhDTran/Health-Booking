@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import AdminHeader from "../../../components/AdminHeader";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import clinicImg from "../../../assets/images/admin/clinic.jpg";
-import labImg from "../../../assets/images/admin/lab.jpg";
-import specialtyImg from "../../../assets/images/admin/specialty.jpg";
 import doctorImg from "../../../assets/images/admin/doctor.jpg";
+import labImg from "../../../assets/images/admin/lab.jpg";
 import scheduleImg from "../../../assets/images/admin/schedule.jpg";
 import serviceImg from "../../../assets/images/admin/service.jpg";
+import specialtyImg from "../../../assets/images/admin/specialty.jpg";
+import AdminHeader from "../../../components/AdminHeader";
 
 export default function Admin() {
   const { role } = useSelector((state) => state.user);

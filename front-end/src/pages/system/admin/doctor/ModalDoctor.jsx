@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import _ from "lodash";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
-import { toast } from "react-toastify";
-import { customStyles } from "../../../../utils/CommonUtils";
 import {
-  fetchAllSpecialties,
   fetchAllClinics,
+  fetchAllSpecialties,
 } from "../../../../store/features/fetchDataSlice";
-import { toBase64 } from "../../../../utils/CommonUtils";
-import { convertToSelectOptions } from "../../../../utils/CommonUtils";
+import {
+  convertToSelectOptions,
+  customStyles,
+  toBase64,
+} from "../../../../utils/CommonUtils";
 
 export default function ModalDoctor(props) {
   // redux
@@ -129,7 +129,7 @@ export default function ModalDoctor(props) {
               id="address"
               value={props.address}
               onChange={(e) => props.setAddress(e.target.value)}
-              placeholder="Địa chỉ phòng khám...."
+              placeholder="Địa chỉ nhà...."
               className="input input-bordered input-info w-full "
             />
           </div>

@@ -1,5 +1,3 @@
-import PatientHeader from "../../../components/PatientHeader";
-
 export default function AboutUsSection() {
   return (
     <div className="pb-16">

@@ -1,5 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
-import _ from "lodash";
 import { useNavigate } from "react-router-dom";
 
 export default function DoctorInfoSection(props) {

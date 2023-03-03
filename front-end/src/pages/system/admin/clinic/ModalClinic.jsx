@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
-import Select from "react-select";
-import { useDispatch, useSelector } from "react-redux";
-import { customStyles } from "../../../../utils/CommonUtils";
 import _ from "lodash";
-
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import Select from "react-select";
+import { customStyles } from "../../../../utils/CommonUtils";
 
 export default function ModalClinic(props) {
   const { specialties } = useSelector((state) => state.fetchData);

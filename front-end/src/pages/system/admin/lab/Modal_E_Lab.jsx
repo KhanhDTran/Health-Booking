@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { toBase64 } from "../../../../utils/CommonUtils";
+import { useEffect, useState } from "react";
 import { putRequestToast } from "../../../../services/commonSv";
+import { toBase64 } from "../../../../utils/CommonUtils";
 import ModalLab from "./ModalLab";
 
 export default function Modal_E_Lab(props) {

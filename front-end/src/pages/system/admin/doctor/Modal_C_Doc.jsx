@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import _ from "lodash";
-import Select from "react-select";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import ModalDoctor from "./ModalDoctor";
 import { postRequestToast } from "../../../../services/commonSv";
 import { fetchAllClinics } from "../../../../store/features/fetchDataSlice";
+import ModalDoctor from "./ModalDoctor";
 
 export default function Modal_C_Doc(props) {
   const dispatch = useDispatch();

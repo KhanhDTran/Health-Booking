@@ -1,11 +1,8 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import ModalClinic from "./ModalClinic";
-import _ from "lodash";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import { postRequestToast } from "../../../../services/commonSv";
 import { toBase64 } from "../../../../utils/CommonUtils";
+import ModalClinic from "./ModalClinic";
 
 export default function Modal_C_Clinic(props) {
   const [username, setusername] = useState("");

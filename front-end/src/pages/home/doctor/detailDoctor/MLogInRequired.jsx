@@ -1,7 +1,7 @@
 import moment from "moment";
 import "moment/locale/vi";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { select_doctor } from "../../../../store/features/patientSlice";
 moment().format();
 
@@ -34,7 +34,13 @@ export default function MLogInRequired(props) {
             <button
               className="btn btn-info"
               onClick={() => {
-                dispatch(select_doctor(props.doctor._id));
+                dispatch(
+                  select_doctor({
+                    _id: props.doctor._id,
+                    position: props.doctor.position,
+                    name: props.doctor.name,
+                  })
+                );
                 navigate("/login");
               }}
             >

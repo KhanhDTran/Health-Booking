@@ -1,9 +1,3 @@
-import { useState, useEffect } from "react";
-import Select from "react-select";
-import { useDispatch, useSelector } from "react-redux";
-import { customStyles } from "../../../../utils/CommonUtils";
-import _ from "lodash";
-
 export default function ModalLab(props) {
   return (
     <>

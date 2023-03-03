@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import FirstSection from "./homeSections/FirstSection";
-import AboutUsSection from "./homeSections/AboutUsSection";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Footer from "../../components/Footer";
-import SpecialtySection from "./homeSections/SpecialtySection";
-import DoctorSection from "./homeSections/DoctorSection";
-import { useDispatch, useSelector } from "react-redux";
 import {
   fetchAllDoctors,
   fetchAllSpecialties,
 } from "../../store/features/fetchDataSlice";
+import AboutUsSection from "./homeSections/AboutUsSection";
+import DoctorSection from "./homeSections/DoctorSection";
+import FirstSection from "./homeSections/FirstSection";
+import SpecialtySection from "./homeSections/SpecialtySection";
 
 export default function Home() {
   const dispatch = useDispatch();

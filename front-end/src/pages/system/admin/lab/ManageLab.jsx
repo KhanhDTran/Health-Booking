@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
+import _ from "lodash";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import Select from "react-select";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
-import Modal_C_Lab from "./Modal_C_Lab";
-import Modal_E_lab from "./Modal_E_Lab";
+import { deleteRequestToast } from "../../../../services/commonSv";
 import { fetchAllLabs } from "../../../../store/features/fetchDataSlice";
 import { customStyles } from "../../../../utils/CommonUtils";
-import Select from "react-select";
-import _ from "lodash";
-import { deleteRequestToast } from "../../../../services/commonSv";
+import Modal_C_Lab from "./Modal_C_Lab";
+import Modal_E_lab from "./Modal_E_Lab";
 
 export default function ManageLab() {
   const dispatch = useDispatch();

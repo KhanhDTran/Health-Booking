@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { toBase64 } from "../../../../utils/CommonUtils";
 import { putRequestToast } from "../../../../services/commonSv";
+import { toBase64 } from "../../../../utils/CommonUtils";
 import ModalSpecialty from "./MSpecialty";
 
 export default function ModalEditSpecialty(props) {

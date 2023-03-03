@@ -1,0 +1,483 @@
+[{
+  "_id": {
+    "$oid": "6401c91a92c62fe008df02f6"
+  },
+  "username": "admin",
+  "password": "admin",
+  "role": "admin"
+},{
+  "_id": {
+    "$oid": "6401cba876a69e699750f8b8"
+  },
+  "username": "clinic1",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cba876a69e699750f8b9",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839272986"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839272986"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cbca76a69e699750f8be"
+  },
+  "username": "clinic2",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cbca76a69e699750f8bf",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839306233"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839306233"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cbda76a69e699750f8c4"
+  },
+  "username": "clinic3",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cbda76a69e699750f8c5",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839322474"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839322474"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cbf576a69e699750f8ca"
+  },
+  "username": "clinic4",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cbf576a69e699750f8cb",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839349771"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839349771"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cc1076a69e699750f8d0"
+  },
+  "username": "clinic5",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cc1076a69e699750f8d1",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839376519"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839376519"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cc2876a69e699750f8d6"
+  },
+  "username": "clinic6",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cc2876a69e699750f8d7",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839400388"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839400388"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cc5576a69e699750f8dc"
+  },
+  "username": "clinic7",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cc5576a69e699750f8dd",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839445058"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839445058"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cc6b76a69e699750f8e2"
+  },
+  "username": "clinic8",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cc6b76a69e699750f8e3",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839467585"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839467585"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cc7c76a69e699750f8e8"
+  },
+  "username": "clinic9",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cc7c76a69e699750f8e9",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839484885"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839484885"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cc9276a69e699750f8ee"
+  },
+  "username": "clinic10",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cc9276a69e699750f8ef",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839506505"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839506505"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cca876a69e699750f8f4"
+  },
+  "username": "clinic11",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401cca876a69e699750f8f5",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839528251"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839528251"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401ccb576a69e699750f8fa"
+  },
+  "username": "clinic12",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401ccb576a69e699750f8fb",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839541895"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839541895"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401ccc376a69e699750f900"
+  },
+  "username": "clinic13",
+  "password": "1",
+  "role": "clinic",
+  "clinic": "6401ccc376a69e699750f901",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677839555509"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677839555509"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d1dad3a9838399360754"
+  },
+  "username": "lab1",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d1dad3a9838399360755",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840858710"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840858710"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d1f4d3a983839936075a"
+  },
+  "username": "lab2",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d1f4d3a983839936075b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840884158"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840884158"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d203d3a9838399360760"
+  },
+  "username": "lab3",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d203d3a9838399360761",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840899695"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840899695"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d213d3a9838399360766"
+  },
+  "username": "lab4",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d213d3a9838399360767",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840915595"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840915595"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d23dd3a983839936076c"
+  },
+  "username": "lab5",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d23dd3a983839936076d",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840957209"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840957209"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d24fd3a9838399360772"
+  },
+  "username": "lab6",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d24fd3a9838399360773",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840975841"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840975841"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d263d3a9838399360778"
+  },
+  "username": "lab7",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d263d3a9838399360779",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840995144"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840995144"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d273d3a983839936077e"
+  },
+  "username": "lab8",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d273d3a983839936077f",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677841011733"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677841011733"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d284d3a9838399360784"
+  },
+  "username": "lab9",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d284d3a9838399360785",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677841028539"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677841028539"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d294d3a983839936078a"
+  },
+  "username": "lab10",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d294d3a983839936078b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677841044309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677841044309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d2a4d3a9838399360790"
+  },
+  "username": "lab11",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d2a4d3a9838399360791",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677841060270"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677841060270"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d2b1d3a9838399360796"
+  },
+  "username": "lab12",
+  "password": "1",
+  "role": "lab",
+  "lab": "6401d2b1d3a9838399360797",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677841073388"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677841073388"
+    }
+  },
+  "__v": 0
+}]

@@ -1,8 +1,7 @@
 import moment from "moment";
 import "moment/locale/vi";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { select_doctor } from "../../../../store/features/patientSlice";
 moment().format();
 
 export default function ModalBooking(props) {

@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
+import _ from "lodash";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import Select from "react-select";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
-import { customStyles } from "../../../../utils/CommonUtils";
-import Select from "react-select";
-import _ from "lodash";
 import { deleteRequestToast } from "../../../../services/commonSv";
+import { fetchAllDoctors } from "../../../../store/features/fetchDataSlice";
+import {
+  convertToSelectOptions,
+  customStyles,
+} from "../../../../utils/CommonUtils";
 import Modal_C_Doc from "./Modal_C_Doc";
 import Modal_E_Doc from "./Modal_E_Doc";
-import { fetchAllDoctors } from "../../../../store/features/fetchDataSlice";
-import { convertToSelectOptions } from "../../../../utils/CommonUtils";
 
 export default function ManageDoctor() {
   const dispatch = useDispatch();

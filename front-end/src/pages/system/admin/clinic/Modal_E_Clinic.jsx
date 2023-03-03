@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import ModalClinic from "./ModalClinic";
-import { toBase64 } from "../../../../utils/CommonUtils";
+import { useEffect, useState } from "react";
 import { putRequestToast } from "../../../../services/commonSv";
+import { toBase64 } from "../../../../utils/CommonUtils";
+import ModalClinic from "./ModalClinic";
 
 export default function Modal_E_Clinic(props) {
   const [username, setusername] = useState("");

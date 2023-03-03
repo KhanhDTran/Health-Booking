@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import _ from "lodash";
-import Select from "react-select";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import ModalLab from "./ModalLab";
-import { toBase64 } from "../../../../utils/CommonUtils";
 import { postRequestToast } from "../../../../services/commonSv";
+import { toBase64 } from "../../../../utils/CommonUtils";
+import ModalLab from "./ModalLab";
 
 export default function Modal_C_Lab(props) {
   const dispatch = useDispatch();

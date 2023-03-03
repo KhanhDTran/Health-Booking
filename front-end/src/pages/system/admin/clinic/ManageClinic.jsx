@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react";
+import _ from "lodash";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import Select from "react-select";
 import AdminHeader from "../../../../components/AdminHeader";
 import Err401Page from "../../../../components/Err401Page";
+import { deleteRequestToast } from "../../../../services/commonSv";
+import {
+  fetchAllClinics,
+  fetchAllSpecialties,
+} from "../../../../store/features/fetchDataSlice";
+import { customStyles } from "../../../../utils/CommonUtils";
 import Modal_C_Clinic from "./Modal_C_Clinic";
 import Modal_E_Clinic from "./Modal_E_Clinic";
-import {
-  fetchAllSpecialties,
-  fetchAllClinics,
-} from "../../../../store/features/fetchDataSlice";
-import _ from "lodash";
-import { deleteRequestToast } from "../../../../services/commonSv";
-import Select from "react-select";
-import { customStyles } from "../../../../utils/CommonUtils";
 
 export default function ManageClinic() {
   const dispatch = useDispatch();

@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
-import { toast } from "react-toastify";
-import OtpInput from "react18-input-otp";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { postRequestToast, getRequestToast } from "../../services/commonSv";
+import OtpInput from "react18-input-otp";
+import { getRequestToast, postRequestToast } from "../../services/commonSv";
 
 export default function ModalOtp(props) {
   const [otp, setOtp] = useState("");
@@ -25,6 +24,8 @@ export default function ModalOtp(props) {
     );
     if (res) {
       setSec(60);
+    } else {
+      setSec(0);
     }
   }
 

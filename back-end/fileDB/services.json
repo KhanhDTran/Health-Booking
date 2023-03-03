@@ -1,0 +1,781 @@
+[{
+  "_id": {
+    "$oid": "6401cf75d3a983839936069e"
+  },
+  "clinic": "6401cba876a69e699750f8b9",
+  "lab": null,
+  "name": "Clinic 1 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "300",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840245344"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840245344"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cf84d3a98383993606a3"
+  },
+  "clinic": "6401cba876a69e699750f8b9",
+  "lab": null,
+  "name": "Clinic 1 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "350",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840260530"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840260530"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cf95d3a98383993606a7"
+  },
+  "clinic": "6401cba876a69e699750f8b9",
+  "lab": null,
+  "name": "Clinic 1 dịch vụ khám 3",
+  "unit": "lần",
+  "unitPrice": "400",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840277040"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840277040"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cfa5d3a98383993606ac"
+  },
+  "clinic": "6401cbca76a69e699750f8bf",
+  "lab": null,
+  "name": "Clinic 2 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "250",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840293127"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840293127"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cfadd3a98383993606b0"
+  },
+  "clinic": "6401cbca76a69e699750f8bf",
+  "lab": null,
+  "name": "Clinic 2 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "450",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840301512"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840301512"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cfbcd3a98383993606b4"
+  },
+  "clinic": "6401cbca76a69e699750f8bf",
+  "lab": null,
+  "name": "Clinic 2 dịch vụ khám 3",
+  "unit": "lần",
+  "unitPrice": "1050",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840316897"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840316897"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cfccd3a98383993606b9"
+  },
+  "clinic": "6401cbda76a69e699750f8c5",
+  "lab": null,
+  "name": "Clinic 3 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "940",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840332210"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840332210"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cfd8d3a98383993606bd"
+  },
+  "clinic": "6401cbda76a69e699750f8c5",
+  "lab": null,
+  "name": "Clinic 3 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "410",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840344755"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840344755"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cfe1d3a98383993606c1"
+  },
+  "clinic": "6401cbda76a69e699750f8c5",
+  "lab": null,
+  "name": "Clinic 3 dịch vụ khám 3",
+  "unit": "lần",
+  "unitPrice": "320",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840353918"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840353918"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cfeed3a98383993606c6"
+  },
+  "clinic": "6401cbf576a69e699750f8cb",
+  "lab": null,
+  "name": "Clinic 4 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "230",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840366916"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840366916"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401cffed3a98383993606ca"
+  },
+  "clinic": "6401cbf576a69e699750f8cb",
+  "lab": null,
+  "name": "Clinic 4 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "630",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840382735"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840382735"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d006d3a98383993606ce"
+  },
+  "clinic": "6401cbf576a69e699750f8cb",
+  "lab": null,
+  "name": "Clinic 4 dịch vụ khám 3",
+  "unit": "lần",
+  "unitPrice": "840",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840390322"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840390322"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d014d3a98383993606d3"
+  },
+  "clinic": "6401cc1076a69e699750f8d1",
+  "lab": null,
+  "name": "Clinic 5 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "390",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840404797"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840404797"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d020d3a98383993606d7"
+  },
+  "clinic": "6401cc1076a69e699750f8d1",
+  "lab": null,
+  "name": "Clinic 5 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "840",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840416575"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840416575"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d02cd3a98383993606db"
+  },
+  "clinic": "6401cc1076a69e699750f8d1",
+  "lab": null,
+  "name": "Clinic 5 dịch vụ khám 3",
+  "unit": "lân",
+  "unitPrice": "530",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840428317"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840428317"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d037d3a98383993606e0"
+  },
+  "clinic": "6401cc2876a69e699750f8d7",
+  "lab": null,
+  "name": "Clinic 6 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "730",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840439422"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840439422"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d040d3a98383993606e5"
+  },
+  "clinic": "6401cc2876a69e699750f8d7",
+  "lab": null,
+  "name": "Clinic 6 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "390",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840448934"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840468371"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d04dd3a98383993606e9"
+  },
+  "clinic": "6401cc2876a69e699750f8d7",
+  "lab": null,
+  "name": "Clinic 6 dịch vụ khám 3",
+  "unit": "lần",
+  "unitPrice": "590",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840461539"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840461539"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d062d3a98383993606f0"
+  },
+  "clinic": "6401cc5576a69e699750f8dd",
+  "lab": null,
+  "name": "Clinic 7 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "940",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840482319"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840482319"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d069d3a98383993606f4"
+  },
+  "clinic": "6401cc5576a69e699750f8dd",
+  "lab": null,
+  "name": "Clinic 7 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "1200",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840489407"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840489407"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d074d3a98383993606f8"
+  },
+  "clinic": "6401cc5576a69e699750f8dd",
+  "lab": null,
+  "name": "Clinic 7 dịch vụ khám 3",
+  "unit": "lần",
+  "unitPrice": "2300",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840500983"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840500983"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d084d3a98383993606fd"
+  },
+  "clinic": "6401cc6b76a69e699750f8e3",
+  "lab": null,
+  "name": "Clinic 8 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "3200",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840516115"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840516115"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d08cd3a9838399360701"
+  },
+  "clinic": "6401cc6b76a69e699750f8e3",
+  "lab": null,
+  "name": "Clinic 8 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "2500",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840524338"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840524338"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d093d3a9838399360705"
+  },
+  "clinic": "6401cc6b76a69e699750f8e3",
+  "lab": null,
+  "name": "Clinic 8 dịch vụ khám 3",
+  "unit": "lần",
+  "unitPrice": "1800",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840531421"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840531421"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d0a3d3a983839936070a"
+  },
+  "clinic": "6401cc7c76a69e699750f8e9",
+  "lab": null,
+  "name": "Clinic 9 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "1200",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840547429"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840547429"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d0aed3a983839936070e"
+  },
+  "clinic": "6401cc7c76a69e699750f8e9",
+  "lab": null,
+  "name": "Clinic 9 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "3100",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840558989"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840558989"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d0bbd3a9838399360712"
+  },
+  "clinic": "6401cc7c76a69e699750f8e9",
+  "lab": null,
+  "name": "Clinic 9 dịch vụ khám 3",
+  "unit": "lần",
+  "unitPrice": "400",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840571344"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840571344"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d0d7d3a9838399360719"
+  },
+  "clinic": "6401cc9276a69e699750f8ef",
+  "lab": null,
+  "name": "Clinic 10 dịch vụ khám 1",
+  "unit": "lần ",
+  "unitPrice": "320",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840599438"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840599438"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d0e1d3a983839936071d"
+  },
+  "clinic": "6401cc9276a69e699750f8ef",
+  "lab": null,
+  "name": "Clinic 10 dịch vụ khám 2",
+  "unit": "lần ",
+  "unitPrice": "1200",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840609171"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840609171"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d0e8d3a9838399360721"
+  },
+  "clinic": "6401cc9276a69e699750f8ef",
+  "lab": null,
+  "name": "Clinic 10 dịch vụ khám 3",
+  "unit": "lần ",
+  "unitPrice": "440",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840616653"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840616653"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d0f6d3a9838399360726"
+  },
+  "clinic": "6401cca876a69e699750f8f5",
+  "lab": null,
+  "name": "Clinic 11 dịch vụ khám 1",
+  "unit": "lần",
+  "unitPrice": "1210",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840630826"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840630826"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d0fed3a983839936072a"
+  },
+  "clinic": "6401cca876a69e699750f8f5",
+  "lab": null,
+  "name": "Clinic 11 dịch vụ khám 2",
+  "unit": "lần ",
+  "unitPrice": "420",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840638573"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840638573"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d104d3a983839936072e"
+  },
+  "clinic": "6401cca876a69e699750f8f5",
+  "lab": null,
+  "name": "Clinic 11 dịch vụ khám 3",
+  "unit": "lần ",
+  "unitPrice": "840",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840644808"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840644808"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d10fd3a9838399360733"
+  },
+  "clinic": "6401ccb576a69e699750f8fb",
+  "lab": null,
+  "name": "Clinic 12 dịch vụ khám 1",
+  "unit": "lần ",
+  "unitPrice": "830",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840655963"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840655963"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d124d3a9838399360737"
+  },
+  "clinic": "6401ccb576a69e699750f8fb",
+  "lab": null,
+  "name": "Clinic 12 dịch vụ khám 2",
+  "unit": "lần",
+  "unitPrice": "230",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840676141"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840676141"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d129d3a983839936073b"
+  },
+  "clinic": "6401ccb576a69e699750f8fb",
+  "lab": null,
+  "name": "Clinic 12 dịch vụ khám 3",
+  "unit": "lần ",
+  "unitPrice": "840",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840681932"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840681932"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d134d3a9838399360740"
+  },
+  "clinic": "6401ccc376a69e699750f901",
+  "lab": null,
+  "name": "Clinic 13 dịch vụ khám 1",
+  "unit": " lần ",
+  "unitPrice": "320",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840692295"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840692295"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d13ed3a9838399360745"
+  },
+  "clinic": "6401ccc376a69e699750f901",
+  "lab": null,
+  "name": "Clinic 13 dịch vụ khám 2",
+  "unit": "lần ",
+  "unitPrice": "340",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840702281"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840702281"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6401d145d3a9838399360749"
+  },
+  "clinic": "6401ccc376a69e699750f901",
+  "lab": null,
+  "name": "Clinic 13 dịch vụ khám 3",
+  "unit": "lần ",
+  "unitPrice": "380",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677840709331"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677840709331"
+    }
+  },
+  "__v": 0
+}]

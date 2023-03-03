@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { customStyles } from "../../../../utils/CommonUtils";
 import _ from "lodash";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Select from "react-select";
-import { toast } from "react-toastify";
+import { customStyles } from "../../../../utils/CommonUtils";
 
 export default function SelectLabClinic(props) {
   const dispatch = useDispatch();
@@ -37,7 +35,9 @@ export default function SelectLabClinic(props) {
               placeholder={"Phòng chuyên khoa....."}
               onChange={(e) => {
                 if (e) {
-                  props.setSelectedClinic(_.find(props.clinics, { _id: e.value }));
+                  props.setSelectedClinic(
+                    _.find(props.clinics, { _id: e.value })
+                  );
                 } else {
                   props.setSelectedClinic(null);
                 }

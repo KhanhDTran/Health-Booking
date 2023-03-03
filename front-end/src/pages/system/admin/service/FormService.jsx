@@ -1,10 +1,5 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-
-import _ from "lodash";
-import Select from "react-select";
-import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 export default function FormService(props) {
   const dispatch = useDispatch();

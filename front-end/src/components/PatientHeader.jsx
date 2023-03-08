@@ -74,7 +74,9 @@ export default function PatientHeader(props) {
               <div className="dropdown dropdown-end ">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full mr-2 ">
-                    <img src={defaultAva} />
+                    <img
+                      src={user.patient.image ? user.patient.image : defaultAva}
+                    />
                   </div>
                 </label>
                 <ul
@@ -82,10 +84,28 @@ export default function PatientHeader(props) {
                   className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <a className="text-xl">
-                      <i className="fa-solid fa-user-tie text-sm"></i>
-                      {user.patient.name}
-                    </a>
+                    <a className="text-xl">{user.patient.name}</a>
+                  </li>
+                  <li></li>
+                  <li>
+                    <NavLink to="/patient/profile/">
+                      <i className="fa-solid fa-user-tie text-sm"></i>Thông tin
+                      cá nhân
+                    </NavLink>
+                  </li>
+                  <li></li>
+                  <li>
+                    <NavLink to="/patient/booking/">
+                      <i className="fa-solid fa-calendar"></i>
+                      Lịch hẹn khám bệnh
+                    </NavLink>
+                  </li>
+                  <li></li>
+                  <li>
+                    <NavLink to="/patient/record/">
+                      <i className="fa-solid fa-book-medical"></i>
+                      Hồ sơ bệnh án
+                    </NavLink>
                   </li>
                   <li></li>
 

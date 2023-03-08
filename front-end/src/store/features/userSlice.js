@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 let role = localStorage.getItem("role")
   ? JSON.parse(localStorage.getItem("role"))
@@ -27,11 +28,19 @@ export const userSlice = createSlice({
       localStorage.removeItem("role");
       localStorage.removeItem("user");
       state.role = null;
+      toast.success("Đã đăng xuất");
+    },
+    edit_patient_profile: (state, res) => {
+      console.log(res);
+      state.user = res.payload.user;
+      localStorage.removeItem("user");
+      localStorage.setItem("user", JSON.stringify(res.payload.user));
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { logged_in, logged_out } = userSlice.actions;
+export const { logged_in, logged_out, edit_patient_profile } =
+  userSlice.actions;
 
 export default userSlice.reducer;

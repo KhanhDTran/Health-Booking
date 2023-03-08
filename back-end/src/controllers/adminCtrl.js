@@ -36,9 +36,9 @@ export async function editService(req, res) {
     });
   } catch (e) {
     console.log(e);
-    return res.status(400).json({ msg: `Đã lwu không thành công dịch vụ` });
+    return res.status(400).json({ msg: `Đã lưu không thành công dịch vụ` });
   }
-  return res.status(200).json({ msg: `Đã lwu thành công dịch vụ ` });
+  return res.status(200).json({ msg: `Đã lưu thành công dịch vụ ` });
 }
 
 export async function createService(req, res) {

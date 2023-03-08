@@ -7,6 +7,12 @@ import Doctor from "../schemas/Doctor.js";
 import Schedule from "../schemas/Schedule.js";
 import Service from "../schemas/Service.js";
 
+export async function getPatients(req, res) {
+  console.log(req);
+  let patients = await Patient.find(req.query);
+  return res.status(200).json({ patients });
+}
+
 export async function getServices(req, res) {
   let services = await Service.find(req.query);
   return res.status(200).json({ services });

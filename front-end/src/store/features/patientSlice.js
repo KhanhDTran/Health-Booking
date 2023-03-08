@@ -6,6 +6,7 @@ let selectedDoctor = localStorage.getItem("selectedDoctor")
 
 const initialState = {
   selectedDoctor,
+  patient: null,
 };
 
 export const patientSlice = createSlice({
@@ -15,10 +16,7 @@ export const patientSlice = createSlice({
     select_doctor: (state, { payload }) => {
       console.log(payload);
       state.selectedDoctor = payload;
-      localStorage.setItem(
-        "selectedDoctor",
-        JSON.stringify(payload)
-      );
+      localStorage.setItem("selectedDoctor", JSON.stringify(payload));
     },
     remove_selected_doctor: (state) => {
       localStorage.removeItem("selectedDoctor");

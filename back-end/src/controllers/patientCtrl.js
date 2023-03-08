@@ -4,6 +4,27 @@ import Patient from "../schemas/Patient.js";
 import { sendVerifyCodeEmail } from "../services/emailSv.js";
 import { genOtp, verifyOtp } from "../utils/otp.js";
 
+export async function editProfile(req, res) {
+  await delay(1000);
+  if (!req.body._id) return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    await Patient.findByIdAndUpdate(req.body._id, {
+      name: req.body.name,
+      age: req.body.age,
+      address: req.body.address,
+      phone: req.body.phone,
+      gender: req.body.gender,
+      image: req.body.image,
+    });
+  } catch (e) {
+    console.log(e);
+    return res
+      .status(400)
+      .json({ msg: `Đã lưu không thành công thông tin cá nhân` });
+  }
+  return res.status(200).json({ msg: `Đã lưu thành công thông tin cá nhân ` });
+}
+
 export async function resendOtpPatient(req, res) {
   let token = genOtp(req.query.email);
   await sendVerifyCodeEmail({

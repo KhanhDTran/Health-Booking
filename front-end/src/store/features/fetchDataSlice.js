@@ -8,6 +8,7 @@ const initialState = {
   doctors: null,
   schedules: null,
   services: null,
+  patients: null,
 };
 
 export const fetchDataSlice = createSlice({
@@ -33,8 +34,23 @@ export const fetchDataSlice = createSlice({
     builder.addCase(fetchServices.fulfilled, (state, { payload }) => {
       if (payload) state.services = payload;
     });
+    builder.addCase(fetchPatients.fulfilled, (state, { payload }) => {
+      if (payload) state.patients = payload;
+    });
   },
 });
+
+export const fetchPatients = createAsyncThunk(
+  "fetchData/get-patients",
+  async (query) => {
+    try {
+      let res = await getRequest("/getData/get-patients", query);
+      if (res && res.patients) return res.patients;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+);
 
 export const fetchServices = createAsyncThunk(
   "fetchData/get-services",

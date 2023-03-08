@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 moment().format();
 
-export default function BookingTable(props) {
+export default function ClinicTablebooking(props) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -22,8 +22,8 @@ export default function BookingTable(props) {
               <thead>
                 <tr>
                   <th></th>
-                  <th>Bác sĩ</th>
-                  <th>Phòng khám </th>
+                  <th>Bệnh nhân</th>
+
                   <th>Dịch vụ</th>
                   <th>Thời gian</th>
                   <th>Trạng thái</th>
@@ -38,32 +38,19 @@ export default function BookingTable(props) {
                         <span> {index + 1} </span>
                       </th>
                       <td>
-                        <div className="flex items-center space-x-3 flex-col">
+                        <div className="flex items-center space-x-3">
                           <div className="avatar">
-                            <div className=" h-36 w-36 ">
+                            <div className=" h-24 w-24 ">
                               <img
                                 className="mask mask-circle bg-base-200 h-36 w-36 hover:cursor-pointer"
-                                src={item.doctor.image}
-                                onClick={() =>
-                                  navigate(
-                                    `/doctor/${item.doctor._id}/${item.doctor.position}/${item.doctor.name}`
-                                  )
-                                }
+                                src={item.patient.image}
                               />
                             </div>
                           </div>
                           <div>
                             <div className="font-bold">
-                              {item.doctor.position} {item.doctor.name}{" "}
+                              {item.patient.name}{" "}
                             </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div className="flex items-center space-x-3">
-                          <div>
-                            <div className="font-bold">{item.clinic.name} </div>
-                            <div>{item.clinic.address}</div>
                           </div>
                         </div>
                       </td>
@@ -98,7 +85,7 @@ export default function BookingTable(props) {
                       <th>
                         <button
                           className="btn btn-ghost btn-xs"
-                          onClick={() => props.cancleBooking(item)}
+                          //   onClick={() => props.cancleBooking(item)}
                         >
                           Hủy lịch khám
                         </button>

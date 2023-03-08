@@ -14,7 +14,7 @@ export const patientSlice = createSlice({
   initialState,
   reducers: {
     select_doctor: (state, { payload }) => {
-      console.log(payload);
+   
       state.selectedDoctor = payload;
       localStorage.setItem("selectedDoctor", JSON.stringify(payload));
     },

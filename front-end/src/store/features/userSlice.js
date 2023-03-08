@@ -31,7 +31,7 @@ export const userSlice = createSlice({
       toast.success("Đã đăng xuất");
     },
     edit_patient_profile: (state, res) => {
-      console.log(res);
+     
       state.user = res.payload.user;
       localStorage.removeItem("user");
       localStorage.setItem("user", JSON.stringify(res.payload.user));

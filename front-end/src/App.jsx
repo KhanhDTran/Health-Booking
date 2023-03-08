@@ -9,7 +9,8 @@ import AllSpecialties from "./pages/home/specialty/AllSpecialties";
 import AllDoctorsPage from "./pages/home/doctor/allDoctors/AllDoctorsPage";
 import AdminRoute from "./routes/AdminRoute";
 import PatientRoute from "./routes/PatientRoute";
-
+import ClinicRoute from "./routes/ClinicRoute";
+import LabRoute from "./routes/LabRoute";
 
 function App() {
   return (
@@ -29,17 +30,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           {/* Authenticate */}
 
-          {/* --------------- Clinic  ----------------------*/}
-
-          {/* --------------- Clinic  ----------------------*/}
-
-          {/* --------------- Lab  ----------------------*/}
-
-          {/* --------------- Lab  ----------------------*/}
-
           <Route path="/system/admin//*" element={<AdminRoute />} />
 
           <Route path="/patient//*" element={<PatientRoute />} />
+
+          <Route path="/system/clinic//*" element={<ClinicRoute />} />
+
+          <Route path="/system/laboratory//*" element={<LabRoute />} />
 
           <Route path="*" element={<Error />} />
         </Routes>

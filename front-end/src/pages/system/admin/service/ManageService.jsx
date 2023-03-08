@@ -66,7 +66,7 @@ export default function ManageService() {
 
   async function handleDeleteService() {
     if (confirm(`Bạn có muốn xóa dịch vụ: "${service.name}" ?`)) {
-      console.log(service);
+   
       let res = await deleteRequestToast(
         "/delete-service",
         {

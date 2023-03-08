@@ -23,28 +23,26 @@ export async function createBooking(req, res) {
   if (!req.body.patient || !req.body.schedule || !req.body.services)
     return res.status(400).json({ msg: "Thiếu thông tin" });
   try {
+    console.log(req.body);
     let checkBooking = await Booking.findOne({
-      clinic: req.body.clinic,
       patient: req.body.patient,
-      services: req.body.services,
-      schedule: req.body.schedule,
+      hour: req.body.schedule.hour,
+      date: req.body.schedule.date,
       doctor: req.body.doctor,
-      status: req.body.status,
+      clinic: req.body.clinic,
     });
     if (checkBooking)
-      return res.status(400).json({ msg: "Đã tồn tại lịch hẹn khám." });
-    let newBooking = new Booking({
+      return res.status(400).json({ msg: `Đã tồn tại lịch khám vào giờ này` });
+    let booking = new Booking({
       clinic: req.body.clinic,
       patient: req.body.patient,
       services: req.body.services,
-      schedule: req.body.schedule,
+      hour: req.body.schedule.hour,
+      date: req.body.schedule.date,
       doctor: req.body.doctor,
       status: req.body.status,
     });
-    let schedule = await Schedule.findById(req.body.schedule);
-    schedule.patients.push(req.body.patient);
-    await schedule.save();
-    await newBooking.save();
+    await booking.save();
   } catch (e) {
     console.log(e);
     return res.status(400).json({ msg: `Đã đặt lịch khám không thành công ` });

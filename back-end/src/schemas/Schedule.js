@@ -7,7 +7,6 @@ const scheduleSchema = new Schema(
     lab: { type: Schema.Types.String, ref: "Laboratory" },
     date: Date,
     hour: String,
-    patients: [ { type: Schema.Types.String, ref: "Patient" }]
   },
   {
     timestamps: true,

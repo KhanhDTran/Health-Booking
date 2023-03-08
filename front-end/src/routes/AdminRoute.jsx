@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Error from "../pages/Error";
 import Admin from "../pages/system/admin/Admin";
 import ManageClinic from "../pages/system/admin/clinic/ManageClinic";
 import ManageDoctor from "../pages/system/admin/doctor/ManageDoctor";

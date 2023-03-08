@@ -9,19 +9,17 @@ import Service from "../schemas/Service.js";
 import Booking from "../schemas/Booking.js";
 
 export async function getBookings(req, res) {
-  console.log(req);
   let bookings = await Booking.find(req.query).populate([
     "clinic",
     "lab",
-    "schedule",
     "services",
     "doctor",
+    "patient",
   ]);
   return res.status(200).json({ bookings });
 }
 
 export async function getPatients(req, res) {
-  console.log(req);
   let patients = await Patient.find(req.query);
   return res.status(200).json({ patients });
 }
@@ -32,7 +30,7 @@ export async function getServices(req, res) {
 }
 
 export async function getSchedules(req, res) {
-  let schedules = await Schedule.find(req.query).populate(["patients"]);
+  let schedules = await Schedule.find(req.query);
   return res.status(200).json({ schedules });
 }
 

@@ -45,6 +45,12 @@ export default function Login() {
       if (role === "admin") {
         navigate("/system/admin/");
       }
+      if (role === "clinic") {
+        navigate("/system/clinic/booking");
+      }
+      if (role === "lab") {
+        navigate("/system/laboratory/booking");
+      }
       if (role === "patient") {
         if (selectedDoctor) {
           dispatch(remove_selected_doctor());

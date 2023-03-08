@@ -19,7 +19,7 @@ export default function ModalBooking(props) {
         patient: user.patient._id,
         doctor: props.doctor._id,
         services: [props.service._id],
-        schedule: props.schedule._id,
+        schedule: props.schedule,
         status: "Đang chờ khám",
       },
       "Đang tiến hành đặt lịch...."

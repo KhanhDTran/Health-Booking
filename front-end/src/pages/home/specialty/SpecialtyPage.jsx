@@ -31,7 +31,7 @@ export default function SpecialtyPage() {
     dispatch(fetchAllDoctors({ specialty: _id }));
   }, [_id]);
 
-  console.log(doctors);
+ 
 
   // function
   function a() {}

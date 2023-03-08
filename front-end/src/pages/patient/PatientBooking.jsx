@@ -25,8 +25,6 @@ export default function PatientBooking() {
     }
   }, [user]);
 
-  console.log(bookings);
-
   // function
   function a() {}
 
@@ -38,7 +36,11 @@ export default function PatientBooking() {
     ) {
       let res = await deleteRequestToast(
         "/patient/delete-booking",
-        { _id: item._id },
+        {
+          _id: item._id,
+          schedule: item.schedule._id,
+          patient: user.patient._id,
+        },
         "Đang hủy lịch khám bệnh..."
       );
       if (res) dispatch(fetchBookings({ patient: user.patient._id }));
@@ -61,7 +63,7 @@ export default function PatientBooking() {
 
               {!bookings ||
                 (_.isEmpty(bookings) && (
-                  <div className="text-4xl flex justify-center">
+                  <div className="text-4xl flex justify-center h-96">
                     {" "}
                     <span>Không có lịch hẹn khám nào</span>{" "}
                   </div>

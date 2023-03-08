@@ -73,7 +73,7 @@ export default function PatientHeader(props) {
             <div className="navbar-end">
               <div className="dropdown dropdown-end ">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full mr-2 ">
+                  <div className="rounded-full ">
                     <img
                       src={user.patient.image ? user.patient.image : defaultAva}
                     />

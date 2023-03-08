@@ -8,7 +8,8 @@ const BookingSchema = new Schema(
     lab: { type: Schema.Types.String, ref: "Laboratory" },
     patient: { type: Schema.Types.String, ref: "Patient" },
     services: [{ type: Schema.Types.String, ref: "Service" }],
-    schedule: { type: Schema.Types.String, ref: "Schedule" },
+    date: Date,
+    hour: String,
     status: String,
   },
   {

@@ -5,11 +5,11 @@ import _ from "lodash";
 import { toast } from "react-toastify";
 import PatientHeader from "../../components/PatientHeader";
 import Footer from "../../components/Footer";
-import { fetchPatients } from "../../store/features/fetchDataSlice";
 import { putRequestToast } from "../../services/commonSv";
 import defaultAva from "../../assets/images/patient/defaultAva.jpg";
 import { toBase64 } from "../../utils/CommonUtils";
 import { edit_patient_profile } from "../../store/features/userSlice";
+import Err401Page from "../../components/Err401Page";
 
 export default function PatientProfile() {
   const dispatch = useDispatch();
@@ -344,25 +344,7 @@ export default function PatientProfile() {
           <Footer />
         </>
       ) : (
-        <>
-          {" "}
-          <div className="grid  place-items-center py-24 px-6 sm:py-32 lg:px-8">
-            <div className="text-center">
-              <p className="text-base font-semibold text-indigo-600">401</p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                Bạn không có quyền truy cập trang này
-              </h1>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="/"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Về trang chủ
-                </a>
-              </div>
-            </div>
-          </div>
-        </>
+        <Err401Page />
       )}
     </>
   );

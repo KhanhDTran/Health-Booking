@@ -4,10 +4,11 @@ const { Schema } = mongoose;
 const BookingSchema = new Schema(
   {
     clinic: { type: Schema.Types.String, ref: "Clinic" },
-    laboratory: { type: Schema.Types.String, ref: "Laboratory" },
+    doctor: { type: Schema.Types.String, ref: "Doctor" },
+    lab: { type: Schema.Types.String, ref: "Laboratory" },
     patient: { type: Schema.Types.String, ref: "Patient" },
-    hour: String,
-    date: Date,
+    services: [{ type: Schema.Types.String, ref: "Service" }],
+    schedule: { type: Schema.Types.String, ref: "Schedule" },
     status: String,
   },
   {

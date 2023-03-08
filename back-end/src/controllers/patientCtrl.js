@@ -3,6 +3,54 @@ import User from "../schemas/User.js";
 import Patient from "../schemas/Patient.js";
 import { sendVerifyCodeEmail } from "../services/emailSv.js";
 import { genOtp, verifyOtp } from "../utils/otp.js";
+import Booking from "../schemas/Booking.js";
+import Schedule from "../schemas/Schedule.js";
+
+export async function deleteBooking(req, res) {
+  await delay(1000);
+  if (!req.query._id) return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    await Booking.findByIdAndDelete(req.query._id);
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ msg: `Đã hủy lịch khám không thành công ` });
+  }
+  return res.status(200).json({ msg: `Đã hủy lịch khám thành công  ` });
+}
+
+export async function createBooking(req, res) {
+  await delay(1000);
+  if (!req.body.patient || !req.body.schedule || !req.body.services)
+    return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    let checkBooking = await Booking.findOne({
+      clinic: req.body.clinic,
+      patient: req.body.patient,
+      services: req.body.services,
+      schedule: req.body.schedule,
+      doctor: req.body.doctor,
+      status: req.body.status,
+    });
+    if (checkBooking)
+      return res.status(400).json({ msg: "Đã tồn tại lịch hẹn khám." });
+    let newBooking = new Booking({
+      clinic: req.body.clinic,
+      patient: req.body.patient,
+      services: req.body.services,
+      schedule: req.body.schedule,
+      doctor: req.body.doctor,
+      status: req.body.status,
+    });
+    let schedule = await Schedule.findById(req.body.schedule);
+    schedule.patients.push(req.body.patient);
+    await schedule.save();
+    await newBooking.save();
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ msg: `Đã đặt lịch khám không thành công ` });
+  }
+  return res.status(200).json({ msg: `Đã đặt lịch khám thành công  ` });
+}
 
 export async function editProfile(req, res) {
   await delay(1000);

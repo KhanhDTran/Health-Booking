@@ -1,14 +1,32 @@
 import moment from "moment";
 import "moment/locale/vi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { postRequestToast } from "../../../../services/commonSv";
 moment().format();
 
 export default function ModalBooking(props) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
-  async function handleBooking() {}
+  const { user } = useSelector((state) => state.user);
+
+  async function handleBooking() {
+    let res = await postRequestToast(
+      "/patient/create-booking",
+      {
+        clinic: props.clinic._id,
+        patient: user.patient._id,
+        doctor: props.doctor._id,
+        services: [props.service._id],
+        schedule: props.schedule._id,
+        status: "Đang chờ khám",
+      },
+      "Đang tiến hành đặt lịch...."
+    );
+    props.setSchedule(false);
+  }
+
   return (
     <>
       <input

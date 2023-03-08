@@ -6,6 +6,19 @@ import Lab from "../schemas/Laboratory.js";
 import Doctor from "../schemas/Doctor.js";
 import Schedule from "../schemas/Schedule.js";
 import Service from "../schemas/Service.js";
+import Booking from "../schemas/Booking.js";
+
+export async function getBookings(req, res) {
+  console.log(req);
+  let bookings = await Booking.find(req.query).populate([
+    "clinic",
+    "lab",
+    "schedule",
+    "services",
+    "doctor",
+  ]);
+  return res.status(200).json({ bookings });
+}
 
 export async function getPatients(req, res) {
   console.log(req);
@@ -19,7 +32,7 @@ export async function getServices(req, res) {
 }
 
 export async function getSchedules(req, res) {
-  let schedules = await Schedule.find(req.query);
+  let schedules = await Schedule.find(req.query).populate(["patients"]);
   return res.status(200).json({ schedules });
 }
 

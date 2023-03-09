@@ -3,15 +3,18 @@ const { Schema } = mongoose;
 
 const recordSchema = new Schema(
   {
-    patient: { type: Schema.Types.String, ref: "Patient" },
-    doctor: { type: Schema.Types.String, ref: "Doctor" },
-    clinic: { type: Schema.Types.String, ref: "Clinic" },
-    laboratores : [{ type: Schema.Types.ObjectId, ref: 'Laboratory' }],
-    services : [{
-        service:  { type: Schema.Types.ObjectId, ref: 'Service' },
+    booking: { type: Schema.Types.ObjectId, ref: "Booking" },
+    laboratores: [{ type: Schema.Types.ObjectId, ref: "Laboratory" }],
+    LabServices: [
+      {
+        service: { type: Schema.Types.ObjectId, ref: "Service" },
         quantity: String,
         price: String,
-    }]
+      },
+    ],
+    results: [{ type: Schema.Types.ObjectId, ref: "Result" }],
+    conclusion: String,
+    conclusionHtml: String,
   },
   {
     timestamps: true,

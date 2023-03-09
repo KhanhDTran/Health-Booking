@@ -11,6 +11,7 @@ import AdminRoute from "./routes/AdminRoute";
 import PatientRoute from "./routes/PatientRoute";
 import ClinicRoute from "./routes/ClinicRoute";
 import LabRoute from "./routes/LabRoute";
+import 'react-markdown-editor-lite/lib/index.css';
 
 function App() {
   return (

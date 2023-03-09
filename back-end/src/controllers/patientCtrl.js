@@ -6,6 +6,7 @@ import { genOtp, verifyOtp } from "../utils/otp.js";
 import Booking from "../schemas/Booking.js";
 import Schedule from "../schemas/Schedule.js";
 
+
 export async function deleteBooking(req, res) {
   await delay(1000);
   if (!req.query._id) return res.status(400).json({ msg: "Thiếu thông tin" });

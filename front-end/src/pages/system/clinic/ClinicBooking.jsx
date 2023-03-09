@@ -8,6 +8,10 @@ import ClinicHeader from "../../../components/ClinicHeader";
 import DatePicker from "react-datepicker";
 import { fetchBookings } from "../../../store/features/fetchDataSlice";
 import ClinicTablebooking from "./ClinicTablebooking";
+import { putRequestToast } from "../../../services/commonSv";
+import moment from "moment";
+import "moment/locale/vi";
+moment().format();
 
 export default function ClinicBooking() {
   const dispatch = useDispatch();
@@ -17,19 +21,55 @@ export default function ClinicBooking() {
 
   // useState
   const [date, setDate] = useState(new Date(new Date().setHours(0, 0, 0, 0)));
+  const [listBookings, setListBookings] = useState([]);
 
-  console.log(bookings);
+  // console.log(bookings);
 
   // UseEffect
   useEffect(() => {
-    dispatch(fetchBookings({ clinic: user.clinic._id }));
+    dispatch(
+      fetchBookings({ clinic: user.clinic._id, status: "Đang chờ khám" })
+    );
   }, []);
+
+  useEffect(() => {
+    if (bookings) {
+      let list = _.filter(bookings, (o) => {
+        return (
+          moment(o.date).format("DD-MM-YYYY") ===
+          moment(date).format("DD-MM-YYYY")
+        );
+      });
+      setListBookings(list);
+    }
+  }, [bookings]);
 
   // function
   function handleChangeDate(e) {
     setDate(e);
+    let list = _.filter(bookings, (o) => {
+      return (
+        moment(o.date).format("DD-MM-YYYY") === moment(e).format("DD-MM-YYYY")
+      );
+    });
+    setListBookings(list);
   }
-  async function b() {}
+  async function handleAdd(item) {
+    let res = await putRequestToast(
+      "/clinic/edit-booking-to-examining",
+      {
+        _id: item._id,
+        query: {
+          status: "Đang khám",
+        },
+      },
+      `Đang chuyển sang "Đang khám bệnh"...`
+    );
+    if (res)
+      dispatch(
+        fetchBookings({ clinic: user.clinic._id, status: "Đang chờ khám" })
+      );
+  }
 
   return (
     <>
@@ -57,7 +97,19 @@ export default function ClinicBooking() {
         </div>
 
         <div className="divider"></div>
-        <ClinicTablebooking bookings={bookings} />
+        <div className="w-full flex justify-center text-4xl p-10 m-10 text-3xl">
+          Danh sách đang chờ khám
+        </div>
+
+        {listBookings && listBookings.length > 0 ? (
+          <ClinicTablebooking
+            bookings={_.sortBy(listBookings, ["hour"])}
+            handleAdd={handleAdd}
+            status={"Đang chờ khám"}
+          />
+        ) : (
+          <>Không có lịch hẹn hôm này</>
+        )}
       </div>
     </>
   );

@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Error from "../pages/Error";
 import ClinicBooking from "../pages/system/clinic/ClinicBooking";
-import ClinicRecord from "../pages/system/clinic/ClinicRecord";
+import ClinicPatientRecord from "../pages/system/clinic/ClinicPatientRecord";
+import ClinicExaminingList from "../pages/system/clinic/ClinicExaminingList";
 
 export default function ClinicRoute() {
   return (
@@ -10,7 +11,12 @@ export default function ClinicRoute() {
         {/* --------------- Clinic  ----------------------*/}
 
         <Route path="/booking" element={<ClinicBooking />} />
-        <Route path="/record" element={<ClinicRecord />} />
+        <Route path="/examining-list" element={<ClinicExaminingList />} />
+        <Route
+          path="/patient_record/:booking_id"
+          element={<ClinicPatientRecord />}
+        />
+        {/* <Route path="/record" element={<ClinicRecord />} /> */}
 
         <Route path="*" element={<Error />} />
 

@@ -100,7 +100,7 @@ export default function BookingTable(props) {
                           className="btn btn-ghost btn-xs"
                           onClick={() => props.cancleBooking(item)}
                         >
-                          Hủy lịch khám
+                          <i className="fa-solid fa-trash-can text-xl"></i>
                         </button>
                       </th>
                     </tr>

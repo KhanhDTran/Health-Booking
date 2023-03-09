@@ -7,6 +7,37 @@ import Doctor from "../schemas/Doctor.js";
 import Schedule from "../schemas/Schedule.js";
 import Service from "../schemas/Service.js";
 import Booking from "../schemas/Booking.js";
+import Record from "../schemas/Record.js";
+
+export async function getRecords(req, res) {
+  let records = await Record.find(req.query).populate([
+    {
+      path: "booking",
+      populate: {
+        path: "doctor",
+      },
+    },
+    {
+      path: "booking",
+      populate: {
+        path: "clinic",
+      },
+    },
+    {
+      path: "booking",
+      populate: {
+        path: "patient",
+      },
+    },
+    {
+      path: "booking",
+      populate: {
+        path: "services",
+      },
+    },
+  ]);
+  return res.status(200).json({ records });
+}
 
 export async function getBookings(req, res) {
   let bookings = await Booking.find(req.query).populate([

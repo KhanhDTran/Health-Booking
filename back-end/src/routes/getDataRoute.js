@@ -11,6 +11,7 @@ import {
   getServices,
   getPatients,
   getBookings,
+  getRecords,
 } from "../controllers/getDataCtrl.js";
 
 export function getDataRoute(app) {
@@ -23,5 +24,7 @@ export function getDataRoute(app) {
   router.get("/api/getData/get-services", getServices);
   router.get("/api/getData/get-patients", getPatients);
   router.get("/api/getData/get-bookings", getBookings);
+  router.get("/api/getData/get-records", getRecords);
+  
   return app.use("", router);
 }

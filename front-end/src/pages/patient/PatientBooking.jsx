@@ -9,6 +9,9 @@ import { fetchBookings } from "../../store/features/fetchDataSlice";
 import Err401Page from "../../components/Err401Page";
 import BookingTable from "./BookingTable";
 import { deleteRequestToast } from "../../services/commonSv";
+import moment from "moment";
+import "moment/locale/vi";
+moment().format();
 
 export default function PatientBooking() {
   const dispatch = useDispatch();
@@ -31,7 +34,9 @@ export default function PatientBooking() {
   async function cancleBooking(item) {
     if (
       confirm(
-        `Có chắc muốn hủy lịch khám của ${item.doctor.name} vào giờ ${item.schedule.hour} không? `
+        `Có chắc muốn hủy lịch khám của ${item.doctor.name} vào giờ ${
+          item.hour
+        }, ngày ${moment(item.date).format("DD-MM-YYYY")} không? `
       )
     ) {
       let res = await deleteRequestToast(

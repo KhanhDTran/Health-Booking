@@ -3,9 +3,10 @@ const { Schema } = mongoose;
 
 const resultSchema = new Schema(
   {
-    laboratory: { type: Schema.Types.String, ref: "Laboratory" },
-    patient: { type: Schema.Types.String, ref: "Patient" },
-    content: String
+    record: { type: Schema.Types.ObjectId, ref: "Record" },
+    result: String,
+    resultHtml: String,
+    image: String,
   },
   {
     timestamps: true,

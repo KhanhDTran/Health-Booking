@@ -64,17 +64,23 @@ export default function ClinicHeader(props) {
               </li>
               <li></li>
               <li>
+                <NavLink to="/system/clinic/examining-list">
+                  <i className="fa-solid fa-list"></i>
+                  Danh sách đang khám
+                </NavLink>
+              </li>
+              <li></li>
+              {/* <li>
                 <NavLink to="/system/clinic/record">
                   <i className="fa-solid fa-book-medical"></i>
                   Hồ sơ bệnh án
                 </NavLink>
               </li>
-              <li></li>
+              <li></li> */}
               <li>
                 <NavLink
                   to="/login"
                   onClick={() => {
-                   
                     dispatch(logged_out());
                     navigate("/login");
                   }}

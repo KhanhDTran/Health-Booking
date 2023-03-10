@@ -17,6 +17,8 @@ import {
 import { convertToSelectOptions } from "../../../../utils/CommonUtils";
 import SelectLabClinic from "../components/SelectLabClinic";
 import FormService from "./FormService";
+import { customStyles } from "../../../../utils/CommonUtils";
+
 
 export default function ManageService() {
   const dispatch = useDispatch();
@@ -66,7 +68,6 @@ export default function ManageService() {
 
   async function handleDeleteService() {
     if (confirm(`Bạn có muốn xóa dịch vụ: "${service.name}" ?`)) {
-   
       let res = await deleteRequestToast(
         "/delete-service",
         {
@@ -136,7 +137,7 @@ export default function ManageService() {
             lab: selectedLab ? selectedLab._id : null,
           })
         );
-        clearInputs();
+        // clearInputs();
       }
     }
   }

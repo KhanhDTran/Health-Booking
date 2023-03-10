@@ -6,7 +6,7 @@ const resultSchema = new Schema(
     record: { type: Schema.Types.ObjectId, ref: "Record" },
     result: String,
     resultHtml: String,
-    image: String,
+    images: [String],
   },
   {
     timestamps: true,

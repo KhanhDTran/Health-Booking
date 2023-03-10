@@ -4,12 +4,11 @@ const { Schema } = mongoose;
 const recordSchema = new Schema(
   {
     booking: { type: Schema.Types.ObjectId, ref: "Booking" },
-    laboratores: [{ type: Schema.Types.ObjectId, ref: "Laboratory" }],
-    LabServices: [
+    labs: [{ type: Schema.Types.ObjectId, ref: "Laboratory" }],
+    labServices: [
       {
         service: { type: Schema.Types.ObjectId, ref: "Service" },
         quantity: String,
-        price: String,
       },
     ],
     results: [{ type: Schema.Types.ObjectId, ref: "Result" }],

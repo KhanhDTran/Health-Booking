@@ -35,6 +35,16 @@ export async function getRecords(req, res) {
         path: "services",
       },
     },
+    {
+      path: "labServices",
+      populate: {
+        path: "service",
+        populate: "lab",
+      },
+    },
+    {
+      path: "labs",
+    },
   ]);
   return res.status(200).json({ records });
 }
@@ -56,7 +66,7 @@ export async function getPatients(req, res) {
 }
 
 export async function getServices(req, res) {
-  let services = await Service.find(req.query);
+  let services = await Service.find(req.query).populate("lab");
   return res.status(200).json({ services });
 }
 

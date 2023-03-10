@@ -778,4 +778,2404 @@
     }
   },
   "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9527fd5b2a0e852bf402"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 1",
+  "unit": "lần ",
+  "unitPrice": "120",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415143037"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415143037"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9549fd5b2a0e852bf40d"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 2",
+  "unit": "lần",
+  "unitPrice": "80",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415177708"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415177708"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9550fd5b2a0e852bf411"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 3",
+  "unit": "lần",
+  "unitPrice": "140",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415184028"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415184028"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a955afd5b2a0e852bf415"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 4",
+  "unit": "lần",
+  "unitPrice": "90",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415194547"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415194547"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9560fd5b2a0e852bf419"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 5",
+  "unit": "lần",
+  "unitPrice": "150",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415200205"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415200205"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9569fd5b2a0e852bf41d"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 6",
+  "unit": "lần",
+  "unitPrice": "60",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415209054"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415209054"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9570fd5b2a0e852bf421"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 7",
+  "unit": "lần",
+  "unitPrice": "80",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415216131"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415216131"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9576fd5b2a0e852bf425"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 8",
+  "unit": "lần",
+  "unitPrice": "50",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415222037"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415222037"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a957cfd5b2a0e852bf429"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 9",
+  "unit": "lần",
+  "unitPrice": "135",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415228405"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415228405"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9583fd5b2a0e852bf42d"
+  },
+  "clinic": null,
+  "lab": "6401d1dad3a9838399360755",
+  "name": "Lab1 Xét nghiệm máu 10",
+  "unit": "lần",
+  "unitPrice": "40",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415235958"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415235958"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95a7fd5b2a0e852bf43a"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 1",
+  "unit": "lần ",
+  "unitPrice": "40",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415271534"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415271534"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95acfd5b2a0e852bf43e"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 2",
+  "unit": "lần ",
+  "unitPrice": "55",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415276079"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415276079"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95b1fd5b2a0e852bf442"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 3",
+  "unit": "lần ",
+  "unitPrice": "65",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415281395"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415281395"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95b7fd5b2a0e852bf446"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 4",
+  "unit": "lần ",
+  "unitPrice": "85",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415287358"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415287358"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95bcfd5b2a0e852bf44a"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 5",
+  "unit": "lần ",
+  "unitPrice": "100",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415292957"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415292957"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95c3fd5b2a0e852bf44e"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 6",
+  "unit": "lần ",
+  "unitPrice": "95",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415299209"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415299209"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95c7fd5b2a0e852bf452"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 7",
+  "unit": "lần ",
+  "unitPrice": "120",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415303457"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415303457"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95ccfd5b2a0e852bf456"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 8",
+  "unit": "lần ",
+  "unitPrice": "130",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415308546"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415308546"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95d0fd5b2a0e852bf45a"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 9",
+  "unit": "lần ",
+  "unitPrice": "145",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415312503"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415312503"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95d6fd5b2a0e852bf45e"
+  },
+  "clinic": null,
+  "lab": "6401d1f4d3a983839936075b",
+  "name": "Lab2 Xét nghiệm nước tiểu 10",
+  "unit": "lần ",
+  "unitPrice": "45",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415318916"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415318916"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95ecfd5b2a0e852bf463"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 1",
+  "unit": "lần ",
+  "unitPrice": "105",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415340766"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415340766"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95f1fd5b2a0e852bf467"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 2",
+  "unit": "lần ",
+  "unitPrice": "120",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415345901"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415345901"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95f5fd5b2a0e852bf46b"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 3",
+  "unit": "lần ",
+  "unitPrice": "200",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415349998"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415349998"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95f9fd5b2a0e852bf46f"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 4",
+  "unit": "lần ",
+  "unitPrice": "205",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415353889"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415353889"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a95fffd5b2a0e852bf473"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 5",
+  "unit": "lần ",
+  "unitPrice": "175",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415359426"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415359426"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9603fd5b2a0e852bf477"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 6",
+  "unit": "lần ",
+  "unitPrice": "190",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415363732"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415363732"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9609fd5b2a0e852bf47b"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 7",
+  "unit": "lần ",
+  "unitPrice": "270",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415369950"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415369950"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a960efd5b2a0e852bf47f"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 8",
+  "unit": "lần ",
+  "unitPrice": "240",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415374520"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415374520"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9615fd5b2a0e852bf483"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 9",
+  "unit": "lần ",
+  "unitPrice": "320",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415381451"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415381451"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a961afd5b2a0e852bf487"
+  },
+  "clinic": null,
+  "lab": "6401d203d3a9838399360761",
+  "name": "Lab3 Siêu âm 10",
+  "unit": "lần ",
+  "unitPrice": "350",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415386559"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415386559"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9632fd5b2a0e852bf48c"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 1",
+  "unit": "lần ",
+  "unitPrice": "230",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415410266"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415410266"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9637fd5b2a0e852bf490"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 2",
+  "unit": "lần ",
+  "unitPrice": "320",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415415703"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415415703"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a963cfd5b2a0e852bf494"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 3",
+  "unit": "lần ",
+  "unitPrice": "410",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415420314"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415420314"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9640fd5b2a0e852bf498"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 4",
+  "unit": "lần ",
+  "unitPrice": "140",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415424291"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415424291"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9644fd5b2a0e852bf49c"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 5",
+  "unit": "lần ",
+  "unitPrice": "240",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415428793"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415428793"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a964cfd5b2a0e852bf4a0"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 6",
+  "unit": "lần ",
+  "unitPrice": "380",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415436205"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415436205"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9651fd5b2a0e852bf4a4"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 7",
+  "unit": "lần ",
+  "unitPrice": "400",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415441665"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415441665"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9658fd5b2a0e852bf4a8"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 8",
+  "unit": "lần ",
+  "unitPrice": "340",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415448506"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415448506"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a965ffd5b2a0e852bf4ac"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 9",
+  "unit": "lần ",
+  "unitPrice": "200",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415455061"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415455061"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9665fd5b2a0e852bf4b0"
+  },
+  "clinic": null,
+  "lab": "6401d213d3a9838399360767",
+  "name": "Lab4 chụp X-quang 10",
+  "unit": "lần ",
+  "unitPrice": "170",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415461139"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415461139"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a968cfd5b2a0e852bf4b5"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 1",
+  "unit": "lần ",
+  "unitPrice": "500",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415500775"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415511748"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96a6fd5b2a0e852bf4bb"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 2",
+  "unit": "lần ",
+  "unitPrice": "450",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415526914"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415526914"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96adfd5b2a0e852bf4bf"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 3",
+  "unit": "lần ",
+  "unitPrice": "640",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415533640"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415533640"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96b2fd5b2a0e852bf4c3"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 4",
+  "unit": "lần ",
+  "unitPrice": "740",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415538654"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415538654"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96b7fd5b2a0e852bf4c7"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 5",
+  "unit": "lần ",
+  "unitPrice": "305",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415543702"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415543702"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96c0fd5b2a0e852bf4cb"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 6",
+  "unit": "lần ",
+  "unitPrice": "450",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415552397"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415552397"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96c5fd5b2a0e852bf4cf"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 7",
+  "unit": "lần ",
+  "unitPrice": "740",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415557174"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415557174"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96c9fd5b2a0e852bf4d3"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 8",
+  "unit": "lần ",
+  "unitPrice": "820",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415561729"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415561729"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96d3fd5b2a0e852bf4d7"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 9",
+  "unit": "lần ",
+  "unitPrice": "720",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415571582"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415571582"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96d9fd5b2a0e852bf4db"
+  },
+  "clinic": null,
+  "lab": "6401d23dd3a983839936076d",
+  "name": "Lab5 Chụp cộng hưởng từ 10",
+  "unit": "lần ",
+  "unitPrice": "1050",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415577553"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415577553"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96eefd5b2a0e852bf4e0"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 1",
+  "unit": "lần ",
+  "unitPrice": "70",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415598473"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415598473"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96f2fd5b2a0e852bf4e4"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 2",
+  "unit": "lần ",
+  "unitPrice": "80",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415602077"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415602077"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96f7fd5b2a0e852bf4e8"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 3",
+  "unit": "lần ",
+  "unitPrice": "90",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415607407"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415607407"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a96fbfd5b2a0e852bf4ec"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 4",
+  "unit": "lần ",
+  "unitPrice": "100",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415611720"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415611720"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9702fd5b2a0e852bf4f0"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 5",
+  "unit": "lần ",
+  "unitPrice": "110",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415618741"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415618741"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9708fd5b2a0e852bf4f4"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 6",
+  "unit": "lần ",
+  "unitPrice": "120",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415624144"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415624144"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a970dfd5b2a0e852bf4f8"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 7",
+  "unit": "lần ",
+  "unitPrice": "130",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415629519"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415629519"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9711fd5b2a0e852bf4fc"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 8",
+  "unit": "lần ",
+  "unitPrice": "140",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415633584"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415633584"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9734fd5b2a0e852bf500"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 9",
+  "unit": "lần ",
+  "unitPrice": "150",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415668937"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415668937"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9738fd5b2a0e852bf504"
+  },
+  "clinic": null,
+  "lab": "6401d24fd3a9838399360773",
+  "name": "Lab6 Xét nghiệm nước tiểu 10",
+  "unit": "lần ",
+  "unitPrice": "160",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415672801"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415672801"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9754fd5b2a0e852bf50a"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 1",
+  "unit": "lần ",
+  "unitPrice": "300",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415700323"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415700323"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9758fd5b2a0e852bf50e"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 2",
+  "unit": "lần ",
+  "unitPrice": "320",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415704190"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415704190"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a975bfd5b2a0e852bf512"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 3",
+  "unit": "lần ",
+  "unitPrice": "350",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415707759"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415707759"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9760fd5b2a0e852bf516"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 4",
+  "unit": "lần ",
+  "unitPrice": "540",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415712184"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415712184"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9767fd5b2a0e852bf51a"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 5",
+  "unit": "lần ",
+  "unitPrice": "305",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415719444"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415719444"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a976cfd5b2a0e852bf51e"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 6",
+  "unit": "lần ",
+  "unitPrice": "470",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415724970"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415724970"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9773fd5b2a0e852bf522"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 7",
+  "unit": "lần ",
+  "unitPrice": "650",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415731193"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415731193"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9778fd5b2a0e852bf526"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 8",
+  "unit": "lần ",
+  "unitPrice": "380",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415736553"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415736553"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a977dfd5b2a0e852bf52a"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 9",
+  "unit": "lần ",
+  "unitPrice": "370",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415741868"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415741868"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9782fd5b2a0e852bf52e"
+  },
+  "clinic": null,
+  "lab": "6401d263d3a9838399360779",
+  "name": "Lab7 Chụp X-Quang 10",
+  "unit": "lần ",
+  "unitPrice": "640",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415746787"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415746787"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9797fd5b2a0e852bf533"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 1",
+  "unit": "lần ",
+  "unitPrice": "70",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415767200"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415767200"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a979dfd5b2a0e852bf537"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 2",
+  "unit": "lần ",
+  "unitPrice": "80",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415773724"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415773724"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97a1fd5b2a0e852bf53b"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 3",
+  "unit": "lần ",
+  "unitPrice": "90",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415777054"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415777054"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97a4fd5b2a0e852bf53f"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 4",
+  "unit": "lần ",
+  "unitPrice": "100",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415780409"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415780409"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97a8fd5b2a0e852bf543"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 5",
+  "unit": "lần ",
+  "unitPrice": "110",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415784572"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415784572"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97acfd5b2a0e852bf547"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 6",
+  "unit": "lần ",
+  "unitPrice": "120",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415788541"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415788541"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97b0fd5b2a0e852bf54b"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 7",
+  "unit": "lần ",
+  "unitPrice": "130",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415792425"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415792425"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97b4fd5b2a0e852bf54f"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 8",
+  "unit": "lần ",
+  "unitPrice": "140",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415796322"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415796322"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97b8fd5b2a0e852bf553"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 9",
+  "unit": "lần ",
+  "unitPrice": "120",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415800462"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415800462"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97bcfd5b2a0e852bf557"
+  },
+  "clinic": null,
+  "lab": "6401d273d3a983839936077f",
+  "name": "Lab8 Xét nghiệm máu 10",
+  "unit": "lần ",
+  "unitPrice": "100",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415804190"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415804190"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97e4fd5b2a0e852bf55c"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 1",
+  "unit": "lần ",
+  "unitPrice": "70",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415844852"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415844852"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97e9fd5b2a0e852bf560"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 2",
+  "unit": "lần ",
+  "unitPrice": "50",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415849111"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415849111"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97edfd5b2a0e852bf564"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 3",
+  "unit": "lần ",
+  "unitPrice": "70",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415853323"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415853323"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97f0fd5b2a0e852bf568"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 4",
+  "unit": "lần ",
+  "unitPrice": "80",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415856875"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415856875"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a97f5fd5b2a0e852bf56c"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 5",
+  "unit": "lần ",
+  "unitPrice": "105",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415861542"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415870190"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a980dfd5b2a0e852bf572"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 6",
+  "unit": "lần ",
+  "unitPrice": "120",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415885501"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415885501"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9813fd5b2a0e852bf576"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 7",
+  "unit": "lần ",
+  "unitPrice": "130",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415891423"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415891423"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9816fd5b2a0e852bf57a"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 8",
+  "unit": "lần ",
+  "unitPrice": "140",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415894986"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415894986"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a981cfd5b2a0e852bf57e"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 9",
+  "unit": "lần ",
+  "unitPrice": "115",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415900573"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415900573"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9820fd5b2a0e852bf582"
+  },
+  "clinic": null,
+  "lab": "6401d284d3a9838399360785",
+  "name": "Lab9 Xét nghiệm nước tiểu 10",
+  "unit": "lần ",
+  "unitPrice": "80",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415904739"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415904739"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9838fd5b2a0e852bf587"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 1",
+  "unit": "lần ",
+  "unitPrice": "300",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415928351"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415928351"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a983bfd5b2a0e852bf58b"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 2",
+  "unit": "lần ",
+  "unitPrice": "340",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415931985"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415931985"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9840fd5b2a0e852bf58f"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 3",
+  "unit": "lần ",
+  "unitPrice": "430",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415936851"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415936851"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9845fd5b2a0e852bf593"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 4",
+  "unit": "lần ",
+  "unitPrice": "500",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415941139"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415941139"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9849fd5b2a0e852bf597"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 5",
+  "unit": "lần ",
+  "unitPrice": "520",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415945681"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415945681"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a984dfd5b2a0e852bf59b"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 6",
+  "unit": "lần ",
+  "unitPrice": "480",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415949882"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415949882"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9852fd5b2a0e852bf59f"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 7",
+  "unit": "lần ",
+  "unitPrice": "350",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415954685"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415954685"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9857fd5b2a0e852bf5a3"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 8",
+  "unit": "lần ",
+  "unitPrice": "270",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415959613"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415959613"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a985bfd5b2a0e852bf5a7"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 9",
+  "unit": "lần ",
+  "unitPrice": "160",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415963817"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415963817"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9861fd5b2a0e852bf5ab"
+  },
+  "clinic": null,
+  "lab": "6401d294d3a983839936078b",
+  "name": "Lab10 Siêu âm 10",
+  "unit": "lần ",
+  "unitPrice": "340",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415969508"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415969508"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9873fd5b2a0e852bf5b0"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 1",
+  "unit": "lần ",
+  "unitPrice": "50",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415987722"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415987722"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9877fd5b2a0e852bf5b4"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 2",
+  "unit": "lần ",
+  "unitPrice": "70",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415991423"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415991423"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a987afd5b2a0e852bf5b8"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 3",
+  "unit": "lần ",
+  "unitPrice": "80",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415994750"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415994750"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a987efd5b2a0e852bf5bc"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 4",
+  "unit": "lần ",
+  "unitPrice": "90",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678415998243"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678415998243"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9881fd5b2a0e852bf5c0"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 5",
+  "unit": "lần ",
+  "unitPrice": "100",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416001540"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416001540"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a9885fd5b2a0e852bf5c4"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 6",
+  "unit": "lần ",
+  "unitPrice": "105",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416005302"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416018849"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a988efd5b2a0e852bf5c8"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 7",
+  "unit": "lần ",
+  "unitPrice": "115",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416014762"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416014762"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a989ffd5b2a0e852bf5ce"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 8",
+  "unit": "lần ",
+  "unitPrice": "90",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416031470"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416031470"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98a4fd5b2a0e852bf5d2"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 9",
+  "unit": "lần ",
+  "unitPrice": "95",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416036954"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416036954"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98a9fd5b2a0e852bf5d6"
+  },
+  "clinic": null,
+  "lab": "6401d2a4d3a9838399360791",
+  "name": "Lab11 Xét nghiệm nước tiểu 10",
+  "unit": "lần ",
+  "unitPrice": "130",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416041309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416041309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98bbfd5b2a0e852bf5db"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 1",
+  "unit": "lần ",
+  "unitPrice": "50",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416059465"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416059465"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98befd5b2a0e852bf5df"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 2",
+  "unit": "lần ",
+  "unitPrice": "80",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416062846"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416062846"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98c2fd5b2a0e852bf5e3"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 3",
+  "unit": "lần ",
+  "unitPrice": "40",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416066011"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416066011"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98c6fd5b2a0e852bf5e7"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 4",
+  "unit": "lần ",
+  "unitPrice": "205",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416070597"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416070597"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98ccfd5b2a0e852bf5eb"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 5",
+  "unit": "lần ",
+  "unitPrice": "310",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416076849"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416076849"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98d0fd5b2a0e852bf5ef"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 6",
+  "unit": "lần ",
+  "unitPrice": "270",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416080875"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416080875"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98d4fd5b2a0e852bf5f3"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 7",
+  "unit": "lần ",
+  "unitPrice": "250",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416084783"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416084783"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98defd5b2a0e852bf5f7"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 8",
+  "unit": "lần ",
+  "unitPrice": "420",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416094346"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416094346"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98e4fd5b2a0e852bf5fb"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 9",
+  "unit": "lần ",
+  "unitPrice": "530",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416100418"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416100418"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640a98eafd5b2a0e852bf5ff"
+  },
+  "clinic": null,
+  "lab": "6401d2b1d3a9838399360797",
+  "name": "Lab12 Chụp X-Quang 10",
+  "unit": "lần ",
+  "unitPrice": "720",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678416106099"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678416106099"
+    }
+  },
+  "__v": 0
 }]

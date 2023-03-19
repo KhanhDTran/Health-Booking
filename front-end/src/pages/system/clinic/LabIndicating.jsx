@@ -42,7 +42,6 @@ export default function LabIndicating(props) {
   useEffect(() => {
     if (props.record.labServices && props.record.labServices.length > 0) {
       let list = _.map(props.record.labServices, (o) => {
-        console.log(o);
         let x = {
           quantity: o.quantity,
           service: o.service,
@@ -141,9 +140,8 @@ export default function LabIndicating(props) {
       return o.service.lab._id;
     });
     let labs = _.uniq(_.sortBy(x));
-    console.log(labs);
     await putRequestToast(
-      "/clinic/edit-patient-record",
+      "/clinic/indicate-labs",
       {
         _id: props.record._id,
         query: {

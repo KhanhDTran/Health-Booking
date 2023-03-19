@@ -27,10 +27,11 @@ export default function BookingTable(props) {
                   <th>Dịch vụ</th>
                   <th>Thời gian</th>
                   <th>Trạng thái</th>
+                  {props.record && <th>Hồ sơ bênh án</th>}
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="h-40">
                 {props.bookings.map((item, index) => {
                   return (
                     <tr key={item._id}>
@@ -95,14 +96,29 @@ export default function BookingTable(props) {
                       <td>
                         <span>{item.status} </span>
                       </td>
-                      <th>
-                        <button
-                          className="btn btn-ghost btn-xs"
-                          onClick={() => props.cancleBooking(item)}
-                        >
-                          <i className="fa-solid fa-trash-can text-xl"></i>
-                        </button>
-                      </th>
+                      <td>
+                        {item.status === "Đang chờ khám" ? (
+                          <>
+                            <button
+                              className="btn btn-ghost btn-xs"
+                              onClick={() => props.cancleBooking(item)}
+                            >
+                              <i className="fa-solid fa-trash-can text-xl"></i>
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <button
+                              className="btn btn-ghost btn-xs"
+                              onClick={() =>
+                                navigate(`/patient/detail-record/${item._id}`)
+                              }
+                            >
+                              Chi tiết
+                            </button>
+                          </>
+                        )}
+                      </td>
                     </tr>
                   );
                 })}
@@ -116,6 +132,7 @@ export default function BookingTable(props) {
                   <th>Dịch vụ</th>
                   <th>Thời gian</th>
                   <th>Trạng thái</th>
+                  {props.record && <th>Hồ sơ bênh án</th>}
                   <th></th>
                 </tr>
               </tfoot>

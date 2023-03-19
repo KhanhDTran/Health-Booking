@@ -39,11 +39,13 @@ export default function PatientBooking() {
         }, ngày ${moment(item.date).format("DD-MM-YYYY")} không? `
       )
     ) {
+      console.log(item);
       let res = await deleteRequestToast(
         "/patient/delete-booking",
         {
           _id: item._id,
-          schedule: item.schedule._id,
+          hour: item.hour,
+          date: item.date,
           patient: user.patient._id,
         },
         "Đang hủy lịch khám bệnh..."
@@ -57,14 +59,19 @@ export default function PatientBooking() {
       <PatientHeader />
       {role && role === "patient" ? (
         <div>
-          <div className="container mx-auto m-4">
+          <div className="container mx-auto m-4 min-h-screen">
             <div className="flex flex-col gap-4">
               <div className="flex w-full justify-center text-4xl">
                 <span className="p-4 m-4">Lịch hẹn khám bệnh</span>
               </div>
               {/* -------- */}
 
-              <BookingTable bookings={bookings} cancleBooking={cancleBooking} />
+              <BookingTable
+                bookings={_.filter(bookings, (o) => {
+                  return o.status === "Đang chờ khám";
+                })}
+                cancleBooking={cancleBooking}
+              />
 
               {!bookings ||
                 (_.isEmpty(bookings) && (

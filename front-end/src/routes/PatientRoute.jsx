@@ -3,6 +3,7 @@ import Error from "../pages/Error";
 import PatientProfile from "../pages/patient/PatientProfile";
 import PatientBooking from "../pages/patient/PatientBooking";
 import PatientRecord from "../pages/patient/PatientRecord";
+import PatientDetailRecord from "../pages/patient/PatientDetailRecord";
 
 export default function PatientRoute() {
   return (
@@ -12,7 +13,8 @@ export default function PatientRoute() {
 
         <Route path="/profile/" element={<PatientProfile />} />
         <Route path="/booking" element={<PatientBooking />} />
-        <Route path="/record" element={<PatientRecord />} />
+        <Route path="/records" element={<PatientRecord />} />
+        <Route path="/detail-record/:booking_id" element={<PatientDetailRecord />} />
 
         <Route path="*" element={<Error />} />
 

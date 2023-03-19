@@ -59,32 +59,9 @@ export default function ClinicPatientRecord() {
       <ClinicHeader />
       {records && records.length > 0 ? (
         <>
-          {" "}
           <div className="container mx-auto p-4 m-4">
             <div className="flex flex-col gap-4">
               <PatientRecordInfor records={records} />
-              {/* --------------- Chỉ định khám lâm sàng------------------------ */}
-
-              <div className="divider"></div>
-
-              <div className="w-full flex justify-center text-4xl">
-                <span>Chỉ định khám lâm sàng</span>
-              </div>
-              <div className="w-full flex justify-center text-4xl">
-                <select
-                  className="select select-info w-full max-w-xs "
-                  onChange={(e) => {
-                    if (e.target.value === "1") setShowLabIndicating(false);
-                    if (e.target.value === "2") setShowLabIndicating(true);
-                  }}
-                >
-                  <option value={"1"}>Ẩn chỉ định khám lâm sàng</option>
-                  <option value={"2"}>Hiện chỉ định khám lâm sàng</option>
-                </select>
-              </div>
-              {showLabIndicating && (
-                <LabIndicating {...{ record: records[0] }} />
-              )}
 
               {/* ------------------ kết luận kết quả --------------------- */}
 
@@ -129,6 +106,30 @@ export default function ClinicPatientRecord() {
                   </div>
                 </>
               )}
+              {/* --------------- Chỉ định khám lâm sàng------------------------ */}
+
+              <div className="divider"></div>
+
+              <div className="w-full flex justify-center text-4xl">
+                <span>Chỉ định khám lâm sàng</span>
+              </div>
+              <div className="w-full flex justify-center text-4xl">
+                <select
+                  className="select select-info w-full max-w-xs "
+                  onChange={(e) => {
+                    if (e.target.value === "1") setShowLabIndicating(false);
+                    if (e.target.value === "2") setShowLabIndicating(true);
+                  }}
+                >
+                  <option value={"1"}>Ẩn chỉ định khám lâm sàng</option>
+                  <option value={"2"}>Hiện chỉ định khám lâm sàng</option>
+                </select>
+              </div>
+              {showLabIndicating && (
+                <LabIndicating {...{ record: records[0] }} />
+              )}
+
+              {/* -------------------------------------------------- */}
             </div>
           </div>
         </>

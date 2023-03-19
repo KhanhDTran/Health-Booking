@@ -102,7 +102,7 @@ export default function PatientHeader(props) {
                   </li>
                   <li></li>
                   <li>
-                    <NavLink to="/patient/record/">
+                    <NavLink to="/patient/records/">
                       <i className="fa-solid fa-book-medical"></i>
                       Hồ sơ bệnh án
                     </NavLink>

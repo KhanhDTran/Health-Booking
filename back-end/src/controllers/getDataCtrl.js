@@ -1,4 +1,3 @@
-import { delay } from "../utils/commonUtils.js";
 import Patient from "../schemas/Patient.js";
 import Speciaalty from "../schemas/Specialty.js";
 import Clinic from "../schemas/Clinic.js";

@@ -6,6 +6,7 @@ import _ from "lodash";
 import moment from "moment";
 import "moment/locale/vi";
 moment().format();
+import { putRequestToast } from "../../services/commonSv";
 
 export default function ModalLabBooking(props) {
   const dispatch = useDispatch();
@@ -37,7 +38,22 @@ export default function ModalLabBooking(props) {
     dispatch(fetchScedules({ lab: props.selectedLab._id, date: e }));
   }
 
-  async function handleCreateLab() {}
+  async function handleLabBooking() {
+    let res = await postRequestToast(
+      "/patient/create-booking",
+      {
+        clinic: props.clinic._id,
+        patient: user.patient._id,
+        doctor: props.doctor._id,
+        services: [props.service._id],
+        schedule: props.schedule,
+        status: "Đang chờ khám",
+      },
+      "Đang tiến hành đặt lịch...."
+    );
+    setSelectedHour(null);
+    props.setOpenModalBooking(false)
+  }
 
   return (
     <>
@@ -54,6 +70,7 @@ export default function ModalLabBooking(props) {
             className="btn btn-sm btn-circle absolute right-2 top-2"
             onClick={() => {
               props.setOpenModalBooking(false);
+              setSelectedHour(null);
             }}
           >
             ✕
@@ -155,7 +172,7 @@ export default function ModalLabBooking(props) {
           <div className="flex justify-center mt-10 bot-0 ">
             <button
               className="btn btn-info"
-              onClick={handleCreateLab}
+              onClick={handleLabBooking}
               disabled={selectedHour ? false : true}
             >
               Đăng ký

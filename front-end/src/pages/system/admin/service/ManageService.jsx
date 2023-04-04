@@ -19,9 +19,12 @@ import SelectLabClinic from "../components/SelectLabClinic";
 import FormService from "./FormService";
 import { customStyles } from "../../../../utils/CommonUtils";
 
-
 export default function ManageService() {
   const dispatch = useDispatch();
+  useEffect(() => {
+    document.title = "Đăng ký | D ịch vụ y tế";
+    window.scrollTo(0, 0);
+  }, []);
 
   const { role } = useSelector((state) => state.user);
 
@@ -157,7 +160,7 @@ export default function ManageService() {
             <AdminHeader />
             <div className="container mx-auto flex flex-col">
               <div className="title text-md lg:text-3xl p-4 m-4 bg-base-300 rounded-box text-center">
-                <span className="">Thời Gian Biểu </span>{" "}
+                <span className="">Dịch vụ y tế </span>{" "}
               </div>
               <SelectLabClinic
                 {...{

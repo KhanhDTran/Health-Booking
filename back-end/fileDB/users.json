@@ -14,14 +14,10 @@
   "role": "clinic",
   "clinic": "6401cba876a69e699750f8b9",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839272986"
-    }
+    "$date": "2023-03-03T10:27:52.986Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839272986"
-    }
+    "$date": "2023-03-03T10:27:52.986Z"
   },
   "__v": 0
 },{
@@ -33,14 +29,10 @@
   "role": "clinic",
   "clinic": "6401cbca76a69e699750f8bf",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839306233"
-    }
+    "$date": "2023-03-03T10:28:26.233Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839306233"
-    }
+    "$date": "2023-03-03T10:28:26.233Z"
   },
   "__v": 0
 },{
@@ -52,14 +44,10 @@
   "role": "clinic",
   "clinic": "6401cbda76a69e699750f8c5",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839322474"
-    }
+    "$date": "2023-03-03T10:28:42.474Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839322474"
-    }
+    "$date": "2023-03-03T10:28:42.474Z"
   },
   "__v": 0
 },{
@@ -71,14 +59,10 @@
   "role": "clinic",
   "clinic": "6401cbf576a69e699750f8cb",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839349771"
-    }
+    "$date": "2023-03-03T10:29:09.771Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839349771"
-    }
+    "$date": "2023-03-03T10:29:09.771Z"
   },
   "__v": 0
 },{
@@ -90,14 +74,10 @@
   "role": "clinic",
   "clinic": "6401cc1076a69e699750f8d1",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839376519"
-    }
+    "$date": "2023-03-03T10:29:36.519Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839376519"
-    }
+    "$date": "2023-03-03T10:29:36.519Z"
   },
   "__v": 0
 },{
@@ -109,14 +89,10 @@
   "role": "clinic",
   "clinic": "6401cc2876a69e699750f8d7",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839400388"
-    }
+    "$date": "2023-03-03T10:30:00.388Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839400388"
-    }
+    "$date": "2023-03-03T10:30:00.388Z"
   },
   "__v": 0
 },{
@@ -128,14 +104,10 @@
   "role": "clinic",
   "clinic": "6401cc5576a69e699750f8dd",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839445058"
-    }
+    "$date": "2023-03-03T10:30:45.058Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839445058"
-    }
+    "$date": "2023-03-03T10:30:45.058Z"
   },
   "__v": 0
 },{
@@ -147,14 +119,10 @@
   "role": "clinic",
   "clinic": "6401cc6b76a69e699750f8e3",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839467585"
-    }
+    "$date": "2023-03-03T10:31:07.585Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839467585"
-    }
+    "$date": "2023-03-03T10:31:07.585Z"
   },
   "__v": 0
 },{
@@ -166,14 +134,10 @@
   "role": "clinic",
   "clinic": "6401cc7c76a69e699750f8e9",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839484885"
-    }
+    "$date": "2023-03-03T10:31:24.885Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839484885"
-    }
+    "$date": "2023-03-03T10:31:24.885Z"
   },
   "__v": 0
 },{
@@ -185,14 +149,10 @@
   "role": "clinic",
   "clinic": "6401cc9276a69e699750f8ef",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839506505"
-    }
+    "$date": "2023-03-03T10:31:46.505Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839506505"
-    }
+    "$date": "2023-03-03T10:31:46.505Z"
   },
   "__v": 0
 },{
@@ -204,14 +164,10 @@
   "role": "clinic",
   "clinic": "6401cca876a69e699750f8f5",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839528251"
-    }
+    "$date": "2023-03-03T10:32:08.251Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839528251"
-    }
+    "$date": "2023-03-03T10:32:08.251Z"
   },
   "__v": 0
 },{
@@ -223,14 +179,10 @@
   "role": "clinic",
   "clinic": "6401ccb576a69e699750f8fb",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839541895"
-    }
+    "$date": "2023-03-03T10:32:21.895Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839541895"
-    }
+    "$date": "2023-03-03T10:32:21.895Z"
   },
   "__v": 0
 },{
@@ -242,14 +194,10 @@
   "role": "clinic",
   "clinic": "6401ccc376a69e699750f901",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677839555509"
-    }
+    "$date": "2023-03-03T10:32:35.509Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677839555509"
-    }
+    "$date": "2023-03-03T10:32:35.509Z"
   },
   "__v": 0
 },{
@@ -261,14 +209,10 @@
   "role": "lab",
   "lab": "6401d1dad3a9838399360755",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677840858710"
-    }
+    "$date": "2023-03-03T10:54:18.710Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677840858710"
-    }
+    "$date": "2023-03-03T10:54:18.710Z"
   },
   "__v": 0
 },{
@@ -280,14 +224,10 @@
   "role": "lab",
   "lab": "6401d1f4d3a983839936075b",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677840884158"
-    }
+    "$date": "2023-03-03T10:54:44.158Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677840884158"
-    }
+    "$date": "2023-03-03T10:54:44.158Z"
   },
   "__v": 0
 },{
@@ -299,14 +239,10 @@
   "role": "lab",
   "lab": "6401d203d3a9838399360761",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677840899695"
-    }
+    "$date": "2023-03-03T10:54:59.695Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677840899695"
-    }
+    "$date": "2023-03-03T10:54:59.695Z"
   },
   "__v": 0
 },{
@@ -318,14 +254,10 @@
   "role": "lab",
   "lab": "6401d213d3a9838399360767",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677840915595"
-    }
+    "$date": "2023-03-03T10:55:15.595Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677840915595"
-    }
+    "$date": "2023-03-03T10:55:15.595Z"
   },
   "__v": 0
 },{
@@ -337,14 +269,10 @@
   "role": "lab",
   "lab": "6401d23dd3a983839936076d",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677840957209"
-    }
+    "$date": "2023-03-03T10:55:57.209Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677840957209"
-    }
+    "$date": "2023-03-03T10:55:57.209Z"
   },
   "__v": 0
 },{
@@ -356,14 +284,10 @@
   "role": "lab",
   "lab": "6401d24fd3a9838399360773",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677840975841"
-    }
+    "$date": "2023-03-03T10:56:15.841Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677840975841"
-    }
+    "$date": "2023-03-03T10:56:15.841Z"
   },
   "__v": 0
 },{
@@ -375,14 +299,10 @@
   "role": "lab",
   "lab": "6401d263d3a9838399360779",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677840995144"
-    }
+    "$date": "2023-03-03T10:56:35.144Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677840995144"
-    }
+    "$date": "2023-03-03T10:56:35.144Z"
   },
   "__v": 0
 },{
@@ -394,14 +314,10 @@
   "role": "lab",
   "lab": "6401d273d3a983839936077f",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677841011733"
-    }
+    "$date": "2023-03-03T10:56:51.733Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677841011733"
-    }
+    "$date": "2023-03-03T10:56:51.733Z"
   },
   "__v": 0
 },{
@@ -413,14 +329,10 @@
   "role": "lab",
   "lab": "6401d284d3a9838399360785",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677841028539"
-    }
+    "$date": "2023-03-03T10:57:08.539Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677841028539"
-    }
+    "$date": "2023-03-03T10:57:08.539Z"
   },
   "__v": 0
 },{
@@ -432,14 +344,10 @@
   "role": "lab",
   "lab": "6401d294d3a983839936078b",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677841044309"
-    }
+    "$date": "2023-03-03T10:57:24.309Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677841044309"
-    }
+    "$date": "2023-03-03T10:57:24.309Z"
   },
   "__v": 0
 },{
@@ -451,14 +359,10 @@
   "role": "lab",
   "lab": "6401d2a4d3a9838399360791",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677841060270"
-    }
+    "$date": "2023-03-03T10:57:40.270Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677841060270"
-    }
+    "$date": "2023-03-03T10:57:40.270Z"
   },
   "__v": 0
 },{
@@ -470,14 +374,40 @@
   "role": "lab",
   "lab": "6401d2b1d3a9838399360797",
   "createdAt": {
-    "$date": {
-      "$numberLong": "1677841073388"
-    }
+    "$date": "2023-03-03T10:57:53.388Z"
   },
   "updatedAt": {
-    "$date": {
-      "$numberLong": "1677841073388"
-    }
+    "$date": "2023-03-03T10:57:53.388Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6424001eaf37b9c5c1f07f96"
+  },
+  "username": "patient1",
+  "password": "1",
+  "role": "patient",
+  "patient": "6424001eaf37b9c5c1f07f95",
+  "createdAt": {
+    "$date": "2023-03-29T09:08:46.480Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-29T09:08:46.480Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642400ceaf37b9c5c1f0800f"
+  },
+  "username": "patient2",
+  "password": "1",
+  "role": "patient",
+  "patient": "642400ceaf37b9c5c1f0800e",
+  "createdAt": {
+    "$date": "2023-03-29T09:11:42.518Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-29T09:11:42.518Z"
   },
   "__v": 0
 }]

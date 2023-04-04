@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchScedules } from "../../store/features/fetchDataSlice";
+import { fetchScedules } from "../../../store/features/fetchDataSlice";
 import DatePicker from "react-datepicker";
 import _ from "lodash";
 import moment from "moment";
 import "moment/locale/vi";
 moment().format();
-import { putRequestToast } from "../../services/commonSv";
+import { postRequestToast, putRequestToast } from "../../../services/commonSv";
 
 export default function ModalLabBooking(props) {
   const dispatch = useDispatch();
 
   const { schedules } = useSelector((state) => state.fetchData);
+  const { role, user } = useSelector((state) => state.user);
 
   //   useState
-  console.log(props.selectedLab);
+  // console.log(props);
   const [date, setDate] = useState(new Date(new Date().setHours(0, 0, 0, 0)));
   const [today, setToday] = useState(new Date(new Date().setHours(0, 0, 0, 0)));
   const [selectedHour, setSelectedHour] = useState(null);
@@ -40,19 +41,21 @@ export default function ModalLabBooking(props) {
 
   async function handleLabBooking() {
     let res = await postRequestToast(
-      "/patient/create-booking",
+      "/patient/create-booking-lab",
       {
-        clinic: props.clinic._id,
+        lab: props.selectedLab._id,
         patient: user.patient._id,
-        doctor: props.doctor._id,
-        services: [props.service._id],
-        schedule: props.schedule,
+        record: props.record._id,
+        hour: selectedHour.hour,
+        date: date,
         status: "Đang chờ khám",
       },
       "Đang tiến hành đặt lịch...."
     );
-    setSelectedHour(null);
-    props.setOpenModalBooking(false)
+    if (res) {
+      setSelectedHour(null);
+      props.setOpenModalBooking(false);
+    }
   }
 
   return (

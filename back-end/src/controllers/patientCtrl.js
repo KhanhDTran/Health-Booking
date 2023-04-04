@@ -19,6 +19,41 @@ export async function deleteBooking(req, res) {
   return res.status(200).json({ msg: `Đã hủy lịch khám thành công  ` });
 }
 
+export async function createBookingLab(req, res) {
+  await delay(1000);
+  if (!req.body.patient || !req.body.lab || !req.body.record)
+    return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    console.log(req.body);
+    let checkbooking = await Booking.findOne({
+      lab: req.body.lab,
+      record: req.body.record,
+      patient: req.body.patient,
+    });
+    if (!checkbooking) {
+      let booking = new Booking({
+        lab: req.body.lab,
+        record: req.body.record,
+        patient: req.body.patient,
+        hour: req.body.hour,
+        date: req.body.date,
+        // services:
+        status: req.body.status,
+      });
+      await booking.save();
+    }
+    if (checkbooking) {
+      checkbooking.hour = req.body.hour;
+      checkbooking.date = req.body.date;
+      await checkbooking.save();
+    }
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ msg: `Đã đặt lịch khám không thành công ` });
+  }
+  return res.status(200).json({ msg: `Đã đặt lịch khám thành công  ` });
+}
+
 export async function createBooking(req, res) {
   await delay(1000);
   if (!req.body.patient || !req.body.schedule || !req.body.services)

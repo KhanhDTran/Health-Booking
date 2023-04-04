@@ -9,6 +9,7 @@ import {
   editProfile,
   createBooking,
   deleteBooking,
+  createBookingLab
 } from "../controllers/patientCtrl.js";
 
 export function patientRoute(app) {
@@ -20,6 +21,9 @@ export function patientRoute(app) {
   router.put("/api/patient/edit-profile", editProfile);
   router.post("/api/patient/create-booking", createBooking);
   router.delete("/api/patient/delete-booking", deleteBooking);
+
+  router.post("/api/patient/create-booking-lab", createBookingLab);
+
 
   return app.use("", router);
 }

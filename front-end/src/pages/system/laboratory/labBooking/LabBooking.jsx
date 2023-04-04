@@ -4,34 +4,33 @@ import { useNavigate } from "react-router-dom";
 import _ from "lodash";
 import Select from "react-select";
 import { toast } from "react-toastify";
-import ClinicHeader from "../../../components/ClinicHeader";
-import DatePicker from "react-datepicker";
-import { fetchBookings } from "../../../store/features/fetchDataSlice";
-import ClinicTablebooking from "./ClinicTablebooking";
-import { putRequestToast } from "../../../services/commonSv";
+import LabHeader from "../../../../components/LabHeader";
+import { fetchBookings } from "../../../../store/features/fetchDataSlice";
 import moment from "moment";
 import "moment/locale/vi";
 moment().format();
+import DatePicker from "react-datepicker";
+import LabTableBooking from "./LabTableBooking";
+import { putRequestToast } from "../../../../services/commonSv";
 
-export default function ClinicBooking() {
+export default function LabBooking() {
   const dispatch = useDispatch();
 
-  const { bookings } = useSelector((state) => state.fetchData);
   const { user } = useSelector((state) => state.user);
+  const { bookings } = useSelector((state) => state.fetchData);
 
   // useState
+  const [x, setX] = useState("");
   const [date, setDate] = useState(new Date(new Date().setHours(0, 0, 0, 0)));
   const [listBookings, setListBookings] = useState([]);
 
-  // console.log(bookings);
-
   // UseEffect
+  useEffect(() => {}, []);
+
   useEffect(() => {
     document.title = "Lịch Hẹn Khám Bệnh";
+    dispatch(fetchBookings({ lab: user.lab._id, status: "Đang chờ khám" }));
     window.scrollTo(0, 0);
-    dispatch(
-      fetchBookings({ clinic: user.clinic._id, status: "Đang chờ khám" })
-    );
   }, []);
 
   useEffect(() => {
@@ -46,7 +45,6 @@ export default function ClinicBooking() {
     }
   }, [bookings]);
 
-  // function
   function handleChangeDate(e) {
     setDate(e);
     let list = _.filter(bookings, (o) => {
@@ -56,6 +54,9 @@ export default function ClinicBooking() {
     });
     setListBookings(list);
   }
+
+  // function
+  function a() {}
 
   async function handleAdd(item) {
     let res = await putRequestToast(
@@ -69,14 +70,14 @@ export default function ClinicBooking() {
       `Đang chuyển sang "Đang khám bệnh"...`
     );
     if (res)
-      dispatch(
-        fetchBookings({ clinic: user.clinic._id, status: "Đang chờ khám" })
-      );
+      dispatch(fetchBookings({ lab: user.lab._id, status: "Đang chờ khám" }));
   }
+
+  //   console.log(bookings);
 
   return (
     <>
-      <ClinicHeader />
+      <LabHeader />
       <div className="container mx-auto p-4">
         <div className="w-full flex justify-center text-3xl">
           Danh sách lịch hẹn khám bệnh
@@ -105,7 +106,7 @@ export default function ClinicBooking() {
         </div>
 
         {listBookings && listBookings.length > 0 ? (
-          <ClinicTablebooking
+          <LabTableBooking
             bookings={_.sortBy(listBookings, ["hour"])}
             handleAdd={handleAdd}
             status={"Đang chờ khám"}

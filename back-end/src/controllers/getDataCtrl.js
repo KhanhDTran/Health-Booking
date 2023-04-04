@@ -7,6 +7,28 @@ import Schedule from "../schemas/Schedule.js";
 import Service from "../schemas/Service.js";
 import Booking from "../schemas/Booking.js";
 import Record from "../schemas/Record.js";
+import Result from "../schemas/Result.js";
+
+export async function getResults(req, res) {
+  let results = await Result.find(req.query).populate([
+    {
+      path: "record",
+      populate: [
+        {
+          path: "labServices",
+          populate: {
+            path: "service",
+            // populate: "lab",
+          },
+        },
+        {
+          path: "booking",
+        },
+      ],
+    },
+  ]);
+  return res.status(200).json({ results });
+}
 
 export async function getRecords(req, res) {
   let records = await Record.find(req.query).populate([
@@ -55,6 +77,15 @@ export async function getBookings(req, res) {
     "services",
     "doctor",
     "patient",
+    {
+      path: "record",
+      populate: {
+        path: "labServices",
+        populate: {
+          path: "service",
+        },
+      },
+    },
   ]);
   return res.status(200).json({ bookings });
 }

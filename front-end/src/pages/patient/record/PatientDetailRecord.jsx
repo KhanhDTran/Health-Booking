@@ -2,10 +2,10 @@ import _ from "lodash";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Footer from "../../components/Footer";
-import PatientHeader from "../../components/PatientHeader";
-import { fetchRecords } from "../../store/features/fetchDataSlice";
-import PatientRecordInfor from "../system/clinic/PatientRecordInfor";
+import Footer from "../../../components/Footer";
+import PatientHeader from "../../../components/PatientHeader";
+import { fetchRecords } from "../../../store/features/fetchDataSlice";
+import PatientRecordInfor from "../../system/clinic/PatientRecordInfor";
 import PatientLabsTable from "./PatientLabsTable";
 import PatientTableLabServices from "./PatientTableLabServices";
 import ModalLabBooking from "./ModalLabBooking";
@@ -24,6 +24,7 @@ export default function PatientDetailRecord() {
   // UseEffect
   useEffect(() => {
     dispatch(fetchRecords({ booking: booking_id }));
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {

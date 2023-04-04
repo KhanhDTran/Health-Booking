@@ -15,7 +15,7 @@ export default function PatientTableLabServices(props) {
       <div className="divider"></div>
       <div className="flex flex-col gap-4 p-4">
         <div className="w-full flex justify-center text-4xl m-4">
-          <span>Danh sách chỉ định dịch vụ khám lâm sàng được</span>
+          <span>Danh sách chỉ định dịch vụ khám lâm sàng</span>
         </div>
         <div className="shadow-2xl ">
           <div className="overflow-x-auto">
@@ -37,11 +37,9 @@ export default function PatientTableLabServices(props) {
                     <tr key={item.service._id}>
                       <th>{index + 1}</th>
                       <td> {item.service.name} </td>
-
                       <td> {item.service.lab.name} </td>
                       <td> {item.service.unit} </td>
                       <td> {item.quantity} </td>
-
                       <td>
                         {new Intl.NumberFormat("vi-VN", {
                           style: "currency",

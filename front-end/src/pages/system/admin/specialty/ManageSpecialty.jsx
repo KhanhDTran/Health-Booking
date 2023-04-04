@@ -11,6 +11,11 @@ import ModalCreateSpecialty from "./MCreateSpecialty";
 import ModalEditSpecialty from "./MEditSpecialty";
 
 export default function ManageSpecialty() {
+  useEffect(() => {
+    document.title = "Đăng ký | Chuyên Khoa Y Tế";
+    window.scrollTo(0, 0);
+  }, []);
+
   const dispatch = useDispatch();
   const { role } = useSelector((state) => state.user);
   const [openModalCreateSpecialty, setopenModalCreateSpecialty] =

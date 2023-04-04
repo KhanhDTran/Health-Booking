@@ -11,7 +11,6 @@ const recordSchema = new Schema(
         quantity: String,
       },
     ],
-    results: [{ type: Schema.Types.ObjectId, ref: "Result" }],
     conclusion: String,
     conclusionHtml: String,
   },

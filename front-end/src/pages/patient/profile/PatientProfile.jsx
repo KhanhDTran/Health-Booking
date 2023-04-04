@@ -3,18 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import _ from "lodash";
 import { toast } from "react-toastify";
-import PatientHeader from "../../components/PatientHeader";
-import Footer from "../../components/Footer";
-import { putRequestToast } from "../../services/commonSv";
-import defaultAva from "../../assets/images/patient/defaultAva.jpg";
-import { toBase64 } from "../../utils/CommonUtils";
-import { edit_patient_profile } from "../../store/features/userSlice";
-import Err401Page from "../../components/Err401Page";
+import PatientHeader from "../../../components/PatientHeader";
+import Footer from "../../../components/Footer";
+import { putRequestToast } from "../../../services/commonSv";
+import defaultAva from "../../../assets/images/patient/defaultAva.jpg";
+import { toBase64 } from "../../../utils/CommonUtils";
+import { edit_patient_profile } from "../../../store/features/userSlice";
+import Err401Page from "../../../components/Err401Page";
 
 export default function PatientProfile() {
   const dispatch = useDispatch();
 
   const { role, user } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    document.title = "Thông Tin Cá Nhân";
+    window.scrollTo(0, 0);
+  }, []);
 
   // useState
   let [name, setName] = useState("");

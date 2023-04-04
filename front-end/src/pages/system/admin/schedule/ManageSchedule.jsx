@@ -38,6 +38,11 @@ export default function ManageSchedule() {
   const [checkninght, setCheckNinght] = useState(false);
 
   useEffect(() => {
+    document.title = "Đăng ký | Thời Gian Biểu";
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     dispatch(fetchAllClinics());
     dispatch(fetchAllLabs());
     setAllListAttibute("date", date);

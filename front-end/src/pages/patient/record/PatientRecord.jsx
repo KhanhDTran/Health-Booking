@@ -4,16 +4,21 @@ import { useNavigate } from "react-router-dom";
 import _ from "lodash";
 import Select from "react-select";
 import { toast } from "react-toastify";
-import PatientHeader from "../../components/PatientHeader";
-import Footer from "../../components/Footer";
-import { fetchBookings } from "../../store/features/fetchDataSlice";
-import BookingTable from "./BookingTable";
+import PatientHeader from "../../../components/PatientHeader";
+import Footer from "../../../components/Footer";
+import { fetchBookings } from "../../../store/features/fetchDataSlice";
+import BookingTable from "../booking/BookingTable";
 
 export default function PatientRecord() {
   const dispatch = useDispatch();
   // useState
   const { role, user } = useSelector((state) => state.user);
   const { bookings } = useSelector((state) => state.fetchData);
+
+  useEffect(() => {
+    document.title = "Hồ Sơ Bệnh Án";
+    window.scrollTo(0, 0);
+  }, []);
 
   // UseEffect
   useEffect(() => {
@@ -41,7 +46,7 @@ export default function PatientRecord() {
 
               <BookingTable
                 bookings={_.filter(bookings, (o) => {
-                  return o.status !== "Đang chờ khám";
+                  return o.clinic && o.status !== "Đang chờ khám";
                 })}
                 // cancleBooking={cancleBooking}
                 record={"record"}

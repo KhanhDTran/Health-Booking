@@ -12,19 +12,7 @@ import Result from "../schemas/Result.js";
 export async function getResults(req, res) {
   let results = await Result.find(req.query).populate([
     {
-      path: "record",
-      populate: [
-        {
-          path: "labServices",
-          populate: {
-            path: "service",
-            // populate: "lab",
-          },
-        },
-        {
-          path: "booking",
-        },
-      ],
+      path: "lab",
     },
   ]);
   return res.status(200).json({ results });

@@ -7,6 +7,7 @@ import { clinicRoute } from "./routes/clinicRoute.js";
 import { patientRoute } from "./routes/patientRoute.js";
 import { labRoute } from "./routes/labRoute.js";
 import { getDataRoute } from "./routes/getDataRoute.js";
+import { paymentRoute } from "./routes/paymentRoute.js";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -36,6 +37,7 @@ adminRoute(app);
 clinicRoute(app);
 patientRoute(app);
 labRoute(app);
+paymentRoute(app);
 getDataRoute(app);
 
 let PORT = process.env.PORT || 8000;

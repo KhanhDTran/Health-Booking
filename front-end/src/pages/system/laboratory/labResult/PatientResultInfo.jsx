@@ -47,9 +47,39 @@ export default function PatientResultInfo(props) {
               Ngày khám: {moment(props.booking.date).format("DD-MM-YYYY")}
             </span>
           </div>
-          {/* <div className="w-full">
-            <span>Dịch vụ: {props.records[0].booking.services[0].name} </span>
-          </div> */}
+        </div>
+      </div>
+      <div className="divider"></div>
+      <div className="container mx-auto shadow-2xl">
+        <div className="w-full">
+          <span className="p-4 m-4 text-3xl">Danh sách dịch vụ: </span>
+          <div className="overflow-x-auto p-4">
+            <table className="table w-full">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Tên</th>
+                  <th>Số Lượng</th>
+                </tr>
+              </thead>
+              <tbody>
+                {props.services.map((item, index) => {
+                  // console.log(item);
+                  return (
+                    <tr key={index}>
+                      <th> {index + 1} </th>
+                      <td>{item.service.name} </td>
+                      <td>
+                        {item.quantity} {item.service.unit}{" "}
+                      </td>
+                    </tr>
+                  );
+                  // <div></div>;
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

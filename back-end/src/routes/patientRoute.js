@@ -1,4 +1,6 @@
 import expess from "express";
+import dotenv from "dotenv";
+dotenv.config();
 
 let router = expess.Router();
 
@@ -9,7 +11,7 @@ import {
   editProfile,
   createBooking,
   deleteBooking,
-  createBookingLab
+  createBookingLab,
 } from "../controllers/patientCtrl.js";
 
 export function patientRoute(app) {
@@ -24,6 +26,7 @@ export function patientRoute(app) {
 
   router.post("/api/patient/create-booking-lab", createBookingLab);
 
+  // Vui lòng tham khảo thêm tại code demo
 
   return app.use("", router);
 }

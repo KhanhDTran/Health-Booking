@@ -6,6 +6,8 @@ import { genOtp, verifyOtp } from "../utils/otp.js";
 import Booking from "../schemas/Booking.js";
 import Schedule from "../schemas/Schedule.js";
 
+
+
 export async function deleteBooking(req, res) {
   console.log(req.query);
   await delay(1000);

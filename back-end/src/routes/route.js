@@ -9,8 +9,5 @@ export function webRoute(app) {
   router.post("/api/create-user", createUser);
   router.get("/api/login", login);
 
-  
-  
-
   return app.use("", router);
 }

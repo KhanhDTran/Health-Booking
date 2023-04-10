@@ -2,12 +2,18 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ClinicHeader from "../../../components/ClinicHeader";
-import { fetchRecords } from "../../../store/features/fetchDataSlice";
+import {
+  fetchRecords,
+  fetchResults,
+} from "../../../store/features/fetchDataSlice";
 import MarkdownIt from "markdown-it";
 import MdEditor from "react-markdown-editor-lite";
 import { putRequestToast } from "../../../services/commonSv";
 import LabIndicating from "./LabIndicating";
 import PatientRecordInfor from "./PatientRecordInfor";
+import ModalDetailResult from "../../patient/record/result/ModalDetailResult";
+import RecordResults from "../../patient/record/result/RecordResults";
+import _ from "lodash";
 
 export default function ClinicPatientRecord() {
   const dispatch = useDispatch();
@@ -16,11 +22,12 @@ export default function ClinicPatientRecord() {
   const params = useParams();
   const { booking_id } = params;
 
-  const { records } = useSelector((state) => state.fetchData);
+  const { records, results } = useSelector((state) => state.fetchData);
   const [conclusion, setConclusion] = useState("");
   const [conclusionHtml, setConclusionHtml] = useState("");
   const [showConclusion, setShowConclusion] = useState(false);
   const [showLabIndicating, setShowLabIndicating] = useState(false);
+  const [selectedResult, setSelectedResult] = useState(null);
 
   // UseEffect
   useEffect(() => {
@@ -32,7 +39,18 @@ export default function ClinicPatientRecord() {
       setConclusion(records[0].conclusion);
       setConclusionHtml(records[0].conclusionHtml);
     }
+    if (records && records.length > 0) {
+      dispatch(fetchResults({ record: records[0]._id }));
+    }
   }, [records]);
+
+  useEffect(() => {
+    if (selectedResult) {
+      document.querySelector("body").style.overflow = "hidden";
+    } else {
+      document.querySelector("body").style = "";
+    }
+  }, [selectedResult]);
 
   // function
   function handleEditorChange({ html, text }) {
@@ -52,6 +70,10 @@ export default function ClinicPatientRecord() {
       },
       `Đang lưu kết luận...`
     );
+  }
+
+  function handleShowResult(item) {
+    setSelectedResult(item);
   }
 
   return (
@@ -105,6 +127,12 @@ export default function ClinicPatientRecord() {
                     </button>
                   </div>
                 </>
+              )}
+
+              {/* -------------------- Kết quả khám lâm sàng ---------------- */}
+              <RecordResults {...{ results, handleShowResult }} />
+              {selectedResult && (
+                <ModalDetailResult {...{ selectedResult, setSelectedResult }} />
               )}
               {/* --------------- Chỉ định khám lâm sàng------------------------ */}
 

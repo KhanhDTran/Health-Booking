@@ -28,7 +28,6 @@ export default function PatientTableLabServices(props) {
                   <th>Phòng Khám lâm sàng</th>
                   <th>Đơn vị</th>
                   <th>Số lượng</th>
-                  <th>Giá tiền</th>
                 </tr>
               </thead>
               <tbody className="h-40">
@@ -40,12 +39,6 @@ export default function PatientTableLabServices(props) {
                       <td> {item.service.lab.name} </td>
                       <td> {item.service.unit} </td>
                       <td> {item.quantity} </td>
-                      <td>
-                        {new Intl.NumberFormat("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        }).format(item.service.unitPrice * 1000)}
-                      </td>
                     </tr>
                   );
                 })}
@@ -57,7 +50,6 @@ export default function PatientTableLabServices(props) {
                   <th>Phòng Khám lâm sàng</th>
                   <th>Đơn vị</th>
                   <th>Số lượng</th>
-                  <th>Giá tiền</th>
                 </tr>
               </thead>
             </table>

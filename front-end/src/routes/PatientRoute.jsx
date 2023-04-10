@@ -4,6 +4,7 @@ import PatientProfile from "../pages/patient/profile/PatientProfile";
 import PatientBooking from "../pages/patient/booking/PatientBooking";
 import PatientRecord from "../pages/patient/record/PatientRecord";
 import PatientDetailRecord from "../pages/patient/record/PatientDetailRecord";
+import CheckOut from "../pages/patient/record/payment/ChecKOut";
 
 export default function PatientRoute() {
   return (
@@ -18,6 +19,7 @@ export default function PatientRoute() {
           path="/detail-record/:booking_id"
           element={<PatientDetailRecord />}
         />
+        <Route path="/payment/checkout/" element={<CheckOut />} />
 
         <Route path="*" element={<Error />} />
 

@@ -21,8 +21,8 @@ export default function LabExaminingList() {
 
   useEffect(() => {
     document.title = "Danh Sách Đang Khám";
-    dispatch(fetchBookings({ lab: user.lab._id, status: "Đang khám" }));
     window.scrollTo(0, 0);
+    dispatch(fetchBookings({ lab: user.lab._id, status: "Đang khám" }));
   }, []);
 
   // function

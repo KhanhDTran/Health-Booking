@@ -53,9 +53,6 @@ export default function PatientLabsTable(props) {
                           <td>
                             <div className="flex flex-col">
                               <div>{item.name}</div>
-                              <div>
-                                {item.address} {item.province}
-                              </div>
                             </div>
                           </td>
 

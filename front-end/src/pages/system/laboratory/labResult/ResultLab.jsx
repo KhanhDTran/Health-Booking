@@ -127,7 +127,6 @@ export default function ResultLab() {
           {/* -------------- Thay đổi trạng thái hồ sơ khám ------------------- */}
           {bookings && (
             <div className="flex justify-center flex-col items-center">
-              {" "}
               <div className="text-3xl p-4 justify-center flex w-full">
                 Thay đổi trạng thái hồ sơ khám
               </div>

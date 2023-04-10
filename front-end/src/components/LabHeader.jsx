@@ -72,7 +72,7 @@ export default function LabHeader(props) {
               <li></li>
               <li>
                 <NavLink to="/system/laboratory/examined-list">
-                  <i className="fa-solid fa-list"></i>
+                  <i className="fa-solid fa-list-check"></i>
                   Danh sách đã khám xong
                 </NavLink>
               </li>

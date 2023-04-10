@@ -7,12 +7,12 @@ import { toast } from "react-toastify";
 import {
   fetchServices,
   fetchAllLabs,
-} from "../../../store/features/fetchDataSlice";
-import { convertToSelectOptions } from "../../../utils/CommonUtils";
-import { customStyles } from "../../../utils/CommonUtils";
+} from "../../../../store/features/fetchDataSlice";
+import { convertToSelectOptions } from "../../../../utils/CommonUtils";
+import { customStyles } from "../../../../utils/CommonUtils";
 import RecordTableServices from "./RecordTableServices";
 import TableIndicatedServices from "./TableIndicatedServices";
-import { putRequestToast } from "../../../services/commonSv";
+import { putRequestToast } from "../../../../services/commonSv";
 
 export default function LabIndicating(props) {
   const dispatch = useDispatch();
@@ -155,68 +155,91 @@ export default function LabIndicating(props) {
 
   return (
     <>
-      <div className="container mx-auto p-4 m-4">
-        {/* ------------------------- table indicated */}
+      <div className="divider"></div>
 
-        {/* ---------- table indicated services ------------------ */}
-        <TableIndicatedServices
-          {...{
-            selectedList: _.sortBy(selectedList, (o) => {
-              return o.service.lab.name;
-            }),
-            handleMinusService,
-          }}
-        />
-        <div className="w-full flex justify-center p-4 m-4">
-          <button
-            className="btn btn-info w-40"
-            onClick={handleSaveIndicatedList}
-          >
-            Lưu danh sách chỉ định
-          </button>
-        </div>
-
-        {/* ------------------------ */}
-
-        <div className="p-4 m-4 w-full not-prose flex grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="form-control gap-2 flex">
-            <label htmlFor="type" className="pl-2">
-              Loại Khám Lâm Sàng
-            </label>
-            <select
-              className="select select-info w-full "
-              value={type}
-              onChange={(e) => handleOnChangeType(e.target.value)}
-            >
-              <option value="">Loại khám lâm sàng</option>
-              <option value="Xét nghiệm máu">Xét nghiệm máu</option>
-              <option value="Xét nghiệm nước tiểu">Xét nghiệm nước tiểu</option>
-              <option value="Siêu âm ">Siêu âm </option>
-              <option value="Chụp X-Quang ">Chụp X-Quang </option>
-              <option value="Chụp cộng hưởng từ">Chụp cộng hưởng từ</option>
-            </select>
-          </div>
-
-          <div className="w-64 lg:w-96 ">
-            <label htmlFor="">Phòng khám lâm sàng</label>
-            <Select
-              isClearable={true}
-              className="my-react-select-container"
-              classNamePrefix="my-react-select"
-              options={labOptions}
-              styles={customStyles}
-              value={selectedLab}
-              placeholder={"Phòng khám lâm sàng....."}
-              onChange={(e) => {
-                handleChangeLab(e);
-              }}
-            />{" "}
-          </div>
-        </div>
-
-        {/* ---------- table services ------------------ */}
-        <RecordTableServices {...{ type, serviceList, handleAddService }} />
+      <div className="w-full flex justify-center text-4xl">
+        <span>Chỉ định khám lâm sàng</span>
       </div>
+      <div className="w-full flex justify-center text-4xl">
+        <select
+          className="select select-info w-full max-w-xs "
+          onChange={(e) => {
+            if (e.target.value === "1") props.setShowLabIndicating(false);
+            if (e.target.value === "2") props.setShowLabIndicating(true);
+          }}
+        >
+          <option value={"1"}>Ẩn chỉ định khám lâm sàng</option>
+          <option value={"2"}>Hiện chỉ định khám lâm sàng</option>
+        </select>
+      </div>
+      {props.showLabIndicating && (
+        <>
+          <div className="container mx-auto p-4 m-4">
+            {/* ------------------------- table indicated */}
+
+            {/* ---------- table indicated services ------------------ */}
+            <TableIndicatedServices
+              {...{
+                selectedList: _.sortBy(selectedList, (o) => {
+                  return o.service.lab.name;
+                }),
+                handleMinusService,
+              }}
+            />
+            <div className="w-full flex justify-center p-4 m-4">
+              <button
+                className="btn btn-info w-40"
+                onClick={handleSaveIndicatedList}
+              >
+                Lưu danh sách chỉ định
+              </button>
+            </div>
+
+            {/* ------------------------ */}
+
+            <div className="p-4 m-4 w-full not-prose flex grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="form-control gap-2 flex">
+                <label htmlFor="type" className="pl-2">
+                  Loại Khám Lâm Sàng
+                </label>
+                <select
+                  className="select select-info w-full "
+                  value={type}
+                  onChange={(e) => handleOnChangeType(e.target.value)}
+                >
+                  <option value="">Loại khám lâm sàng</option>
+                  <option value="Xét nghiệm máu">Xét nghiệm máu</option>
+                  <option value="Xét nghiệm nước tiểu">
+                    Xét nghiệm nước tiểu
+                  </option>
+                  <option value="Siêu âm ">Siêu âm </option>
+                  <option value="Chụp X-Quang ">Chụp X-Quang </option>
+                  <option value="Chụp cộng hưởng từ">Chụp cộng hưởng từ</option>
+                </select>
+              </div>
+
+              <div className="w-64 lg:w-96 ">
+                <label htmlFor="">Phòng khám lâm sàng</label>
+                <Select
+                  isClearable={true}
+                  className="my-react-select-container"
+                  classNamePrefix="my-react-select"
+                  options={labOptions}
+                  styles={customStyles}
+                  value={selectedLab}
+                  placeholder={"Phòng khám lâm sàng....."}
+                  onChange={(e) => {
+                    handleChangeLab(e);
+                  }}
+                />{" "}
+              </div>
+            </div>
+
+            {/* ---------- table services ------------------ */}
+            <RecordTableServices {...{ type, serviceList, handleAddService }} />
+          </div>
+        </>
+      )}
     </>
   );
 }

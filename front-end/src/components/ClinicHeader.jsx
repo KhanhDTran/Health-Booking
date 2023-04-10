@@ -70,13 +70,13 @@ export default function ClinicHeader(props) {
                 </NavLink>
               </li>
               <li></li>
-              {/* <li>
-                <NavLink to="/system/clinic/record">
-                  <i className="fa-solid fa-book-medical"></i>
-                  Hồ sơ bệnh án
+              <li>
+                <NavLink to="/system/clinic/examined-list">
+                  <i className="fa-solid fa-list-check"></i>
+                  Danh sách đã khám xong
                 </NavLink>
               </li>
-              <li></li> */}
+              <li></li>
               <li>
                 <NavLink
                   to="/login"

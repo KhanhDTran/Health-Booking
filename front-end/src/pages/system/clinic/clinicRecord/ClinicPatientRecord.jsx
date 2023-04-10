@@ -1,46 +1,54 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import ClinicHeader from "../../../components/ClinicHeader";
+import ClinicHeader from "../../../../components/ClinicHeader";
 import {
   fetchRecords,
   fetchResults,
-} from "../../../store/features/fetchDataSlice";
-import MarkdownIt from "markdown-it";
-import MdEditor from "react-markdown-editor-lite";
-import { putRequestToast } from "../../../services/commonSv";
+  fetchBookings,
+} from "../../../../store/features/fetchDataSlice";
+import { putRequestToast } from "../../../../services/commonSv";
 import LabIndicating from "./LabIndicating";
 import PatientRecordInfor from "./PatientRecordInfor";
-import ModalDetailResult from "../../patient/record/result/ModalDetailResult";
-import RecordResults from "../../patient/record/result/RecordResults";
+import ModalDetailResult from "../../../patient/record/result/ModalDetailResult";
+import RecordResults from "../../../patient/record/result/RecordResults";
 import _ from "lodash";
-import ClinicMedicine from "./medicine/ClinicMedicine";
+import ClinicMedicine from "../medicine/ClinicMedicine";
 import { toast } from "react-toastify";
+import ConclusionRecord from "./conclusionRecord";
+import ClinicRecordStatus from "./ClinicRecordStatus";
+import PreBooking from "../../../patient/record/PreBooking";
 
 export default function ClinicPatientRecord() {
   const dispatch = useDispatch();
-  const mdParser = new MarkdownIt(/* Markdown-it options */);
   // useState
   const params = useParams();
   const { booking_id } = params;
 
-  const { records, results } = useSelector((state) => state.fetchData);
+  const { records, results, bookings } = useSelector(
+    (state) => state.fetchData
+  );
   const [conclusion, setConclusion] = useState("");
   const [conclusionHtml, setConclusionHtml] = useState("");
   const [showConclusion, setShowConclusion] = useState(false);
   const [showMedicine, setShowMedicine] = useState(false);
   const [showLabIndicating, setShowLabIndicating] = useState(false);
   const [selectedResult, setSelectedResult] = useState(null);
+  const [reExamineDate, setReExamineDate] = useState("");
 
   // UseEffect
   useEffect(() => {
+    document.title = "Chi Tiết Hồ Sơ Bệnh Án";
+    window.scrollTo(0, 0);
     dispatch(fetchRecords({ booking: booking_id }));
+    dispatch(fetchBookings({ _id: booking_id }));
   }, []);
 
   useEffect(() => {
     if (records) {
       setConclusion(records[0].conclusion);
       setConclusionHtml(records[0].conclusionHtml);
+      setReExamineDate(records[0].reExamine ? records[0].reExamine.date : "");
     }
     if (records && records.length > 0) {
       dispatch(fetchResults({ record: records[0]._id }));
@@ -73,6 +81,11 @@ export default function ClinicPatientRecord() {
         query: {
           conclusion,
           conclusionHtml,
+          reExamine: reExamineDate
+            ? {
+                date: reExamineDate,
+              }
+            : null,
         },
       },
       `Đang lưu kết luận...`
@@ -99,6 +112,19 @@ export default function ClinicPatientRecord() {
     }
   }
 
+  async function changeClinicRecordStatus(status) {
+    await putRequestToast(
+      "/clinic/edit-booking",
+      {
+        _id: booking_id,
+        query: {
+          status,
+        },
+      },
+      `Đang lưu trạng thái hồ sơ...`
+    );
+    dispatch(fetchBookings({ _id: booking_id }));
+  }
   async function deleteMedicine(item) {
     if (confirm(`Có chắc muốn xoá thuốc ${item.name}`)) {
       let medicines = _.filter(records[0].medicines, function (o) {
@@ -125,50 +151,46 @@ export default function ClinicPatientRecord() {
         <>
           <div className="container mx-auto p-4 m-4">
             <div className="flex flex-col gap-4">
+              {/* ------------------ record infor -----------------------  */}
+
               <PatientRecordInfor records={records} />
 
-              {/* ------------------ kết luận kết quả --------------------- */}
+              {/* ------------------ Status ------------------------------  */}
 
-              <div className="divider"></div>
-              <div className="w-full flex justify-center text-4xl">
-                <span>Kết luận kết quả</span>
-              </div>
-
-              <div className="w-full flex justify-center text-4xl">
-                <select
-                  className="select select-info w-full max-w-xs "
-                  onChange={(e) => {
-                    if (e.target.value === "1") setShowConclusion(false);
-                    if (e.target.value === "2") setShowConclusion(true);
+              {records && bookings && (
+                <ClinicRecordStatus
+                  {...{
+                    record: records[0],
+                    booking: bookings[0],
+                    changeClinicRecordStatus,
                   }}
-                >
-                  <option value={"1"}>Ẩn kết luận</option>
-                  <option value={"2"}>Hiện kết luận</option>
-                </select>
-              </div>
+                />
+              )}
 
-              {showConclusion && (
-                <>
-                  {" "}
-                  <MdEditor
-                    className="m-4"
-                    style={{
-                      height: "600px",
-                      width: "100%",
-                    }}
-                    value={conclusion}
-                    renderHTML={(text) => mdParser.render(text)}
-                    onChange={handleEditorChange}
-                  />
-                  <div className="w-full flex justify-center">
-                    <button
-                      className="btn btn-info w-40"
-                      onClick={handleSaveConclusion}
-                    >
-                      Lưu kết luận{" "}
-                    </button>
-                  </div>
-                </>
+              {bookings && bookings[0].preBooking && (
+                <PreBooking
+                  {...{
+                    booking: bookings[0],
+                    preBooking: bookings[0].preBooking,
+                    user: "clinic",
+                  }}
+                />
+              )}
+
+              {/* ------------------ kết luận kết quả --------------------- */}
+              {records && bookings && (
+                <ConclusionRecord
+                  {...{
+                    setShowConclusion,
+                    showConclusion,
+                    handleEditorChange,
+                    handleSaveConclusion,
+                    conclusion,
+                    reExamineDate,
+                    setReExamineDate,
+                    reExamine: records[0].reExamine,
+                  }}
+                />
               )}
 
               {/* ------------------ Kê thuốc ------------------------- */}
@@ -190,28 +212,16 @@ export default function ClinicPatientRecord() {
               {selectedResult && (
                 <ModalDetailResult {...{ selectedResult, setSelectedResult }} />
               )}
+
               {/* --------------- Chỉ định khám lâm sàng------------------------ */}
 
-              <div className="divider"></div>
-
-              <div className="w-full flex justify-center text-4xl">
-                <span>Chỉ định khám lâm sàng</span>
-              </div>
-              <div className="w-full flex justify-center text-4xl">
-                <select
-                  className="select select-info w-full max-w-xs "
-                  onChange={(e) => {
-                    if (e.target.value === "1") setShowLabIndicating(false);
-                    if (e.target.value === "2") setShowLabIndicating(true);
-                  }}
-                >
-                  <option value={"1"}>Ẩn chỉ định khám lâm sàng</option>
-                  <option value={"2"}>Hiện chỉ định khám lâm sàng</option>
-                </select>
-              </div>
-              {showLabIndicating && (
-                <LabIndicating {...{ record: records[0] }} />
-              )}
+              <LabIndicating
+                {...{
+                  record: records[0],
+                  setShowLabIndicating,
+                  showLabIndicating,
+                }}
+              />
 
               {/* -------------------------------------------------- */}
             </div>

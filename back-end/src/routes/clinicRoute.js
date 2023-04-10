@@ -7,6 +7,7 @@ import {
   editBookingToPending,
   editPatientRecord,
   indicateLabs,
+  editBooking,
 } from "../controllers/clinicCtrl.js";
 
 export function clinicRoute(app) {
@@ -16,6 +17,7 @@ export function clinicRoute(app) {
   router.put("/api/clinic/edit-booking-to-pending", editBookingToPending);
   router.put("/api/clinic/edit-patient-record", editPatientRecord);
   router.put("/api/clinic/indicate-labs", indicateLabs);
+  router.put("/api/clinic/edit-booking", editBooking);
 
   //   router.put("/api/clinic/upsert-schedule", upsertSchedule);
   //   router.put("/api/clinic/upsert-schedule", upsertSchedule);

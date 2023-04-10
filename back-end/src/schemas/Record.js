@@ -26,6 +26,9 @@ const recordSchema = new Schema(
         note: String,
       },
     ],
+    reExamine: {
+      date: String,
+    },
     conclusion: String,
     conclusionHtml: String,
   },

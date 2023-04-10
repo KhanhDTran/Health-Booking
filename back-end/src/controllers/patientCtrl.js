@@ -6,7 +6,42 @@ import { genOtp, verifyOtp } from "../utils/otp.js";
 import Booking from "../schemas/Booking.js";
 import Schedule from "../schemas/Schedule.js";
 
-
+export async function reBookingClinic(req, res) {
+  await delay(1000);
+  if (!req.body.patient || !req.body.clinic || !req.body.preBooking)
+    return res.status(400).json({ msg: "Thiếu thông tin" });
+  try {
+    let checkbooking = await Booking.findOne({
+      clinic: req.body.clinic,
+      preBooking: req.body.preBooking,
+      patient: req.body.patient,
+    });
+    if (!checkbooking) {
+      let booking = new Booking({
+        clinic: req.body.clinic,
+        patient: req.body.patient,
+        doctor: req.body.doctor,
+        preBooking: req.body.preBooking,
+        hour: req.body.hour,
+        date: req.body.date,
+        services: req.body.services,
+        status: "Đang chờ khám",
+      });
+      await booking.save();
+    }
+    if (checkbooking) {
+      checkbooking.hour = req.body.hour;
+      checkbooking.date = req.body.date;
+      await checkbooking.save();
+    }
+  } catch (e) {
+    console.log(e);
+    return res
+      .status(400)
+      .json({ msg: `Đã đặt lịch khám lại không thành công ` });
+  }
+  return res.status(200).json({ msg: `Đã đặt lịch khám lại thành công  ` });
+}
 
 export async function deleteBooking(req, res) {
   await delay(1000);

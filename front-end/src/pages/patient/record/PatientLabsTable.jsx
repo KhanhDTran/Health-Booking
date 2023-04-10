@@ -40,7 +40,6 @@ export default function PatientLabsTable(props) {
                         <tr key={item._id}>
                           <th> {index + 1} </th>
                           <td>
-                            {" "}
                             <div className="avatar">
                               <div className=" h-28 w-28 ">
                                 <img
@@ -55,11 +54,9 @@ export default function PatientLabsTable(props) {
                               <div>{item.name}</div>
                             </div>
                           </td>
-
                           <td>{item.room}</td>
                           <td>{item.type}</td>
                           <td>
-                            {" "}
                             <button
                               className="btn btn-ghost btn-xs"
                               onClick={() => props.handleBookingLab(item)}

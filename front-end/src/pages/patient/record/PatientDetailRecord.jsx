@@ -7,8 +7,9 @@ import PatientHeader from "../../../components/PatientHeader";
 import {
   fetchRecords,
   fetchResults,
+  fetchBookings,
 } from "../../../store/features/fetchDataSlice";
-import PatientRecordInfor from "../../system/clinic/PatientRecordInfor";
+import PatientRecordInfor from "../../system/clinic/clinicRecord/PatientRecordInfor";
 import PatientLabsTable from "./PatientLabsTable";
 import PatientTableLabServices from "./PatientTableLabServices";
 import ModalLabBooking from "./ModalLabBooking";
@@ -17,6 +18,8 @@ import ModalDetailResult from "./result/ModalDetailResult";
 import { postRequestToast } from "../../../services/commonSv";
 import PaymentTable from "./payment/PaymentTable";
 import PatientMedicine from "./medicine/PatientMedicine";
+import ModalReBooking from "./rebooking/ModalReBooking";
+import PreBooking from "./PreBooking";
 
 export default function PatientDetailRecord() {
   const dispatch = useDispatch();
@@ -26,15 +29,20 @@ export default function PatientDetailRecord() {
 
   // useState
   const { role, user } = useSelector((state) => state.user);
-  const { records, results } = useSelector((state) => state.fetchData);
+  const { records, results, bookings } = useSelector(
+    (state) => state.fetchData
+  );
   const [selectedLab, setSelectedLab] = useState(null);
   const [openModalBooking, setOpenModalBooking] = useState(false);
+  const [openModalReBooking, setOpenModalReBooking] = useState(false);
   const [selectedResult, setSelectedResult] = useState(null);
 
   // UseEffect
   useEffect(() => {
-    dispatch(fetchRecords({ booking: booking_id }));
+    document.title = "Chi Tiết Hồ Sơ Bệnh Án";
     window.scrollTo(0, 0);
+    dispatch(fetchRecords({ booking: booking_id }));
+    dispatch(fetchBookings({ _id: booking_id }));
   }, []);
 
   useEffect(() => {
@@ -44,12 +52,12 @@ export default function PatientDetailRecord() {
   }, [records]);
 
   useEffect(() => {
-    if (openModalBooking || selectedResult) {
+    if (openModalBooking || selectedResult || openModalReBooking) {
       document.querySelector("body").style.overflow = "hidden";
     } else {
       document.querySelector("body").style = "";
     }
-  }, [openModalBooking, selectedResult]);
+  }, [openModalBooking, selectedResult, openModalReBooking]);
 
   // function
   function handleBookingLab(item) {
@@ -77,6 +85,8 @@ export default function PatientDetailRecord() {
     }
   }
 
+  // console.log(bookings);
+
   return (
     <>
       <PatientHeader />
@@ -85,6 +95,18 @@ export default function PatientDetailRecord() {
           <div className="container mx-auto p-4 m-4 min-h-screen">
             <div className="flex flex-col gap-4 ">
               <PatientRecordInfor records={records} />
+
+              {/* ------------------ Thông tin hồ sơ bệnh án trước đó --------------------------- */}
+
+              {bookings && bookings[0].preBooking && (
+                <PreBooking
+                  {...{
+                    booking: bookings[0],
+                    preBooking: bookings[0].preBooking,
+                    user: "patient",
+                  }}
+                />
+              )}
 
               {/* ------------------ kết quả kết luận của bác sĩ chuyên khoa --------------------- */}
               <div className="divider"></div>
@@ -95,17 +117,41 @@ export default function PatientDetailRecord() {
 
                 <div className=" shadow-2xl ">
                   {records && records[0].conclusionHtml && (
-                    <div
-                      className="prose lg:prose-xl p-4"
-                      dangerouslySetInnerHTML={{
-                        __html: records[0].conclusionHtml,
-                      }}
-                    ></div>
+                    <>
+                      <div
+                        className="prose lg:prose-xl p-4"
+                        dangerouslySetInnerHTML={{
+                          __html: records[0].conclusionHtml,
+                        }}
+                      ></div>
+                    </>
                   )}
                 </div>
+                {records[0].reExamine && (
+                  <>
+                    <span>Hẹn ngày khám lại: {records[0].reExamine.date} </span>
+                    <button
+                      className="btn btn-info w-40"
+                      onClick={() => setOpenModalReBooking(true)}
+                    >
+                      Đăng ký khám lại
+                    </button>
+                  </>
+                )}
               </div>
+              {openModalReBooking && (
+                <ModalReBooking
+                  {...{
+                    setOpenModalReBooking,
+                    openModalReBooking,
+                    record: records[0],
+                    clinic: records[0].booking.clinic,
+                    booking: bookings[0],
+                  }}
+                />
+              )}
 
-              {/* ----------------- Thuốc  ====------------------------------ */}
+              {/* ----------------- Thuốc ------------------------------ */}
 
               {records && (
                 <PatientMedicine {...{ medicines: records[0].medicines }} />

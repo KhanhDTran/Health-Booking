@@ -12,6 +12,7 @@ const BookingSchema = new Schema(
     date: Date,
     hour: String,
     status: String,
+    preBooking: { type: Schema.Types.ObjectId, ref: "Booking" },
   },
   {
     timestamps: true,

@@ -12,6 +12,7 @@ import {
   createBooking,
   deleteBooking,
   createBookingLab,
+  reBookingClinic,
 } from "../controllers/patientCtrl.js";
 
 export function patientRoute(app) {
@@ -25,6 +26,7 @@ export function patientRoute(app) {
   router.delete("/api/patient/delete-booking", deleteBooking);
 
   router.post("/api/patient/create-booking-lab", createBookingLab);
+  router.post("/api/patient/re-booking-clinic", reBookingClinic);
 
   // Vui lòng tham khảo thêm tại code demo
 

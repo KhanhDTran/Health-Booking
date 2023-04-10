@@ -65,6 +65,13 @@ export async function getBookings(req, res) {
     "services",
     "doctor",
     "patient",
+    "preBooking",
+    {
+      path: "preBooking",
+      populate: {
+        path: "services",
+      },
+    },
     {
       path: "record",
       populate: {

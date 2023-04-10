@@ -38,7 +38,7 @@ export default function PatientLabsTable(props) {
                     props.records[0].labs.map((item, index) => {
                       return (
                         <tr key={item._id}>
-                          <th>1</th>
+                          <th> {index + 1} </th>
                           <td>
                             {" "}
                             <div className="avatar">

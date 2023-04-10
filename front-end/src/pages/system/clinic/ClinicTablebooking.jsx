@@ -32,6 +32,7 @@ export default function ClinicTablebooking(props) {
               </thead>
               <tbody>
                 {props.bookings.map((item, index) => {
+               
                   return (
                     <tr key={item._id}>
                       <th>

@@ -30,10 +30,11 @@ export default function ResultLab() {
   const { user } = useSelector((state) => state.user);
   const [result, setResult] = useState("");
   const [resultHtml, setResultHtml] = useState("");
+  const [status, setStatus] = useState("");
 
   // UseEffect
   useEffect(() => {
-    document.title = "Danh Sách Đang Khám";
+    document.title = "Kết Quả Khám";
     window.scrollTo(0, 0);
     clearInput();
     dispatch(fetchBookings({ _id: booking_id }));
@@ -50,6 +51,10 @@ export default function ResultLab() {
       setResultHtml(resultHtml ? resultHtml : "");
     }
   }, [results]);
+
+  useEffect(() => {
+    if (bookings) setStatus(bookings[0].status);
+  }, [bookings]);
 
   // function
   function handleEditorChange({ html, text }) {
@@ -74,8 +79,6 @@ export default function ResultLab() {
     }, 50);
   }
 
-  console.log(results);
-
   async function saveResult() {
     await putRequestToast(
       "/lab/edit-result",
@@ -91,20 +94,19 @@ export default function ResultLab() {
     );
   }
 
-  // async function handleExamined() {
-  //   await putRequestToast(
-  //     "/lab/examined-booking",
-  //     {
-  //       _id: results[0]._id,
-  //       query: {
-  //         result,
-  //         resultHtml,
-  //         images,
-  //       },
-  //     },
-  //     `Đang lưu kết quả khám...`
-  //   );
-  // }
+  async function changeLabStatus() {
+    await putRequestToast(
+      "/lab/edit-lab-booking",
+      {
+        _id: booking_id,
+        query: {
+          status,
+        },
+      },
+      `Đang lưu trạng thái hồ sơ...`
+    );
+    dispatch(fetchBookings({ _id: booking_id }));
+  }
 
   return (
     <>
@@ -122,7 +124,40 @@ export default function ResultLab() {
 
         {/* ------- Result ------------- */}
         <>
-          {" "}
+          {/* -------------- Thay đổi trạng thái hồ sơ khám ------------------- */}
+          {bookings && (
+            <div className="flex justify-center flex-col items-center">
+              {" "}
+              <div className="text-3xl p-4 justify-center flex w-full">
+                Thay đổi trạng thái hồ sơ khám
+              </div>
+              <div className="p-4 m-4">
+                <span>Trạng thái hiện tại: {bookings[0].status} </span>
+              </div>
+              <div className="flex justify-center flex-col w-96">
+                <select
+                  className="select select-info w-full w-96"
+                  value={status ? status : ""}
+                  onChange={(e) => setStatus(e.target.value)}
+                >
+                  <option value={"Đang khám"}>Đang khám</option>
+                  <option value={"Đang đợi lấy mẫu"}>Đang đợi lấy mẫu</option>
+                  <option value={"Đã lấy mẫu"}>Đã lấy mẫu</option>
+                  <option value={"Đang đợi kết quả"}>Đang đợi kết quả</option>
+                  <option value={"Đã có kết quả"}>Đã có kết quả</option>
+                  <option value={"Đã khám xong"}>Đã khám xong</option>
+                </select>
+              </div>
+              <div className="p-4 m-4">
+                <button className="btn btn-info" onClick={changeLabStatus}>
+                  Lưu trạng thái
+                </button>
+              </div>
+              <div className="divider"></div>
+            </div>
+          )}
+
+          {/* ---------------------- Kết quả khám ---------------------- */}
           <div className="text-3xl p-4 justify-center flex w-full">
             Kết quả khám
           </div>

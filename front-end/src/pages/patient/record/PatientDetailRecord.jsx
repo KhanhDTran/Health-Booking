@@ -16,6 +16,7 @@ import RecordResults from "./result/RecordResults";
 import ModalDetailResult from "./result/ModalDetailResult";
 import { postRequestToast } from "../../../services/commonSv";
 import PaymentTable from "./payment/PaymentTable";
+import PatientMedicine from "./medicine/PatientMedicine";
 
 export default function PatientDetailRecord() {
   const dispatch = useDispatch();
@@ -76,8 +77,6 @@ export default function PatientDetailRecord() {
     }
   }
 
-  console.log(records);
-
   return (
     <>
       <PatientHeader />
@@ -105,6 +104,12 @@ export default function PatientDetailRecord() {
                   )}
                 </div>
               </div>
+
+              {/* ----------------- Thuốc  ====------------------------------ */}
+
+              {records && (
+                <PatientMedicine {...{ medicines: records[0].medicines }} />
+              )}
 
               {/* ---------------- Kết quả khám lâm sàng ------------------ */}
 

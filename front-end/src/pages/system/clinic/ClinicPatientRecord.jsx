@@ -14,6 +14,8 @@ import PatientRecordInfor from "./PatientRecordInfor";
 import ModalDetailResult from "../../patient/record/result/ModalDetailResult";
 import RecordResults from "../../patient/record/result/RecordResults";
 import _ from "lodash";
+import ClinicMedicine from "./medicine/ClinicMedicine";
+import { toast } from "react-toastify";
 
 export default function ClinicPatientRecord() {
   const dispatch = useDispatch();
@@ -26,6 +28,7 @@ export default function ClinicPatientRecord() {
   const [conclusion, setConclusion] = useState("");
   const [conclusionHtml, setConclusionHtml] = useState("");
   const [showConclusion, setShowConclusion] = useState(false);
+  const [showMedicine, setShowMedicine] = useState(false);
   const [showLabIndicating, setShowLabIndicating] = useState(false);
   const [selectedResult, setSelectedResult] = useState(null);
 
@@ -58,6 +61,10 @@ export default function ClinicPatientRecord() {
     setConclusionHtml(html);
   }
 
+  function handleShowResult(item) {
+    setSelectedResult(item);
+  }
+
   async function handleSaveConclusion() {
     await putRequestToast(
       "/clinic/edit-patient-record",
@@ -72,8 +79,43 @@ export default function ClinicPatientRecord() {
     );
   }
 
-  function handleShowResult(item) {
-    setSelectedResult(item);
+  async function addMedicine(name, quantity, note) {
+    if (!name || !quantity) {
+      toast.warning("Thiếu thông tin thuốc");
+    } else {
+      let medicines = _.filter(records[0].medicines);
+      medicines.push({ name, quantity, note });
+      let res = await putRequestToast(
+        "/clinic/edit-patient-record",
+        {
+          _id: records[0]._id,
+          query: {
+            medicines,
+          },
+        },
+        `Đang lưu thêm thuốc...`
+      );
+      if (res) dispatch(fetchRecords({ booking: booking_id }));
+    }
+  }
+
+  async function deleteMedicine(item) {
+    if (confirm(`Có chắc muốn xoá thuốc ${item.name}`)) {
+      let medicines = _.filter(records[0].medicines, function (o) {
+        return o.name !== item.name;
+      });
+      let res = await putRequestToast(
+        "/clinic/edit-patient-record",
+        {
+          _id: records[0]._id,
+          query: {
+            medicines,
+          },
+        },
+        `Đang xoá thuốc...`
+      );
+      if (res) dispatch(fetchRecords({ booking: booking_id }));
+    }
   }
 
   return (
@@ -127,6 +169,20 @@ export default function ClinicPatientRecord() {
                     </button>
                   </div>
                 </>
+              )}
+
+              {/* ------------------ Kê thuốc ------------------------- */}
+
+              {records && (
+                <ClinicMedicine
+                  {...{
+                    record: records[0],
+                    showMedicine,
+                    setShowMedicine,
+                    deleteMedicine,
+                    addMedicine,
+                  }}
+                />
               )}
 
               {/* -------------------- Kết quả khám lâm sàng ---------------- */}

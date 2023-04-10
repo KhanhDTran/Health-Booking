@@ -2,107 +2,42 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import _ from "lodash";
-import Select from "react-select";
-import { toast } from "react-toastify";
-import LabHeader from "../../../../components/LabHeader";
 import { fetchBookings } from "../../../../store/features/fetchDataSlice";
-import moment from "moment";
-import "moment/locale/vi";
-moment().format();
-import DatePicker from "react-datepicker";
+import LabHeader from "../../../../components/LabHeader";
 import { putRequestToast } from "../../../../services/commonSv";
+import "moment/locale/vi";
+import moment from "moment";
+moment().format();
 
-export default function LabBooking() {
+export default function LabExaminedList() {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
-  const { user } = useSelector((state) => state.user);
   const { bookings } = useSelector((state) => state.fetchData);
+  const { user } = useSelector((state) => state.user);
 
   // useState
-  const [x, setX] = useState("");
-  const [date, setDate] = useState(new Date(new Date().setHours(0, 0, 0, 0)));
-  const [listBookings, setListBookings] = useState([]);
 
   // UseEffect
-  useEffect(() => {}, []);
 
   useEffect(() => {
-    document.title = "Lịch Hẹn Khám Bệnh";
-    dispatch(fetchBookings({ lab: user.lab._id, status: "Đang chờ khám" }));
+    document.title = "Danh Sách Đã Khám Xong";
     window.scrollTo(0, 0);
+    dispatch(fetchBookings({ lab: user.lab._id, status: "Đã khám xong" }));
   }, []);
 
-  useEffect(() => {
-    if (bookings) {
-      let list = _.filter(bookings, (o) => {
-        return (
-          moment(o.date).format("DD-MM-YYYY") ===
-          moment(date).format("DD-MM-YYYY")
-        );
-      });
-      setListBookings(list);
-    }
-  }, [bookings]);
-
-  function handleChangeDate(e) {
-    setDate(e);
-    let list = _.filter(bookings, (o) => {
-      return (
-        moment(o.date).format("DD-MM-YYYY") === moment(e).format("DD-MM-YYYY")
-      );
-    });
-    setListBookings(list);
-  }
-
   // function
-  function a() {}
-
-  async function handleAdd(item) {
-    let res = await putRequestToast(
-      "/clinic/edit-booking-to-examining",
-      {
-        _id: item._id,
-        query: {
-          status: "Đang khám",
-        },
-      },
-      `Đang chuyển sang "Đang khám bệnh"...`
-    );
-    if (res)
-      dispatch(fetchBookings({ lab: user.lab._id, status: "Đang chờ khám" }));
-  }
 
   return (
     <>
       <LabHeader />
       <div className="container mx-auto p-4">
         <div className="w-full flex justify-center text-3xl">
-          Danh sách lịch hẹn khám bệnh
-        </div>
-        <div className="flex flex-col">
-          <div className="p-4 w-96 flex flex-col  gap-4 justify-center">
-            <label
-              htmlFor="date"
-              className="text-2xl w-40 hover:cursor-pointer"
-            >
-              Chọn ngày <i className="fa-solid fa-calendar"></i>
-            </label>
-            <DatePicker
-              id="date"
-              startDate={new Date(new Date().setHours(0, 0, 0, 0))}
-              selected={date}
-              onChange={(e) => handleChangeDate(e)}
-              dateFormat="dd - MM - yyyy"
-            />
-          </div>
+          Danh sách bệnh nhân đã khám xong
         </div>
 
         <div className="divider"></div>
-        <div className="w-full flex justify-center text-4xl p-10 m-10 text-3xl">
-          Danh sách đang chờ khám
-        </div>
-
-        {listBookings && listBookings.length > 0 ? (
+        {bookings && !_.isEmpty(bookings) ? (
           <>
             <div className="overflow-x-auto w-full">
               <table className="table w-full ">
@@ -113,8 +48,8 @@ export default function LabBooking() {
                     <th>Bệnh nhân</th>
                     <th>Dịch vụ</th>
                     <th>Thời gian</th>
-                    <th></th>
                     <th>Trạng thái</th>
+                    <th>Kết quả khám</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -168,21 +103,20 @@ export default function LabBooking() {
                           </div>
                         </td>
 
-                        <th>
-                          <div
-                            className="tooltip"
-                            data-tip="Chuyển sang đang khám"
-                          >
-                            <button
-                              className="btn btn-ghost btn-xs"
-                              onClick={() => handleAdd(item)}
-                            >
-                              <i className="fa-regular fa-square-plus text-2xl"></i>
-                            </button>
-                          </div>
-                        </th>
                         <td>
                           <span>{item.status} </span>
+                        </td>
+                        <td>
+                          <button
+                            className="btn btn-ghost btn-xs"
+                            onClick={() => {
+                              navigate(
+                                `/system/laboratory/result/${item._id}/${item.record._id}`
+                              );
+                            }}
+                          >
+                            Chi tiết
+                          </button>
                         </td>
                       </tr>
                     );
@@ -195,15 +129,15 @@ export default function LabBooking() {
                     <th>Bệnh nhân</th>
                     <th>Dịch vụ</th>
                     <th>Thời gian</th>
-                    <th></th>
                     <th>Trạng thái</th>
+                    <th>Kết quả khám</th>
                   </tr>
                 </tfoot>
               </table>
             </div>
           </>
         ) : (
-          <>Không có lịch hẹn hôm này</>
+          <>Hiện không có bệnh nhân đã khám xong</>
         )}
       </div>
     </>

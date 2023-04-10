@@ -82,7 +82,7 @@ export default function PaymentTable(props) {
                 <tr key={index}>
                   <th>{item.service.lab.name}</th>
                   <td> {item.service.name} </td>
-                  <td> 1 </td>
+                  <td> {item.quantity} </td>
                   <td>
                     {new Intl.NumberFormat("vi-VN", {
                       style: "currency",

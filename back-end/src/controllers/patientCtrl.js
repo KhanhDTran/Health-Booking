@@ -9,7 +9,6 @@ import Schedule from "../schemas/Schedule.js";
 
 
 export async function deleteBooking(req, res) {
-  console.log(req.query);
   await delay(1000);
   if (!req.query._id) return res.status(400).json({ msg: "Thiếu thông tin" });
   try {
@@ -26,7 +25,6 @@ export async function createBookingLab(req, res) {
   if (!req.body.patient || !req.body.lab || !req.body.record)
     return res.status(400).json({ msg: "Thiếu thông tin" });
   try {
-    console.log(req.body);
     let checkbooking = await Booking.findOne({
       lab: req.body.lab,
       record: req.body.record,
@@ -61,7 +59,6 @@ export async function createBooking(req, res) {
   if (!req.body.patient || !req.body.schedule || !req.body.services)
     return res.status(400).json({ msg: "Thiếu thông tin" });
   try {
-    console.log(req.body);
     let checkBooking = await Booking.findOne({
       patient: req.body.patient,
       hour: req.body.schedule.hour,

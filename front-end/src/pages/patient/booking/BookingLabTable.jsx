@@ -101,7 +101,7 @@ export default function BookingLabTable(props) {
                   <th></th>
                   <th>Bác sĩ</th>
                   <th>Phòng khám </th>
-                  <th>Dịch vụ</th>
+
                   <th>Thời gian</th>
                   <th>Trạng thái</th>
                   {props.record && <th>Hồ sơ bênh án</th>}

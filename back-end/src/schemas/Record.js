@@ -19,6 +19,13 @@ const recordSchema = new Schema(
       bankCode: String,
       date: String,
     },
+    medicines: [
+      {
+        name: String,
+        quantity: String,
+        note: String,
+      },
+    ],
     conclusion: String,
     conclusionHtml: String,
   },

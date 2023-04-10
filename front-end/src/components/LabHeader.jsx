@@ -70,13 +70,14 @@ export default function LabHeader(props) {
                 </NavLink>
               </li>
               <li></li>
-              {/* <li>
-                <NavLink to="/system/clinic/record">
-                  <i className="fa-solid fa-book-medical"></i>
-                  Hồ sơ bệnh án
+              <li>
+                <NavLink to="/system/laboratory/examined-list">
+                  <i className="fa-solid fa-list"></i>
+                  Danh sách đã khám xong
                 </NavLink>
               </li>
-              <li></li> */}
+              <li></li>
+
               <li>
                 <NavLink
                   to="/login"

@@ -17,27 +17,6 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-// export async function sendEmailBookingDetail(data) {
-//   let info = await transporter.sendMail({
-//     from: `"Booking Health 👻" <${process.env.EMAIL_APP_USERNAME}>`, // sender address
-//     to: `${data.email}`, // list of receivers
-//     subject: "Booking appointment Health Booking", // Subject line
-//     text: `Dear ${data.firstName} ${data.lastName}`, // plain text body
-//     html: `<span>This is a detail information of booking appointment </span>  <br />
-//     <span>Doctor: ${data.doctor.position.value} ${
-//       data.doctor.user.firstName
-//     }  ${data.doctor.user.lastName} </span> <br />
-//     <span>Time: ${data.time.time.value} ${moment(data.time.date).format(
-//       "DD/MM/YYYY"
-//     )} </span>  <br />
-//     <span>Price: ${data.doctor.price.value} VNĐ </span>  <br />
-//     <span>Thanh you for using Health Booking</span>  <br />
-//     `, // html body
-//   });
-
-//   console.log("Message sent: %s", info.messageId);
-//   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-// }
 
 export async function sendVerifyCodeEmail(data) {
   let info = await transporter.sendMail({

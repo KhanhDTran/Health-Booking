@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchScedules } from "../../../store/features/fetchDataSlice";
-import DatePicker from "react-datepicker";
 import _ from "lodash";
 import moment from "moment";
 import "moment/locale/vi";
+import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
+import { useDispatch, useSelector } from "react-redux";
+import { postRequestToast } from "../../../services/commonSv";
+import { fetchScedules } from "../../../store/features/fetchDataSlice";
 moment().format();
-import { postRequestToast, putRequestToast } from "../../../services/commonSv";
 
 export default function ModalLabBooking(props) {
   const dispatch = useDispatch();

@@ -1,23 +1,23 @@
+import _ from "lodash";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import ClinicHeader from "../../../../components/ClinicHeader";
+import { putRequestToast } from "../../../../services/commonSv";
 import {
+  fetchBookings,
   fetchRecords,
   fetchResults,
-  fetchBookings,
 } from "../../../../store/features/fetchDataSlice";
-import { putRequestToast } from "../../../../services/commonSv";
-import LabIndicating from "./LabIndicating";
-import PatientRecordInfor from "./PatientRecordInfor";
+import PreBooking from "../../../patient/record/PreBooking";
 import ModalDetailResult from "../../../patient/record/result/ModalDetailResult";
 import RecordResults from "../../../patient/record/result/RecordResults";
-import _ from "lodash";
 import ClinicMedicine from "../medicine/ClinicMedicine";
-import { toast } from "react-toastify";
-import ConclusionRecord from "./conclusionRecord";
 import ClinicRecordStatus from "./ClinicRecordStatus";
-import PreBooking from "../../../patient/record/PreBooking";
+import LabIndicating from "./LabIndicating";
+import PatientRecordInfor from "./PatientRecordInfor";
+import ConclusionRecord from "./conclusionRecord";
 
 export default function ClinicPatientRecord() {
   const dispatch = useDispatch();

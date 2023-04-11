@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
+import _ from "lodash";
+import moment from "moment";
+import "moment/locale/vi";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import _ from "lodash";
-import { fetchBookings } from "../../../../store/features/fetchDataSlice";
 import LabHeader from "../../../../components/LabHeader";
-import { putRequestToast } from "../../../../services/commonSv";
-import "moment/locale/vi";
-import moment from "moment";
+import { fetchBookings } from "../../../../store/features/fetchDataSlice";
 moment().format();
 
 export default function LabExaminedList() {

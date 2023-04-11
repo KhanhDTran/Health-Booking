@@ -26,6 +26,7 @@ export default function ManageDoctor() {
   useEffect(() => {
     dispatch(fetchAllDoctors());
     document.title = "Admin | Bác Sĩ Chuyên Khoa";
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {

@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
-import logo from "../assets/images/logo.png";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { logged_out } from "../store/features/userSlice";
-import "../pages/auth/ModalOtp.scss";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import logo from "../assets/images/logo.png";
 import defaultAva from "../assets/images/patient/defaultAva.jpg";
+import "../pages/auth/ModalOtp.scss";
+import { logged_out } from "../store/features/userSlice";
 
 export default function ClinicHeader(props) {
   const { role, user } = useSelector((state) => state.user);

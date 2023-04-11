@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
+import _ from "lodash";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import _ from "lodash";
-import Select from "react-select";
-import { toast } from "react-toastify";
-import { fetchBookings } from "../../../../store/features/fetchDataSlice";
 import ClinicHeader from "../../../../components/ClinicHeader";
-import ClinicTablebooking from "./ClinicTablebooking";
 import { putRequestToast } from "../../../../services/commonSv";
+import { fetchBookings } from "../../../../store/features/fetchDataSlice";
 
 export default function ClinicExaminedList() {
   const dispatch = useDispatch();

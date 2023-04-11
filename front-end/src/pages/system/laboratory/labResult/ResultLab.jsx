@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from "react";
+import _ from "lodash";
+import MarkdownIt from "markdown-it";
+import React, { useEffect, useState } from "react";
+import MdEditor from "react-markdown-editor-lite";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import _, { result } from "lodash";
-import Select from "react-select";
-import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
 import LabHeader from "../../../../components/LabHeader";
-import PatientResultInfo from "./PatientResultInfo";
+import { putRequestToast } from "../../../../services/commonSv";
 import {
   fetchBookings,
   fetchResults,
 } from "../../../../store/features/fetchDataSlice";
-import { useParams } from "react-router-dom";
-import MarkdownIt from "markdown-it";
-import MdEditor from "react-markdown-editor-lite";
-import { putRequestToast } from "../../../../services/commonSv";
 import { toBase64 } from "../../../../utils/CommonUtils";
+import PatientResultInfo from "./PatientResultInfo";
 
 export default function ResultLab() {
   const dispatch = useDispatch();

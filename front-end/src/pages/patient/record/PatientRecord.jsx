@@ -1,11 +1,8 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import _ from "lodash";
-import Select from "react-select";
-import { toast } from "react-toastify";
-import PatientHeader from "../../../components/PatientHeader";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../../components/Footer";
+import PatientHeader from "../../../components/PatientHeader";
 import { fetchBookings } from "../../../store/features/fetchDataSlice";
 import BookingTable from "../booking/BookingTable";
 

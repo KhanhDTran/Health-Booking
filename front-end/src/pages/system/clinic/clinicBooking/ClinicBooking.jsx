@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import _ from "lodash";
-import Select from "react-select";
-import { toast } from "react-toastify";
-import ClinicHeader from "../../../../components/ClinicHeader";
-import DatePicker from "react-datepicker";
-import { fetchBookings } from "../../../../store/features/fetchDataSlice";
-import ClinicTablebooking from "./ClinicTablebooking";
-import { putRequestToast } from "../../../../services/commonSv";
 import moment from "moment";
 import "moment/locale/vi";
+import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
+import { useDispatch, useSelector } from "react-redux";
+import ClinicHeader from "../../../../components/ClinicHeader";
+import { putRequestToast } from "../../../../services/commonSv";
+import { fetchBookings } from "../../../../store/features/fetchDataSlice";
+import ClinicTablebooking from "./ClinicTablebooking";
 moment().format();
 
 export default function ClinicBooking() {

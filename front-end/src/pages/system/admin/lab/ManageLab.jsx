@@ -22,6 +22,7 @@ export default function ManageLab() {
 
   useEffect(() => {
     document.title = "Admin | Phòng Lâm Sàng";
+    window.scrollTo(0, 0);
     dispatch(fetchAllLabs());
   }, []);
 

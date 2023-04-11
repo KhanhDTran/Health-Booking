@@ -17,7 +17,6 @@ import {
 import { convertToSelectOptions } from "../../../../utils/CommonUtils";
 import SelectLabClinic from "../components/SelectLabClinic";
 import FormService from "./FormService";
-import { customStyles } from "../../../../utils/CommonUtils";
 
 export default function ManageService() {
   const dispatch = useDispatch();

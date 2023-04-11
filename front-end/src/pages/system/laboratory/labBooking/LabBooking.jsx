@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import _ from "lodash";
-import Select from "react-select";
-import { toast } from "react-toastify";
-import LabHeader from "../../../../components/LabHeader";
-import { fetchBookings } from "../../../../store/features/fetchDataSlice";
 import moment from "moment";
 import "moment/locale/vi";
-moment().format();
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
+import { useDispatch, useSelector } from "react-redux";
+import LabHeader from "../../../../components/LabHeader";
 import { putRequestToast } from "../../../../services/commonSv";
+import { fetchBookings } from "../../../../store/features/fetchDataSlice";
+moment().format();
 
 export default function LabBooking() {
   const dispatch = useDispatch();

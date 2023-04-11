@@ -1,18 +1,16 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import _ from "lodash";
-import { toast } from "react-toastify";
-import PatientHeader from "../../../components/PatientHeader";
-import Footer from "../../../components/Footer";
-import { fetchBookings } from "../../../store/features/fetchDataSlice";
-import Err401Page from "../../../components/Err401Page";
-import BookingTable from "./BookingTable";
-import { deleteRequestToast } from "../../../services/commonSv";
 import moment from "moment";
 import "moment/locale/vi";
-moment().format();
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Err401Page from "../../../components/Err401Page";
+import Footer from "../../../components/Footer";
+import PatientHeader from "../../../components/PatientHeader";
+import { deleteRequestToast } from "../../../services/commonSv";
+import { fetchBookings } from "../../../store/features/fetchDataSlice";
 import BookingLabTable from "./BookingLabTable";
+import BookingTable from "./BookingTable";
+moment().format();
 
 export default function PatientBooking() {
   const dispatch = useDispatch();
@@ -83,8 +81,6 @@ export default function PatientBooking() {
       if (res) dispatch(fetchBookings({ patient: user.patient._id }));
     }
   }
-
-  // console.log(bookings);
 
   return (
     <div>

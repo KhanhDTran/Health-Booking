@@ -25,6 +25,7 @@ export default function ManageClinic() {
 
   useEffect(() => {
     document.title = "Admin | Phòng Chuyên Khoa";
+    window.scrollTo(0, 0);
     dispatch(fetchAllSpecialties());
     dispatch(fetchAllClinics());
   }, []);
@@ -53,7 +54,6 @@ export default function ManageClinic() {
   }
 
   async function handleDelete(item) {
-   
     if (confirm(`Có chắc muốn xóa phòng khám chuyên khoa: ${item.name}`)) {
       let res = await deleteRequestToast(
         "/delete-clinic",

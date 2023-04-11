@@ -1,25 +1,25 @@
 import _ from "lodash";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useNavigate, redirect } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../../../components/Footer";
 import PatientHeader from "../../../components/PatientHeader";
+import { postRequestToast } from "../../../services/commonSv";
 import {
+  fetchBookings,
   fetchRecords,
   fetchResults,
-  fetchBookings,
 } from "../../../store/features/fetchDataSlice";
 import PatientRecordInfor from "../../system/clinic/clinicRecord/PatientRecordInfor";
+import ModalLabBooking from "./ModalLabBooking";
 import PatientLabsTable from "./PatientLabsTable";
 import PatientTableLabServices from "./PatientTableLabServices";
-import ModalLabBooking from "./ModalLabBooking";
-import RecordResults from "./result/RecordResults";
-import ModalDetailResult from "./result/ModalDetailResult";
-import { postRequestToast } from "../../../services/commonSv";
-import PaymentTable from "./payment/PaymentTable";
-import PatientMedicine from "./medicine/PatientMedicine";
-import ModalReBooking from "./rebooking/ModalReBooking";
 import PreBooking from "./PreBooking";
+import PatientMedicine from "./medicine/PatientMedicine";
+import PaymentTable from "./payment/PaymentTable";
+import ModalReBooking from "./rebooking/ModalReBooking";
+import ModalDetailResult from "./result/ModalDetailResult";
+import RecordResults from "./result/RecordResults";
 
 export default function PatientDetailRecord() {
   const dispatch = useDispatch();

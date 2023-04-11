@@ -1,8 +1,8 @@
+import MarkdownIt from "markdown-it";
 import moment from "moment";
 import "moment/locale/vi";
-moment().format();
-import MarkdownIt from "markdown-it";
 import MdEditor from "react-markdown-editor-lite";
+moment().format();
 
 export default function ConclusionRecord(props) {
   const mdParser = new MarkdownIt(/* Markdown-it options */);

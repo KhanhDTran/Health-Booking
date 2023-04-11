@@ -3,7 +3,6 @@ import moment from "moment";
 import "moment/locale/vi";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 moment().format();
 
 export default function BookingTable(props) {

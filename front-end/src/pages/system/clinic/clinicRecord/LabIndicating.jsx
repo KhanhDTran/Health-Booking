@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import _ from "lodash";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
-import { toast } from "react-toastify";
+import { putRequestToast } from "../../../../services/commonSv";
 import {
-  fetchServices,
   fetchAllLabs,
+  fetchServices,
 } from "../../../../store/features/fetchDataSlice";
-import { convertToSelectOptions } from "../../../../utils/CommonUtils";
-import { customStyles } from "../../../../utils/CommonUtils";
+import {
+  convertToSelectOptions,
+  customStyles,
+} from "../../../../utils/CommonUtils";
 import RecordTableServices from "./RecordTableServices";
 import TableIndicatedServices from "./TableIndicatedServices";
-import { putRequestToast } from "../../../../services/commonSv";
 
 export default function LabIndicating(props) {
   const dispatch = useDispatch();
@@ -132,8 +132,6 @@ export default function LabIndicating(props) {
     }
     setCheck(!check);
   }
-
-  // console.log(selectedList);
 
   async function handleSaveIndicatedList() {
     let x = _.map(selectedList, (o) => {

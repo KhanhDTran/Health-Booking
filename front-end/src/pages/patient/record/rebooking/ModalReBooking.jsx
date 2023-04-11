@@ -1,19 +1,18 @@
+import _ from "lodash";
+import moment from "moment";
+import "moment/locale/vi";
 import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  postRequestToast
+} from "../../../../services/commonSv";
 import {
   fetchScedules,
   fetchServices,
 } from "../../../../store/features/fetchDataSlice";
-import DatePicker from "react-datepicker";
-import _ from "lodash";
-import moment from "moment";
-import "moment/locale/vi";
-moment().format();
-import {
-  postRequestToast,
-  putRequestToast,
-} from "../../../../services/commonSv";
 import TableServices from "../../../home/doctor/detailDoctor/TableServices";
+moment().format();
 
 export default function ModalReBooking(props) {
   const dispatch = useDispatch();
@@ -65,8 +64,6 @@ export default function ModalReBooking(props) {
       props.setOpenModalReBooking(false);
     }
   }
-
-  //   console.log(props);
 
   return (
     <>

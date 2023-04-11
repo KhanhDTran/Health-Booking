@@ -12,7 +12,7 @@ import ModalEditSpecialty from "./MEditSpecialty";
 
 export default function ManageSpecialty() {
   useEffect(() => {
-    document.title = "Đăng ký | Chuyên Khoa Y Tế";
+    document.title = "Admin | Chuyên Khoa Y Tế";
     window.scrollTo(0, 0);
   }, []);
 

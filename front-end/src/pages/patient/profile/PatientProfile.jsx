@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import _ from "lodash";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import PatientHeader from "../../../components/PatientHeader";
-import Footer from "../../../components/Footer";
-import { putRequestToast } from "../../../services/commonSv";
 import defaultAva from "../../../assets/images/patient/defaultAva.jpg";
-import { toBase64 } from "../../../utils/CommonUtils";
-import { edit_patient_profile } from "../../../store/features/userSlice";
 import Err401Page from "../../../components/Err401Page";
+import Footer from "../../../components/Footer";
+import PatientHeader from "../../../components/PatientHeader";
+import { putRequestToast } from "../../../services/commonSv";
+import { edit_patient_profile } from "../../../store/features/userSlice";
+import { toBase64 } from "../../../utils/CommonUtils";
 
 export default function PatientProfile() {
   const dispatch = useDispatch();

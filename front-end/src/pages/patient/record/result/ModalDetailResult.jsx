@@ -1,5 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
-import _ from "lodash";
+import { useCallback, useState } from "react";
 import ImageViewer from "react-simple-image-viewer";
 
 export default function ModalDetailResult(props) {

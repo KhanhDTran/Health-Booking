@@ -18,7 +18,6 @@ export default function ClinicBooking() {
 
   // useState
   const [date, setDate] = useState(new Date(new Date().setHours(0, 0, 0, 0)));
-  const [listBookings, setListBookings] = useState([]);
 
   // console.log(bookings);
 
@@ -27,31 +26,20 @@ export default function ClinicBooking() {
     document.title = "Lịch Hẹn Khám Bệnh";
     window.scrollTo(0, 0);
     dispatch(
-      fetchBookings({ clinic: user.clinic._id, status: "Đang chờ khám" })
+      fetchBookings({ clinic: user.clinic._id, status: "Đang chờ khám", date })
     );
   }, []);
-
-  useEffect(() => {
-    if (bookings) {
-      let list = _.filter(bookings, (o) => {
-        return (
-          moment(o.date).format("DD-MM-YYYY") ===
-          moment(date).format("DD-MM-YYYY")
-        );
-      });
-      setListBookings(list);
-    }
-  }, [bookings]);
 
   // function
   function handleChangeDate(e) {
     setDate(e);
-    let list = _.filter(bookings, (o) => {
-      return (
-        moment(o.date).format("DD-MM-YYYY") === moment(e).format("DD-MM-YYYY")
-      );
-    });
-    setListBookings(list);
+    dispatch(
+      fetchBookings({
+        clinic: user.clinic._id,
+        status: "Đang chờ khám",
+        date: e,
+      })
+    );
   }
 
   async function handleAdd(item) {
@@ -101,9 +89,9 @@ export default function ClinicBooking() {
           Danh sách đang chờ khám
         </div>
 
-        {listBookings && listBookings.length > 0 ? (
+        {bookings && bookings.length > 0 ? (
           <ClinicTablebooking
-            bookings={_.sortBy(listBookings, ["hour"])}
+            bookings={_.sortBy(bookings, ["hour"])}
             handleAdd={handleAdd}
             status={"Đang chờ khám"}
           />

@@ -64,69 +64,67 @@ export default function ClinicExaminingList() {
                   </tr>
                 </thead>
                 <tbody>
-                  {_.filter(bookings, function (o) {
-                    return (
-                      o.status !== "Đang chờ khám" &&
-                      o.status !== "Đã khám xong"
-                    );
-                  }).map((item, index) => {
-                    return (
-                      <tr key={item._id}>
-                        <th>
-                          <span> {index + 1} </span>
-                        </th>
-                        <td>
-                          <div className="flex space-x-3">
-                            <div className="avatar">
-                              <div className=" h-24 w-24 ">
-                                <img
-                                  className="mask mask-circle bg-base-200 h-36 w-36 hover:cursor-pointer"
-                                  src={item.patient.image}
-                                />
-                              </div>
-                            </div>
-                            <div>
-                              <div className="font-bold">
-                                {item.patient.name}{" "}
-                              </div>
-                              <div>Sinh năm: {item.patient.age} </div>
-                              <div>Giới tính: {item.patient.gender} </div>
-                              <div>Địa chỉ: {item.patient.address} </div>
-                            </div>
-                          </div>
-                        </td>
-
-                        <td>
-                          <div className="flex space-x-3">
-                            <div>
-                              <div className="font-bold">
-                                {item.services[0].name}{" "}
+                  {bookings.map((item, index) => {
+                    if (
+                      item.status !== "Đang chờ khám" &&
+                      item.status !== "Đã khám xong"
+                    )
+                      return (
+                        <tr key={item._id}>
+                          <th>
+                            <span> {index + 1} </span>
+                          </th>
+                          <td>
+                            <div className="flex space-x-3">
+                              <div className="avatar">
+                                <div className=" h-24 w-24 ">
+                                  <img
+                                    className="mask mask-circle bg-base-200 h-36 w-36 hover:cursor-pointer"
+                                    src={item.patient.image}
+                                  />
+                                </div>
                               </div>
                               <div>
-                                {" "}
-                                {new Intl.NumberFormat("vi-VN", {
-                                  style: "currency",
-                                  currency: "VND",
-                                }).format(item.services[0].unitPrice * 1000)}
+                                <div className="font-bold">
+                                  {item.patient.name}{" "}
+                                </div>
+                                <div>Sinh năm: {item.patient.age} </div>
+                                <div>Giới tính: {item.patient.gender} </div>
+                                <div>Địa chỉ: {item.patient.address} </div>
                               </div>
                             </div>
-                          </div>
-                        </td>
+                          </td>
 
-                        <td>
-                          <button
-                            className="btn btn-ghost btn-xs"
-                            onClick={() => {
-                              navigate(
-                                `/system/clinic/patient_record/${item._id}`
-                              );
-                            }}
-                          >
-                            Chi tiết
-                          </button>
-                        </td>
-                        <th>
-                          {item.status === "Đang khám" && (
+                          <td>
+                            <div className="flex space-x-3">
+                              <div>
+                                <div className="font-bold">
+                                  {item.services[0].name}{" "}
+                                </div>
+                                <div>
+                                  {" "}
+                                  {new Intl.NumberFormat("vi-VN", {
+                                    style: "currency",
+                                    currency: "VND",
+                                  }).format(item.services[0].unitPrice * 1000)}
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <button
+                              className="btn btn-ghost btn-xs"
+                              onClick={() => {
+                                navigate(
+                                  `/system/clinic/patient_record/${item._id}`
+                                );
+                              }}
+                            >
+                              Chi tiết
+                            </button>
+                          </td>
+                          <th>
                             <div
                               className="tooltip"
                               data-tip="Chuyển sang đang chờ khám"
@@ -138,13 +136,12 @@ export default function ClinicExaminingList() {
                                 <i className="fa-regular fa-square-minus text-2xl"></i>
                               </button>
                             </div>
-                          )}
-                        </th>
-                        <td>
-                          <span>{item.status} </span>
-                        </td>
-                      </tr>
-                    );
+                          </th>
+                          <td>
+                            <span>{item.status} </span>
+                          </td>
+                        </tr>
+                      );
                   })}
                 </tbody>
                 {/* foot */}

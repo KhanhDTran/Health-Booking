@@ -11,6 +11,8 @@ export default function ClinicTablebooking(props) {
 
   const { user } = useSelector((state) => state.user);
 
+  console.log(props);
+
   return (
     <>
       {props.bookings && !_.isEmpty(props.bookings) && (
@@ -98,7 +100,7 @@ export default function ClinicTablebooking(props) {
                       )}
 
                       <th>
-                        {item.status === "Đang chờ khám" && (
+                        {props.status === "Đang chờ khám" && (
                           <div
                             className="tooltip"
                             data-tip="Chuyển sang đang khám"
@@ -111,7 +113,7 @@ export default function ClinicTablebooking(props) {
                             </button>
                           </div>
                         )}
-                        {item.status === "Đang khám" && (
+                        {props.status === "Đang khám" && (
                           <div
                             className="tooltip"
                             data-tip="Chuyển sang đang chờ khám"
